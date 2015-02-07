@@ -29,4 +29,5 @@ module.exports = {
         "secret": 'razorthink-deployer',
         "collection": 'sessions'
     }
+
 };

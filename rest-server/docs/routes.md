@@ -66,7 +66,7 @@
         expertice: String
     }
 
-3.get /employees
+3. get /employees
     RES:
     [
       {
@@ -77,3 +77,15 @@
         expertice: String
       }
     ]
+    
+# for uploading images use this
+4. post /uploads 
+    <form id="uploadForm"
+          enctype="multipart/form-data"
+          action="/uploads"
+          method="post">
+      <input type="file" name="userPhoto" />
+      <input type="submit" value="Upload Image" name="submit">
+    </form>
+5. get /uploads/
+    

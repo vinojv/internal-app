@@ -29,44 +29,6 @@ module.exports = function (app, config) {
         }
     ));
 
-    // passport.use(new BasicStrategy(
-    //   function(username, password, done) {
-    //     User.findOne({ username: username }, function (err, user) {
-    //       if (err) { return done(err); }
-
-    //       // No user found with that username
-    //       if (!user) { return done(null, false); }
-
-    //       // Make sure the password is correct
-    //       user.verifyPassword(password, function(err, isMatch) {
-    //         if (err) { return done(err); }
-
-    //         // Password did not match
-    //         if (!isMatch) { return done(null, false); }
-
-    //         // Success
-    //         return done(null, user);
-    //       });
-    //     });
-    //   }
-    // ));
-
-    // // TODO: implement digest authentication
-    // passport.use(new DigestStrategy(
-    //     { qop: 'auth' },
-    //     function(username, done) {
-    //         User.findOne({ username: username }, function (err, user) {
-    //             if (err) { return done(err); }
-    //             if (!user) { return done(null, false); }
-    //             return done(null, user, user.password);
-    //         });
-    //     },
-    //     function(params, done) {
-    //         process.nextTick(function () {
-    //             done(null, true)
-    //         });
-    //     }));
-
     passport.serializeUser(function(user, done) {
         done(null, user.id);
     });

@@ -18,7 +18,6 @@ var server = app.listen(app.get('port'), function () {
 
 app.use(app.controllers.auth());
 app.use(app.controllers.employees());
-// app.use(app.controllers.agents());
-app.use(app.controllers.users());
+app.use(app.controllers.upload());
 
 module.exports = app;
