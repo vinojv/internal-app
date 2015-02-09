@@ -1,7 +1,8 @@
 
 // middleware to check if request is authenticated using passport
 exports.ensureAuthenticated = function (req, res, next) {
-    req.isAuthenticated() ? next() : res.status(403).send('Request Not Authenticated');
+    console.log(req.isAuthenticated());
+    req.isAuthenticated() ? next() : res.status(403).send({status:403, message: 'Request Not Authenticated'});
 };
 
 // common read-response from mongoose.

@@ -1,52 +1,73 @@
 angular.module("rbook", [
      "ui.router",
-     "restangular",
-     "ngCookies",
-     "ngAnimate",
-     "ngStorage",
-     "angularFileUpload",
-     ]);
-
-angular.module("blazent")
-	.config([
+     "restangular"
+     ])
+    .config([
         '$stateProvider',
         '$urlRouterProvider',
         '$locationProvider',
         'RestangularProvider',
-
         function ($stateProvider, $urlRouterProvider, $locationProvider, RestangularProvider) {
-			RestangularProvider.setBaseUrl('/');
-			RestangularProvider.setDefaultHeaders({
-				"Content-Type": "application/json"
-			});
+            console.log("config");
 
-			$urlRouterProvider.when("/", "/");
-//			$urlRouterProvider.otherwise("/invalidURL");
-			$locationProvider.html5Mode(true);
+            RestangularProvider.setBaseUrl('/rest/');
+            RestangularProvider.setDefaultHeaders({
+                "Content-Type": "application/json"
+            });
 
-			$stateProvider
-				.state("login", {
-					url: "/",
-					templateUrl: "login.html",
-					controller: "LoginController as Login"
-				})
+            $urlRouterProvider.when("/", "/");
 
-			.state("employee-details", {
-				url: "/employee-details",
-				templateUrl: "/employee-details.html"
-			})
+            $locationProvider.html5Mode(true);
 
-			.state("employee", {
-				url: "/employee/{mode}",
-				templateUrl: "/add-employee.html"
-			});
-		}]);
+            $stateProvider
+                .state("login", {
+                    url: "/",
+                    templateUrl: "/html/login.html",
+                    controller: "LoginController as Login"
+                })
 
-angular.module("rbook", ["restangular"])
-	.controller("RBookController", ["$scope",
-		function (scope) {
-			scope.credentials = {
-				username: '',
-				password: ''
-			}
-}])
+            .state("employee-details", {
+                url: "/employee-details",
+                templateUrl: "/html/employee-details.html",
+                controller: "EmployeeListController as empCtr",
+                resolve: {
+                    employees: ["Service", function (service) {
+                        return service.getEmployees().then(function (data) {
+                            return data;
+                        }, function (err) {
+                            console.log("error")
+                            return []
+                        });
+                    }]
+
+                }
+            })
+
+            .state("employee", {
+                url: "/employee/{mode}",
+                templateUrl: "/html/add-employee.html",
+                controller: "AddEmployeeController as forms"
+            });
+
+    }])
+    .run(["$state",
+          "Restangular",
+          function($state, Restangular){
+        Restangular.setErrorInterceptor(function (response, deferred, responseHandler) {
+                console.log("Restangular error intercepted", response);
+
+                if (response.status == "404") {
+                    $state.go('login');
+                    return false; //error handled
+                }
+
+                return true; // error not handled
+            });
+    }])
+    .controller("RBookController", [
+      "$scope",
+      "$state",
+      function (scope, $state) {
+            $state.go("employee-details");
+
+      }])

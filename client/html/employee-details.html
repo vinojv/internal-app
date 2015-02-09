@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Employee Details</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+-->
+	<div class="main-wrapper">
+
+		<div class="header">
+			<div class="content-container">
+
+				<div class="header-logo fleft">
+					<a href=""></a>
+				</div>
+
+				<div class="header-search fright">
+					<input type="text" placeholder="Search with name">
+				</div>
+
+				<button class="header-add-emp fright">
+					<span class="header-add-emp-icon"></span>
+					<span class="header-add-emp-text">Add</span>
+				</button>
+
+				<div class="clearall"></div>
+			</div>
+		</div>
+
+		<div class="user-details-container">
+			<div class="content-container">
+				<ul class="user-details-list">
+					<li ng-repeat="employee in empCtr.employees">
+						<div class="user-photo-block fleft"
+						ng-style="{'background-image':'url(employee.photo)'}">
+							<!--							<img src="" alt="" width="100%" height="100%">-->
+						</div>
+						<div class="user-details-block fleft">
+							<div class="user-details-row"
+							   ng-if="employee.name">
+				                <h6 class="user-details-title fleft">Name : </h6>
+				                <p class="user-details-desc fleft">{{employee.name}}</p>
+				                <div class="clearall"></div>
+							</div>
+							<div class="user-details-row"
+							   ng-if="employee.designation">
+				                <h6 class="user-details-title fleft">Designation : </h6>
+				                <p class="user-details-desc fleft">{{employee.designation}}</p>
+				                <div class="clearall"></div>
+							</div>
+							<div class="user-details-row"
+							   ng-if="employee.experience">
+				                <h6 class="user-details-title fleft">Experience : </h6>
+				                <p class="user-details-desc fleft">{{employee.experience}} Years</p>
+				                <div class="clearall"></div>
+							</div>
+							<div class="user-details-row"
+							   ng-if="employee.expertice">
+				                <h6 class="user-details-title fleft">Expert in : </h6>
+				                <p class="user-details-desc fleft">{{employee.expertice}}</p>
+				                <div class="clearall"></div>
+							</div>
+							<div class="clearall"></div>
+						</div>
+						<div class="clearall"></div>
+					</li>
+
+					<div class="clearall"></div>
+				</ul>
+			</div>
+		</div>
+
+		<div class="footer">
+
+			<div class="content-container">
+				<h6 class="footer-copyrights fright">2015 &copy; all rights reserved razorthink</h6>
+			</div>
+
+		</div>
+	</div>
+<!--
+</body>
+
+</html>-->

@@ -3,3 +3,4 @@
 # Example .gitignore files: https://github.com/github/gitignore
 
 rest-server/node_modules
+client/node_modules

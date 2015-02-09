@@ -11,7 +11,6 @@ module.exports = function (app, router) {
     return function () {
 
         var route = '/uploads';
-        var Employees = app.models.Employees;
         // set up the router
         router
           .use(multer({ dest: '/home/vinoj/GitHub/internal-app/client/uploads',
