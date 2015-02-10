@@ -39,21 +39,24 @@
 				<span class="add-employee-row-title fleft">Name :</span>
 				<input type="text" ng-model="forms.service.name"
 				  class="add-employee-row-input fleft"
-				  placeholder="Employee name">
+				  placeholder="Employee name"
+				  ng-pattern="/^[A-Za-z0-9_][A-Za-z0-9_ ]*$/">
 				<div class="clearall"></div>
 			</div>
 			<div class="add-employee-form-row">
 				<span class="add-employee-row-title fleft">Designation :</span>
 				<input type="text" ng-model="forms.service.designation"
 				  class="add-employee-row-input fleft"
-				  placeholder="Employee Designation">
+				  placeholder="Employee Designation"
+				  ng-pattern="/^[A-Za-z0-9_][A-Za-z0-9_ ]*$/">
 				<div class="clearall"></div>
 			</div>
 			<div class="add-employee-form-row">
 				<span class="add-employee-row-title fleft">Experience :</span>
 				<input type="text" ng-model="forms.service.exprience"
 				  class="add-employee-row-input fleft"
-				  placeholder="Employee experience">
+				  placeholder="Employee experience"
+				  ng-pattern="/^[0-9_]*$/">
 				<div class="clearall"></div>
 			</div>
 			<div class="add-employee-form-row">
