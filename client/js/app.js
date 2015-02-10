@@ -1,6 +1,7 @@
 angular.module("rbook", [
      "ui.router",
-     "restangular"
+     "restangular",
+     "angularFileUpload"
      ])
     .config([
         '$stateProvider',
@@ -69,5 +70,6 @@ angular.module("rbook", [
       "$state",
       function (scope, $state) {
             $state.go("employee-details");
+//            $state.go("employee");
 
       }])
