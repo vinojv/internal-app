@@ -71,12 +71,17 @@
 				  placeholder="Area of Expertise">
 -->
 
+<!--
 				  <form id="uploadForm"
                       enctype="multipart/form-data"
                       no-validation>
-                  <input type="file" ng-model="userPhoto" name="userPhoto" ng-change="forms.upload($files)"/>
+-->
+                  <input type="text"
+                      ng-model="forms.userPhoto"
+                      ng-init="forms.userPhoto='ds'"
+                      ng-change="forms.upload('dsds')"/>
 <!--                  <input type="submit" value="Upload Image" name="submit">-->
-                </form>
+<!--                </form>-->
 
 				<div class="clearall"></div>
 			</div>

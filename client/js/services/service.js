@@ -1,5 +1,7 @@
 angular.module("rbook")
-    .service("Service", ["Restangular", function(Restangular){
+    .service("Service", [
+    "Restangular",
+    function(Restangular){
 
     var self = this;
 
