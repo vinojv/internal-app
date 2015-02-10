@@ -4,6 +4,7 @@ angular.module("rbook")
     function(Restangular){
 
     var self = this;
+    self.data ={ };
 
     self.checkCred = function (loginData){
 
