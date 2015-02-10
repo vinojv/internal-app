@@ -56,7 +56,7 @@ angular.module("rbook", [
         Restangular.setErrorInterceptor(function (response, deferred, responseHandler) {
                 console.log("Restangular error intercepted", response);
 
-                if (response.status == "404") {
+                if (response.status == 403) {
                     $state.go('login');
                     return false; //error handled
                 }

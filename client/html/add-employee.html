@@ -37,27 +37,47 @@
 			</h5>
 			<div class="add-employee-form-row">
 				<span class="add-employee-row-title fleft">Name :</span>
-				<input type="text" class="add-employee-row-input fleft" placeholder="Employee name">
+				<input type="text" ng-model="forms.service.name"
+				  class="add-employee-row-input fleft"
+				  placeholder="Employee name">
 				<div class="clearall"></div>
 			</div>
 			<div class="add-employee-form-row">
 				<span class="add-employee-row-title fleft">Designation :</span>
-				<input type="text" class="add-employee-row-input fleft" placeholder="Employee Designation">
+				<input type="text" ng-model="forms.service.designation"
+				  class="add-employee-row-input fleft"
+				  placeholder="Employee Designation">
 				<div class="clearall"></div>
 			</div>
 			<div class="add-employee-form-row">
 				<span class="add-employee-row-title fleft">Experience :</span>
-				<input type="text" class="add-employee-row-input fleft" placeholder="Employee experience">
+				<input type="text" ng-model="forms.service.exprience"
+				  class="add-employee-row-input fleft"
+				  placeholder="Employee experience">
 				<div class="clearall"></div>
 			</div>
 			<div class="add-employee-form-row">
 				<span class="add-employee-row-title fleft">Expert in :</span>
-				<input type="text" class="add-employee-row-input fleft" placeholder="Area of Expertise">
+				<input type="text" ng-model="forms.service.expertice"
+				  class="add-employee-row-input fleft"
+				  placeholder="Area of Expertise">
 				<div class="clearall"></div>
 			</div>
 			<div class="add-employee-form-row">
 				<span class="add-employee-row-title fleft">Upload photo :</span>
-				<input type="file" class="add-employee-row-input fleft" placeholder="Area of Expertise">
+<!--
+				<input type="file" ng-model="forms.service.photo"
+				  class="add-employee-row-input fleft"
+				  placeholder="Area of Expertise">
+-->
+
+				  <form id="uploadForm"
+                      enctype="multipart/form-data"
+                      no-validation>
+                  <input type="file" ng-model="userPhoto" name="userPhoto" ng-change="forms.upload($files)"/>
+<!--                  <input type="submit" value="Upload Image" name="submit">-->
+                </form>
+
 				<div class="clearall"></div>
 			</div>
 			<div class="add-employee-form-row">

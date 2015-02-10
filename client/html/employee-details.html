@@ -23,7 +23,8 @@
 					<input type="text" placeholder="Search with name">
 				</div>
 
-				<button class="header-add-emp fright">
+				<button class="header-add-emp fright"
+				    ui-sref="employee">
 					<span class="header-add-emp-icon"></span>
 					<span class="header-add-emp-text">Add</span>
 				</button>
@@ -35,7 +36,8 @@
 		<div class="user-details-container">
 			<div class="content-container">
 				<ul class="user-details-list">
-					<li ng-repeat="employee in empCtr.employees">
+					<li ng-repeat="employee in empCtr.employees"
+					    ng-click="empCtr.editEmployee(employee)">
 						<div class="user-photo-block fleft"
 						ng-style="{'background-image':'url(employee.photo)'}">
 							<!--							<img src="" alt="" width="100%" height="100%">-->

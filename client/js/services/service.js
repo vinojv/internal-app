@@ -10,8 +10,19 @@ angular.module("rbook")
         else
             return;
     };
+
     self.getEmployees = function (){
         return Restangular.one("employees").getList();
+    };
+
+    self.update = false;
+
+    self.postDetails = function (id){
+        if (self.formData._id)
+            return Restangular.one("employees", self.formData._id)
+                .customPUT(self.formData);
+
+        return Restangular.one("employees").customPOST(self.formData);
     }
 
 }])
