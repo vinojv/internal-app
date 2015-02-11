@@ -27,9 +27,9 @@ angular.module("rbook", [
                     controller: "LoginController as Login"
                 })
 
-            .state("employee-details", {
-                url: "/employee-details",
-                templateUrl: "/html/employee-details.html",
+            .state("employees", {
+                url: "/employees",
+                templateUrl: "/html/employees.html",
                 controller: "EmployeeListController as empCtr",
                 resolve: {
                     employees: ["Service", function (service) {
@@ -45,31 +45,29 @@ angular.module("rbook", [
             })
 
             .state("employee", {
-                url: "/employee/{mode}",
+                url: "/employees/{mode}",
                 templateUrl: "/html/add-employee.html",
                 controller: "AddEmployeeController as forms"
             });
 
     }])
     .run(["$state",
-          "Restangular",
-          function($state, Restangular){
+      "Restangular",
+       function($state, Restangular){
         Restangular.setErrorInterceptor(function (response, deferred, responseHandler) {
-                console.log("Restangular error intercepted", response);
+            console.log("Restangular error intercepted", response);
 
-                if (response.status == 403) {
-                    $state.go('login');
-                    return false; //error handled
-                }
+            if (response.status == 403) {
+                $state.go('login');
+                return false; //error handled
+            }
 
-                return true; // error not handled
-            });
+            return true; // error not handled
+        });
     }])
     .controller("RBookController", [
       "$scope",
       "$state",
-      function (scope, $state) {
-            $state.go("employee-details");
-//            $state.go("employee");
-
+       function (scope, $state) {
+            $state.go("employees");
       }])

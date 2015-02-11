@@ -16,7 +16,7 @@ angular.module("rbook")
                     service.checkCred(self.credentials).then(function () {
 
                         console.log("logged in successfully");
-                        $state.go("employee-details");
+                        $state.go("employees");
 
                     }, function (err) {
 

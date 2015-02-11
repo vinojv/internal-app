@@ -39,7 +39,7 @@
 					<li ng-repeat="employee in empCtr.employees"
 					    ng-click="empCtr.editEmployee(employee)">
 						<div class="user-photo-block fleft"
-						ng-style="{'background-image':'url(employee.photo)'}">
+						ng-style="{'background-image':'url({{employee.photo}})'}">
 							<!--							<img src="" alt="" width="100%" height="100%">-->
 						</div>
 						<div class="user-details-block fleft">

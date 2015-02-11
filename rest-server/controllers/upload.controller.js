@@ -33,10 +33,10 @@ module.exports = function (app, router) {
 
           .post(route, function(req, res){
             if(done==true){
-              console.log(req.files);
+              console.log(req.files.file.extension);
               res.send({
                 status: true,
-                filename: "/uploads/" + fileName,
+                filename: "/uploads/" + fileName + "." + req.files.file.extension,
                 message: "File uploaded."
               });
             } else res.send({

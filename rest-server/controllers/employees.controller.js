@@ -30,7 +30,7 @@ module.exports = function (app, router) {
                 name: req.body.name,
                 designation: req.body.designation,
                 exprience: req.body.exprience,
-                photo: req.body.Photo,
+                photo: req.body.photo,
                 expertice:req.body.expertice }, sendDbResponse(req, res));
         })
 
