@@ -18,7 +18,7 @@ module.exports = function (app, router) {
                 if (user) {
                     throw 'Username not available, please try with another username';
                 }
-                console.log(req.body.type)
+//                console.log(req.body.type)
                 // else create a new user
                 req.body.type = req.body.type || 'default';
                 return User.create({ username: req.body.username, password: req.body.password, type: req.body.type });
