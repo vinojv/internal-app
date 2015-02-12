@@ -18,13 +18,14 @@ module.exports = function (app, router) {
                 if (user) {
                     throw 'Username not available, please try with another username';
                 }
-                console.log(req.body)
+                console.log(req.body.type)
                 // else create a new user
-                return User.create({ username: req.body.username, password: req.body.password, type: req.body.type | 'default' });
+                req.body.type = req.body.type || 'default';
+                return User.create({ username: req.body.username, password: req.body.password, type: req.body.type });
             })
             .then(
                 function (user) {
-                    res.json({ username: user.username, id: user._id });
+                    res.json({ username: user.username,type: user.type, id: user._id });
                 },
                 function (err) {
                     res.send(err);

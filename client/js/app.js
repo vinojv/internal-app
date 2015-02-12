@@ -1,7 +1,8 @@
 angular.module("rbook", [
      "ui.router",
      "restangular",
-     "angularFileUpload"
+     "angularFileUpload",
+     "ngStorage"
      ])
     .config([
         '$stateProvider',
@@ -53,11 +54,13 @@ angular.module("rbook", [
     }])
     .run(["$state",
       "Restangular",
-       function($state, Restangular){
+      "$localStorage",
+       function($state, Restangular, $localStorage){
         Restangular.setErrorInterceptor(function (response, deferred, responseHandler) {
             console.log("Restangular error intercepted", response);
 
             if (response.status == 403) {
+                $localStorage.$reset();
                 $state.go('login');
                 return false; //error handled
             }

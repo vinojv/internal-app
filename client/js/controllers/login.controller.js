@@ -2,9 +2,11 @@ angular.module("rbook")
     .controller("LoginController", [
     "Service",
     "$state",
-    function (service, $state) {
+    "$localStorage",
+    function (service, $state, $localStorage) {
             console.log("login controller");
             var self = this;
+
             self.credentials = {
                 username: 'admin@razorthink.com',
                 password: 'admin'
@@ -13,8 +15,8 @@ angular.module("rbook")
             self.submit = function () {
 
                 if (self.credentials.username && self.credentials.password)
-                    service.checkCred(self.credentials).then(function () {
-
+                    service.checkCred(self.credentials).then(function (data) {
+                        $localStorage.userData = data;
                         console.log("logged in successfully");
                         $state.go("employees");
 
