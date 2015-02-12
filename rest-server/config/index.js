@@ -6,7 +6,7 @@ module.exports = {
 
 	"server": {
         "host": "0.0.0.0",
-        "port": 5000,
+        "port": 8000,
         "baseURL": "/api"
     },
 
