@@ -8,8 +8,8 @@ angular.module("rbook")
             var self = this;
 
             self.credentials = {
-                username: 'admin@razorthink.com',
-                password: 'admin'
+                username: '',
+                password: ''
             }
 
             self.submit = function () {
