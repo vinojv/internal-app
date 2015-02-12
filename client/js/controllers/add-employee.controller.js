@@ -21,7 +21,7 @@ angular.module("rbook")
             self.upload = function () {
                 console.log(self.avatar);
                  $upload.upload({
-                    url: "/rest/uploads",
+                    url: "/uploads",
                     file: self.avatar, // or list of files ($files) for html5 only
                 }).progress(function (evt) {
                     self.disabled = true;

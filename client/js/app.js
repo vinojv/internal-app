@@ -12,14 +12,14 @@ angular.module("rbook", [
         function ($stateProvider, $urlRouterProvider, $locationProvider, RestangularProvider) {
             console.log("config");
 
-            RestangularProvider.setBaseUrl('/rest/');
+            RestangularProvider.setBaseUrl('/');
             RestangularProvider.setDefaultHeaders({
                 "Content-Type": "application/json"
             });
 
             $urlRouterProvider.when("/", "/");
 
-            $locationProvider.html5Mode(true);
+//            $locationProvider.html5Mode(true);
 
             $stateProvider
                 .state("login", {

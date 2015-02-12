@@ -2,6 +2,7 @@ var multer = require('multer');
 var passport = require('passport');
 var ensureAuthenticated = require('../utils').ensureAuthenticated;
 var sendDbResponse = require('../utils').sendDbResponse;
+var path = require('path')
 var done = false;
 var fileName;
 /* TODO: A user must be able to see and manipulate only the company related to him */
@@ -13,18 +14,19 @@ module.exports = function (app, router) {
         var route = '/uploads';
         // set up the router
         router
-          .use(multer({ dest: '/home/vinoj/GitHub/internal-app/client/uploads',
-               rename: function (fieldname, filename) {
+          .use(multer({
+            dest: path.resolve(app.get('rootPath'), '../client/uploads'),
+            rename: function (fieldname, filename) {
                   fileName = Date.now();
                   return fileName;
-                },
-               onFileUploadStart: function (file) {
-                  console.log(file.originalname + ' is starting ...')
-                },
-               onFileUploadComplete: function (file) {
-                  console.log(file.fieldname + ' uploaded to  ' + file.path)
-                  done=true;
-                }
+            },
+            onFileUploadStart: function (file) {
+                console.log(file.originalname + ' is starting ...')
+            },
+            onFileUploadComplete: function (file) {
+                console.log(file.fieldname + ' uploaded to  ' + file.path)
+                done=true;
+            }
           }))
 
 //          .get(route, function(req,res){

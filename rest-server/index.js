@@ -1,7 +1,18 @@
 var config = require('./config');
 var server = require('./lib/server');
+var express = require('express');
+var path = require('path');
 
 var app = server(config);
+
+var clientPath = path.resolve(app.get('rootPath'), '../client');
+
+// expose client
+app.use(express.static(clientPath));
+
+app.use(app.controllers.auth());
+app.use(app.controllers.employees());
+app.use(app.controllers.upload());
 
 var server = app.listen(app.get('port'), function () {
 
@@ -15,9 +26,5 @@ var server = app.listen(app.get('port'), function () {
     );
 
 });
-
-app.use(app.controllers.auth());
-app.use(app.controllers.employees());
-app.use(app.controllers.upload());
 
 module.exports = app;
