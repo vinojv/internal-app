@@ -1,10 +1,14 @@
 angular.module("rbook")
     .service("Service", [
     "Restangular",
-    function(Restangular){
+    "$localStorage",
+    function(Restangular, $localStorage){
 
     var self = this;
     self.data ={ };
+
+    if ($localStorage.userData && $localStorage.userData.type)
+        self.type = $localStorage.userData.type.toUpperCase();
 
     self.checkCred = function (loginData){
 

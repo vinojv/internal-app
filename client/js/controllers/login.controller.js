@@ -17,6 +17,9 @@ angular.module("rbook")
                 if (self.credentials.username && self.credentials.password)
                     service.checkCred(self.credentials).then(function (data) {
                         $localStorage.userData = data;
+                        console.log(data);
+                        if ($localStorage.userData && $localStorage.userData.type)
+                            service.type = $localStorage.userData.type.toUpperCase();
                         console.log("logged in successfully");
                         $state.go("employees");
 

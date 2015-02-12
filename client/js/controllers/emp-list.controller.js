@@ -8,8 +8,9 @@ angular.module("rbook")
 
         var self = this;
         self.employees = employees;
-        if ($localStorage.userdata && $localStorage.userdata.type)
-            self.type = $localStorage.userdata.type.toUpperCase;
+        self.Service = Service;
+//        if ($localStorage.userdata && $localStorage.userdata.type)
+//            self.type = $localStorage.userdata.type.toUpperCase;
 
         self.editEmployee = function (employee){
             Service.update = true;

@@ -38,7 +38,7 @@ module.exports = function (app, router) {
             route + '/login',
             passport.authenticate('local'),
             function (req, res) {
-                res.json({ username: req.user.username, _id: req.user._id });
+                res.json({ username: req.user.username, type: req.user.type, _id: req.user._id });
             }
         )
 
