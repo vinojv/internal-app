@@ -5,6 +5,7 @@ var Types = Schema.Types;
 
 exports.schema = new Schema({
     name: { type: String, required: true },
+    email: { type: String, required: true },
     designation: { type: String, required: true },
     exprience: { type: Number },
     photo: { type: String },

@@ -20,7 +20,7 @@
 				</div>
 
 				<div class="header-search fright">
-					<input type="text" placeholder="Search with name">
+					<input ng-model="search" type="text" placeholder="Search with name">
 				</div>
 
 				<button class="header-add-emp fright"
@@ -36,7 +36,7 @@
 		<div class="user-details-container">
 			<div class="content-container">
 				<ul class="user-details-list">
-					<li ng-repeat="employee in empCtr.employees"
+					<li ng-repeat="employee in empCtr.employees | filter:search"
 					    ng-click="empCtr.editEmployee(employee)">
 						<div class="user-photo-block fleft"
 						ng-style="{'background-image':'url({{employee.photo}})'}">

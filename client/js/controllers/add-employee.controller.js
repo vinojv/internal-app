@@ -10,6 +10,7 @@ angular.module("rbook")
             if (!Service.formData || !Service.formData._id){
                 Service.formData = {
                     name: '',
+                    email: '',
                     designation: '',
                     exprience: 0,
                     photo: '',
@@ -39,12 +40,23 @@ angular.module("rbook")
             self.addDetails = function() {
                 console.log("designation",Service.formData);
                 self.disabled = true;
-                Service.postDetails().then(function (data) {
-                    console.log(data);
-                    $state.go('employees');
-                }).finally(function(){
-                    self.disabled = false;
-                });
+
+                if (Service.formData.designation
+                    && Service.formData.name
+                    && Service.formData.email)
+                    Service.postDetails().then(function (data) {
+                        console.log(data);
+                        if (data.email)
+                            $state.go('employees');
+                        else
+                            alert(data);
+                    }, function(e){
+                        alert(e)
+                    })
+
+                    .finally(function(){
+                        self.disabled = false;
+                    });
             }
         }
 

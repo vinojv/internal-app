@@ -26,16 +26,37 @@ module.exports = function (app, router) {
         })
 
         .post(route, function (req, res) {
-            Employees.create({
-                name: req.body.name,
-                designation: req.body.designation,
-                exprience: req.body.exprience,
-                photo: req.body.photo,
-                expertice:req.body.expertice }, sendDbResponse(req, res));
+
+            Employees.findOne({ email: req.body.email }).exec()
+            .then(function (Employee) {
+                // if Employee already exists then throw error
+                if (Employee) {
+                    throw 'Employee exist with the same email id';
+                }
+
+                console.log("employee",Employee);
+
+                return Employees.create({
+                    name: req.body.name,
+                    email: req.body.email,
+                    designation: req.body.designation,
+                    exprience: req.body.exprience,
+                    photo: req.body.photo,
+                    expertice:req.body.expertice }, sendDbResponse(req, res));
+            })
+            .then(
+                function (user) {
+                    res.json({ username: user.username, id: user._id });
+                },
+                function (err) {
+                    res.send(err);
+                }
+            );
         })
 
         .put(route, function (req, res) {
             Employees.create({ name: req.body.name,
+                    email: req.body.email,
                     designation: req.body.designation,
                     exprience: req.body.exprience,
                     photo: req.body.photo,
