@@ -29,6 +29,7 @@ angular.module("rbook")
                 }).success(function (data, status, headers, config) {
                      console.log(data);
                      Service.formData.photo = data.filename;
+					 console.log(data.filename);
                  }).error(function (err){
                     console.log(err);
                  }).finally(function(){
