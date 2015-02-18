@@ -2,7 +2,8 @@ angular.module("rbook")
     .service("Service", [
     "Restangular",
     "$localStorage",
-    function(Restangular, $localStorage){
+    "$state",
+    function(Restangular, $localStorage, $state){
 
     var self = this;
     self.data ={ };
@@ -23,6 +24,15 @@ angular.module("rbook")
     };
 
     self.update = false;
+
+    self.logout = function(){
+        Restangular.one("auth/logout").get()
+            .then(function(){
+                $state.go("login");
+            }, function(err) {
+                console.log(err);
+            })
+    };
 
     self.postDetails = function (id){
         if (self.formData._id)

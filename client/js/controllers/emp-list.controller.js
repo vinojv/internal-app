@@ -9,6 +9,7 @@ angular.module("rbook")
         var self = this;
         self.employees = employees;
         self.Service = Service;
+
 //        if ($localStorage.userdata && $localStorage.userdata.type)
 //            self.type = $localStorage.userdata.type.toUpperCase;
 
