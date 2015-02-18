@@ -354,3 +354,19 @@ h5.invalid-login span {
 .invalid-login__show {
     opacity: 1 !important;
 }
+.user-details-list__edit-button {
+    position: absolute;
+    top: 4px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #CBCBCB;
+    font-size: 13px;
+    text-transform: lowercase;
+    letter-spacing: 0.5px;
+    transform: scale(0);
+    transition: all 0.3s;
+}
+.user-details-list li:hover user-details-list__edit-button {
+    transform: scale(1);
+}
