@@ -281,3 +281,76 @@ button.add-employee-add-button:hover {
 .ng-invalid-pattern {
 	border: 1px solid #f00;
 }
+
+.animated {
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+@keyframes shake {
+	0%, 100% {
+		-webkit-transform: translateX(-50%) translateX(0) translateY(-50%);
+		transform: translateX(-50%) translateX(0) translateY(-50%);
+	}
+	10%,
+	30%,
+	50%,
+	70%,
+	90% {
+		-webkit-transform: translateX(-50%) translateX(-10px) translateY(-50%);
+		transform: translateX(-50%) translateX(-10px) translateY(-50%);
+	}
+	20%,
+	40%,
+	60%,
+	80% {
+		-webkit-transform: translateX(-50%) translateX(10px) translateY(-50%);
+		transform: translateX(-50%) translateX(10px) translateY(-50%);
+	}
+}
+@-webkit-keyframes shake {
+	0%, 100% {
+		-webkit-transform: translateX(-50%) translateX(0) translateY(-50%);
+		transform: translateX(-50%) translateX(0) translateY(-50%);
+	}
+	10%,
+	30%,
+	50%,
+	70%,
+	90% {
+		-webkit-transform: translateX(-50%) translateX(-10px) translateY(-50%);
+		transform: translateX(-50%) translateX(-10px) translateY(-50%);
+	}
+	20%,
+	40%,
+	60%,
+	80% {
+		-webkit-transform: translateX(-50%) translateX(10px) translateY(-50%);
+		transform: translateX(-50%) translateX(10px) translateY(-50%);
+	}
+}
+.shake {
+	-webkit-animation-name: shake;
+	animation-name: shake;
+}
+
+h5.invalid-login {
+    position: fixed;
+    bottom: 150px;
+    background: rgba(163, 163, 163, 0.7);
+    left: 50%;
+    opacity: 0;
+    transform: translateX(-50%);
+    padding: 13px 200px;
+    border-radius: 30px;
+    transition: all 0.55s ease-in;
+}
+
+h5.invalid-login span {
+    font-weight: 400;
+    font-size: 18px;
+}
+.invalid-login__show {
+    opacity: 1 !important;
+}

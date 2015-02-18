@@ -9,6 +9,8 @@ exports.schema = new Schema({
     designation: { type: String, required: true },
     exprience: { type: Number },
     photo: { type: String },
+    project: { type: String },
+    resume : { type: String },
     expertice: { type: String }
 });
 

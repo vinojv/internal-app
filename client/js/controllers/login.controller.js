@@ -3,14 +3,23 @@ angular.module("rbook")
     "Service",
     "$state",
     "$localStorage",
-    function (service, $state, $localStorage) {
+    "$timeout",
+    function (service, $state, $localStorage, $timeout) {
             console.log("login controller");
             var self = this;
+            self.invalidCred = false;
 
             self.credentials = {
                 username: '',
                 password: ''
             }
+
+            self.invalid = function(){
+                self.invalidCred = true;
+                $timeout( function (){
+                    self.invalidCred = false;
+                }, 1000);
+            };
 
             self.submit = function () {
 
@@ -25,8 +34,12 @@ angular.module("rbook")
 
                     }, function (err) {
 
+                        self.invalid();
                         console.log("error", err);
 
-                    })
+                    });
+                else
+                    self.invalid();
+
             }
 }]);
