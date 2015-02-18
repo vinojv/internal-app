@@ -15,9 +15,18 @@ angular.module("rbook")
         self.editEmployee = function (employee){
             Service.update = true;
             Service.formData = employee;
+            $state.go("employee", { mode: "edit" })
         }
 
         self.addNew = function (mode){
+			Service.formData.name: '';
+			Service.formData.email: '';
+			Service.formData.designation:'';
+			Service.formData.exprience 0;
+			Service.formData.photo: '';
+			Service.formData.expertice:'';
+//            Service.formData.project:'';
+//			Service.formData.resume:'';
             $state.go("employee", { mode: mode })
         }
 
