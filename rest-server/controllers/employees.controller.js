@@ -41,6 +41,8 @@ module.exports = function (app, router) {
                     email: req.body.email,
                     designation: req.body.designation,
                     exprience: req.body.exprience,
+                    project: req.body.project,
+                    resume: req.body.resume,
                     photo: req.body.photo,
                     expertice:req.body.expertice }, sendDbResponse(req, res));
             })
@@ -60,6 +62,8 @@ module.exports = function (app, router) {
                     designation: req.body.designation,
                     exprience: req.body.exprience,
                     photo: req.body.photo,
+                    project: req.body.project,
+                    resume: req.body.resume,
                     expertice:req.body.expertice }, sendDbResponse(req, res));
         })
 

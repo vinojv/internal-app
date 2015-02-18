@@ -365,8 +365,9 @@ h5.invalid-login span {
     text-transform: lowercase;
     letter-spacing: 0.5px;
     transform: scale(0);
+    cursor: pointer;
     transition: all 0.3s;
 }
-.user-details-list li:hover user-details-list__edit-button {
+.user-details-list li:hover .user-details-list__edit-button {
     transform: scale(1);
 }

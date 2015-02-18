@@ -37,9 +37,9 @@
 		<div class="user-details-container">
 			<div class="content-container">
 				<ul class="user-details-list">
-					<li ng-repeat="employee in empCtr.employees | filter:search"
-					    ng-click="empCtr.editEmployee(employee)">
-					    <button class="user-details-list__edit-button">Edit</button>
+					<li ng-repeat="employee in empCtr.employees | filter:search">
+					    <button class="user-details-list__edit-button"
+					        ng-click="empCtr.editEmployee(employee)">Edit</button>
 						<div class="user-photo-block fleft"
 						ng-style="{'background-image':'url({{employee.photo}})'}">
 							<!--							<img src="" alt="" width="100%" height="100%">-->

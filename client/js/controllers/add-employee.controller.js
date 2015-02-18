@@ -39,6 +39,24 @@ angular.module("rbook")
                  });
             }
 
+            self.uploadResume = function () {
+                console.log(self.avatar);
+                 $upload.upload({
+                    url: "/uploads",
+                    file: self.resume, // or list of files ($files) for html5 only
+                }).progress(function (evt) {
+                    self.disabled = true;
+                    console.log('percent: ' + parseInt(100.0 * evt.loaded / evt.total));
+                }).success(function (data, status, headers, config) {
+                     console.log(data);
+                     Service.formData.resume = data.filename;
+					 console.log(data.filename);
+                 }).error(function (err){
+                    console.log(err);
+                 }).finally(function(){
+                    self.disabled = false;
+                 });
+            }
 
             self.addDetails = function() {
                 console.log("designation",Service.formData);
