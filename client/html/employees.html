@@ -42,7 +42,7 @@
 		<div class="user-details-container">
 			<div class="content-container">
 				<ul class="user-details-list">
-					<li ng-repeat="employee in empCtr.employees | filter:search">
+					<li ng-repeat="employee in empCtr.employees | filter:search | orderBy : 'name' ">
 					    <button class="user-details-list__edit-button"
                             ng-if="empCtr.Service.type=='HR'"
 					        ng-click="empCtr.editEmployee(employee)">Edit</button>
@@ -85,9 +85,9 @@
 				                <div class="clearall"></div>
 							</div>
 							<div class="user-details-row"
-							   ng-if="employee.experience">
+							   ng-if="employee.exprience">
 				                <h6 class="user-details-title fleft">Experience : </h6>
-				                <p class="user-details-desc fleft">{{employee.experience}} Years</p>
+				                <p class="user-details-desc fleft">{{employee.exprience}} Years</p>
 				                <div class="clearall"></div>
 							</div>
 							 <button class="user-details-list__resume-button"
