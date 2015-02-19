@@ -225,7 +225,7 @@ ul.user-details-list li:nth-child(4n) .user-photo-block {
 }
 
 ul.user-details-list li {
-    height: 150px;
+    height: 190px;
     border-bottom: 2px solid #EDEDED;
     margin: 10px 11px 0px 11px;
     box-sizing: content-box;
