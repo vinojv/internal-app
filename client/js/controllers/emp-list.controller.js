@@ -25,14 +25,16 @@ angular.module("rbook")
         }
 
         self.addNew = function (mode){
-			Service.formData.name = '';
-			Service.formData.email = '';
-			Service.formData.designation ='';
-			Service.formData.exprience = 0;
-			Service.formData.photo = '';
-			Service.formData.expertice ='';
-            Service.formData.project ='';
-			Service.formData.resume ='';
+			Service.formData = {
+                name : '',
+                email : '',
+                designation :'',
+                exprience : 0,
+                photo : '',
+                expertice :'',
+                project :'',
+                resume :''
+            }
             $state.go("employee", { mode: mode })
         }
 

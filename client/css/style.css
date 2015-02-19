@@ -507,16 +507,16 @@ button.user-details-popup__close {
 .user-photo-block-overlay {
     position: relative;
     width: 100%;
-    background: url(../images/view.png) no-repeat rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0);
     background-position: center center;
     height: 100%;
     border-radius: 50%;
-    transform: scale(0);
     transition: all 0.15s ease-in;
 }
 
 .user-photo-block:hover .user-photo-block-overlay {
-    transform: scale(1);
+    background: url(../images/view.png) no-repeat rgba(0, 0, 0, 0.4);
+    background-position: center center;
 }
 button.user-details-list__resume-button {
     background: none;
