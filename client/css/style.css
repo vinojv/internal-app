@@ -164,6 +164,7 @@ ul.user-details-list {
     border-radius: 50%;
     position: relative;
     top: 50%;
+    cursor: pointer;
     transform: translateY(-50%);
 }
 
@@ -416,6 +417,7 @@ h5.invalid-login span {
     letter-spacing: 0.5px;
     transform: scale(0);
     cursor: pointer;
+    z-index: 9;
     transition: all 0.3s;
 }
 
@@ -515,4 +517,16 @@ button.user-details-popup__close {
 
 .user-photo-block:hover .user-photo-block-overlay {
     transform: scale(1);
+}
+button.user-details-list__resume-button {
+    background: none;
+    border: none;
+    color: #A20101;
+    font-weight: 700;
+    position: absolute;
+    font-size: 13px;
+    bottom: 5px;
+    right: 20px;
+    cursor: pointer;
+    text-decoration: underline;
 }

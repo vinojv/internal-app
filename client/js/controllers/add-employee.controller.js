@@ -30,9 +30,11 @@ angular.module("rbook")
                     console.log('percent: ' + parseInt(100.0 * evt.loaded / evt.total));
                 }).success(function (data, status, headers, config) {
                      console.log(data);
+                     self.disabled = false;
                      Service.formData.photo = data.filename;
 					 console.log(data.filename);
                  }).error(function (err){
+                     self.disabled = false;
                     console.log(err);
                  }).finally(function(){
                     self.disabled = false;
@@ -49,9 +51,11 @@ angular.module("rbook")
                     console.log('percent: ' + parseInt(100.0 * evt.loaded / evt.total));
                 }).success(function (data, status, headers, config) {
                      console.log(data);
+                     self.disabled = false;
                      Service.formData.resume = data.filename;
 					 console.log(data.filename);
                  }).error(function (err){
+                     self.disabled = false;
                     console.log(err);
                  }).finally(function(){
                     self.disabled = false;
@@ -66,15 +70,16 @@ angular.module("rbook")
                     && Service.formData.name
                     && Service.formData.email)
                     Service.postDetails().then(function (data) {
+                        self.disabled = false;
                         console.log(data);
                         if (data.email)
                             $state.go('employees');
                         else
                             alert(data);
                     }, function(e){
+                        self.disabled = false;
                         alert(e)
                     })
-
                     .finally(function(){
                         self.disabled = false;
                     });

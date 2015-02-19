@@ -57,7 +57,8 @@ module.exports = function (app, router) {
         })
 
         .put(route, function (req, res) {
-            Employees.create({ name: req.body.name,
+            Employees.create({
+                    name: req.body.name,
                     email: req.body.email,
                     designation: req.body.designation,
                     exprience: req.body.exprience,
@@ -69,7 +70,9 @@ module.exports = function (app, router) {
 
         .put(route + '/:id', function (req, res) {
             var putObj = { };
-
+            console.log("update", req.params.id);
+            if(req.body._id)
+                delete req.body._id;
             Employees.findByIdAndUpdate(
                 req.params.id, req.body,
                 sendDbResponse(req, res)
