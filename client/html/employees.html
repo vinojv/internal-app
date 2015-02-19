@@ -46,7 +46,10 @@
 					    <button class="user-details-list__edit-button"
 					        ng-click="empCtr.editEmployee(employee)">Edit</button>
 						<div class="user-photo-block fleft"
-						ng-style="{'background-image':'url({{employee.photo}})'}">
+                            ng-click="empCtr.avatar=employee.photo"
+                            ng-style="{'background-image':'url({{employee.photo}})'}">
+                            <div class="user-photo-block-overlay"></div>
+
 							<!--							<img src="" alt="" width="100%" height="100%">-->
 						</div>
 						<div class="user-details-block fleft">
@@ -82,6 +85,24 @@
 					<div class="clearall"></div>
 				</ul>
 			</div>
+		</div>
+
+		<div class="user-details-popup__wrapper" ng-if="empCtr.avatar||empCtr.document">
+		    <div class="user-details-popup"
+                   ng-class="{'user-details-popup__show':empCtr.avatar||empCtr.document}">
+                <button class="user-details-popup__close"
+                    ng-click="empCtr.close()">X</button>
+		        <div class="user-details-popup__photo-container"
+		            ng-if="empCtr.avatar"
+    		        ng-style="{'background-image': 'url({{empCtr.avatar}})'}">
+    		        </div>
+		        <div class="user-details-popup__resume-container">
+		            <iframe ng-if="empCtr.document" ng-src={{empCtr.document}}
+                         width="100%"
+                         height="100%"
+                         style="display: block;"></iframe>
+		        </div>
+		    </div>
 		</div>
 
 		<div class="footer">

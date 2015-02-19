@@ -443,3 +443,76 @@ button.header-logout span {
     position: relative;
     top: -1px;
 }
+
+.user-details-popup__wrapper {
+    position: fixed;
+    left: 0;
+    top: 60px;
+    bottom: 55px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 9;
+}
+
+.user-details-popup {
+    position: absolute;
+    width: 1000px;
+    height: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) scale(1.6);
+    opacity: 0;
+    background: #fff;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.35);
+    transition: all 0.3s ease-in;
+}
+
+.user-details-popup__show {
+    transform: translateX(-50%) translateY(-50%) scale(1);
+    opacity: 1;
+}
+
+.user-details-popup__photo-container {
+    position: relative;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    background: url(../images/ishan1.jpg) no-repeat;
+    background-size: contain;
+    margin: 10px;
+    border: 1px solid #E5E5E5;
+    background-position: center center;
+}
+
+button.user-details-popup__close {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    border: none;
+    background: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    padding: 15px;
+    font-size: 30px;
+    font-weight: 700;
+    z-index: 99;
+    cursor: pointer;
+}
+
+.user-details-popup__resume-container {
+    position: relative;
+    height: 100%;
+}
+
+.user-photo-block-overlay {
+    position: relative;
+    width: 100%;
+    background: url(../images/view.png) no-repeat rgba(0, 0, 0, 0.4);
+    background-position: center center;
+    height: 100%;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: all 0.15s ease-in;
+}
+
+.user-photo-block:hover .user-photo-block-overlay {
+    transform: scale(1);
+}
