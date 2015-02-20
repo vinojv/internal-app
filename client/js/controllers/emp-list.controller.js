@@ -32,6 +32,7 @@ angular.module("rbook")
                 exprience : 0,
                 photo : '',
                 expertice :'',
+                reportingTo :'',
                 project :'',
                 resume :''
             }

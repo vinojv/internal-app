@@ -43,6 +43,7 @@ module.exports = function (app, router) {
                     exprience: req.body.exprience,
                     project: req.body.project,
                     resume: req.body.resume,
+                    reportingTo: req.body.reportingTo,
                     photo: req.body.photo,
                     expertice:req.body.expertice }, sendDbResponse(req, res));
             })
@@ -64,6 +65,7 @@ module.exports = function (app, router) {
                     exprience: req.body.exprience,
                     photo: req.body.photo,
                     project: req.body.project,
+                    reportingTo: req.body.reportingTo,
                     resume: req.body.resume,
                     expertice:req.body.expertice }, sendDbResponse(req, res));
         })

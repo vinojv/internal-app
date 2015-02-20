@@ -14,7 +14,8 @@ angular.module("rbook")
                     designation: '',
                     exprience: 0,
                     photo: '',
-                    expertice:'',
+                    expertice: '',
+                    reportingTo: '',
                     project: '',
                     resume: ''
                 }

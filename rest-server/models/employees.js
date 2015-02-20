@@ -10,6 +10,7 @@ exports.schema = new Schema({
     exprience: { type: Number },
     photo: { type: String },
     project: { type: String },
+    reportingTo: { type: String },
     resume : { type: String },
     expertice: { type: String }
 });
