@@ -257,12 +257,12 @@ button.header-add-emp {
     background: #FFF;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     color: #3D464D;
-    padding: 20px 70px 20px 50px;
+    padding: 16px 70px 16px 50px;
 }
 
 h5.add-employee-form-title {
     height: 38px;
-    margin: 6px 0 26px 0;
+    margin: 6px 0 18px 0;
     text-align: center;
     font-size: 24px;
     font-weight: 500;
@@ -278,7 +278,7 @@ span.add-employee-row-title {
 }
 
 .add-employee-form-row {
-    margin: 20px 0;
+    margin: 12px 0;
     position: relative;
 }
 
