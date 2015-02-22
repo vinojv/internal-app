@@ -4,7 +4,9 @@ angular.module("rbook")
     'Service',
     '$state',
     '$localStorage',
-    function(employees, Service, $state, $localStorage){
+    '$document',
+    '$rootScope',
+    function(employees, Service, $state, $localStorage, document, $rootScope){
 
         var self = this;
         self.employees = employees;
@@ -15,8 +17,15 @@ angular.module("rbook")
             self.avatar = '';
             self.document = '';
         }
-//        if ($localStorage.userdata && $localStorage.userdata.type)
-//            self.type = $localStorage.userdata.type.toUpperCase;
+
+        document.bind("keydown keypress", function (event) {
+            if (event.which === 27) {
+                $rootScope.$apply(function () {
+                    self.close();
+                });
+                event.preventDefault();
+            }
+        });
 
         self.editEmployee = function (employee){
             Service.update = true;
