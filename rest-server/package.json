@@ -6,7 +6,6 @@
   "scripts": {
     "start": "node index.js"
   },
-  "author": "Sandeep S Kumar",
   "license": "ISC",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
