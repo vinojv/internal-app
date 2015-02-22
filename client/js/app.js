@@ -1,9 +1,22 @@
+/**
+*   Initialize the app
+*   angular plugins - UI router, Rest angular, angular file upload, anf ng-storge
+**/
 angular.module("rbook", [
      "ui.router",
      "restangular",
      "angularFileUpload",
      "ngStorage"
      ])
+/*
+*   Configures routes and rest angular
+*
+*   The app has 3 states
+        - login -> login service, urls: /html/login.html
+        - employees -> list of employees, urls: /html/employees.html
+        - employee -> add/edit employees, urls: /employees/{mode}
+*
+*/
     .config([
         '$stateProvider',
         '$urlRouterProvider',
@@ -68,6 +81,10 @@ angular.module("rbook", [
             return true; // error not handled
         });
     }])
+/**
+*   Main controller for rbook
+*   Initially goes to employee state
+**/
     .controller("RBookController", [
       "$scope",
       "$state",

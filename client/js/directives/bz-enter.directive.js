@@ -1,3 +1,7 @@
+/**
+*   rb enter directive
+**/
+
 angular.module('rbook')
     .directive('rbEnter', function () {
     return function (scope, element, attrs) {

@@ -20,7 +20,9 @@ angular.module("rbook")
                     resume: ''
                 }
             }
-
+/**
+*       upload photo
+**/
             self.upload = function () {
                 console.log(self.avatar);
                  $upload.upload({
@@ -41,7 +43,9 @@ angular.module("rbook")
                     self.disabled = false;
                  });
             }
-
+/**
+*       upload resume
+**/
             self.uploadResume = function () {
                 console.log(self.avatar);
                  $upload.upload({
@@ -62,7 +66,9 @@ angular.module("rbook")
                     self.disabled = false;
                  });
             }
-
+/**
+*       Post the new/edited employee details
+**/
             self.addDetails = function() {
                 console.log("designation",Service.formData);
                 self.disabled = true;

@@ -26,7 +26,9 @@ angular.module("rbook")
                 event.preventDefault();
             }
         });
-
+/**
+*       edit the employees
+**/
         self.editEmployee = function (employee){
             Service.update = true;
             Service.formData = employee;

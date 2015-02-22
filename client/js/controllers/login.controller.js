@@ -20,7 +20,9 @@ angular.module("rbook")
                     self.invalidCred = false;
                 }, 1000);
             };
-
+/**
+*           check credentials and login
+**/
             self.submit = function () {
 
                 if (self.credentials.username && self.credentials.password)

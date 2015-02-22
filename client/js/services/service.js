@@ -1,3 +1,7 @@
+/**
+*   Service for rbook
+**/
+
 angular.module("rbook")
     .service("Service", [
     "Restangular",
@@ -33,6 +37,10 @@ angular.module("rbook")
                 console.log(err);
             })
     };
+
+/**
+*   post/put employee details
+**/
 
     self.postDetails = function (id){
         if (self.formData._id)
