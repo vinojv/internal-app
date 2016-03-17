@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:FEED NAME="SNOWGROUP_GROUP" TYPE="[GROUP,REFERENCE]" ISPRIMARY="TRUE" PROPAGATE="FALSE" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig" >
+	<fileparameters>
+		<parameter name="headerRowCount"  value="1" />
+		<parameter name="fieldDelimiter" type="ascii" value="124" />
+		<parameter name="recordDelimiter" type="namedDelimiter" value="NEWLINE" />
+	</fileparameters>
+	<COLUMN NAME="TENANT_DATA_PARTITION_ID" TYPE="virtual" VALUE="1" />
+	<COLUMN NAME="IF_SOURCE_ID" TYPE="virtual" VALUE="27" />
+	<COLUMN NAME="TENANT_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATA_PARTITION_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="SOURCE_CODE" TYPE="virtual" VALUE="SNOW_REL_FOR_BE" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATE_FORMAT_MASK" TYPE="virtual" VALUE="MM-dd-yyyy HH:mm:ss" PROCESS="TRIM"  />
+	<COLUMN NAME="NATIVE_GROUP_ID" EXTERNALNAME="u_guid" TYPE="identifier" PROCESS="TRIM_DROP_HIGH_LOW_ASCII"  />
+	<COLUMN NAME="GROUP_NAME" EXTERNALNAME="name" TYPE="attribute" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="GROUP_DESCRIPTION" EXTERNALNAME="description" TYPE="attribute" PROCESS="TRIM_DROP_HIGH_LOW_ASCII"  />
+	<COLUMN NAME="VENDOR" EXTERNALNAME="u_vendor" TYPE="attribute" PROCESS="TRIM_DROP_HIGH_LOW_ASCII"  />
+	<COLUMN NAME="IS_ACTIVE" EXTERNALNAME="active" TYPE="attribute" PROCESS="TRIM_DROP_HIGH_LOW_ASCII"  />
+	<COLUMN NAME="GROUP_TYPE" EXTERNALNAME="type" TYPE="attribute" PROCESS="TRIM_DROP_HIGH_LOW_ASCII"  />
+	<COLUMN NAME="u_stream" EXTERNALNAME="u_stream" TYPE="ignore"  />
+	<COLUMN NAME="RECORD_CREATED_DATE" EXTERNALNAME="sys_created_on" TYPE="attribute" PROCESS="CONVERT_STRING_TO_DATE(DATE_FORMAT_MASK,TIME_ZONE)"  />
+	<COLUMN NAME="RECORD_CREATED_DATE_O" EXTERNALNAME="sys_created_on" TYPE="attribute" />
+	<COLUMN NAME="RECORD_UPDATED_DATE" EXTERNALNAME="sys_updated_on" TYPE="attribute" RECENCY_INDICATOR="LATEST" PROCESS="CONVERT_STRING_TO_DATE(DATE_FORMAT_MASK,TIME_ZONE)"  />
+	<COLUMN NAME="RECORD_UPDATED_DATE_O" EXTERNALNAME="sys_updated_on" TYPE="attribute" />
+	<!-- <COLUMN NAME="IGNORE_RECORD" TYPE="virtual" VALUE="=if(rec.get('IS_ACTIVE') == 'true') return false; else return true;"  /> -->
+	<COLUMN NAME="SUPPORT_GROUP_REFERENCE_GUID" EXTERNALNAME="u_guid" TYPE="attribute" MAPVALUE="true" MAPPOSITION="1" PROCESS="TRIM"  />
+	<COLUMN NAME="SUPPORT_GROUP_REFERENCE_LABEL" EXTERNALNAME="name" TYPE="attribute" MAPVALUE="true" MAPPOSITION="2" PROCESS="TRIM" />
+	<COLUMN NAME="DISPLAY_NAME" EXTERNALNAME="name" TYPE="attribute" KEY="true" KEYPOSITION="1" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="IS_ACTIVE" EXTERNALNAME="active" TYPE="attribute" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="FILTER" TYPE="VIRTUAL" VALUE="= var isActive = upper(rec.get('IS_ACTIVE')); if(isActive != null) if(isActive == 'TRUE') return 'true'; return null;" CONDITION="NOT NULL" />
+	<COLUMN NAME="TIME_ZONE" TYPE="virtual" VALUE="US/Michigan"  />
+</blz:FEED>
+

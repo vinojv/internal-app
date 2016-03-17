@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:FEED NAME="AMEX_VOICE" TYPE="[ASSET, GROUP, GROUP_ASSET]" ISPRIMARY="TRUE" PROPAGATE="FALSE" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig" >
+	<fileparameters>
+		<parameter name="headerRowCount"  value="1" />
+		<parameter name="fieldDelimiter" type="ascii" value="124" />
+		<parameter name="recordDelimiter" type="namedDelimiter" value="NEWLINE" />
+	</fileparameters>
+	<COLUMN NAME="TENANT_DATA_PARTITION_ID" TYPE="virtual" VALUE="1" />
+	<COLUMN NAME="IF_SOURCE_ID" TYPE="virtual" VALUE="24" />
+	<COLUMN NAME="TENANT_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATA_PARTITION_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="SOURCE_CODE" TYPE="virtual" VALUE="AMEX_VOICE" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATE_FORMAT_MASK" TYPE="virtual" VALUE="MM/dd/yyyy HH:mm" PROCESS="TRIM"  />
+	<COLUMN NAME="ASSET_NAME" EXTERNALNAME="Name" TYPE="identifier"  POSITION="1"  />
+	<COLUMN NAME="ROLE" EXTERNALNAME="Release Environment me" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="NATIVE_PHYSICAL_STATUS" EXTERNALNAME="Operation status" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="SCAN_DATE" EXTERNALNAME="Created" TYPE="attribute" RECENCY_INDICATOR="LATEST" PROCESS="CONVERT_STRING_TO_DATE(DATE_FORMAT_MASK,TIME_ZONE)"  />
+	<COLUMN NAME="SCAN_DATE_O" EXTERNALNAME="Created" TYPE="attribute"  />
+	<COLUMN NAME="Updated" EXTERNALNAME="Updated" TYPE="ignore"  />
+	<COLUMN NAME="Is_Virtual" EXTERNALNAME="Is Virtual" TYPE="ignore"  />
+	<COLUMN NAME="Operating_System_me" EXTERNALNAME="Operating System me" TYPE="ignore"  />
+	<COLUMN NAME="OS_NAME" EXTERNALNAME="Operating System Version" TYPE="attribute"    />
+	<COLUMN NAME="MODEL_MANUFACTURER" EXTERNALNAME="Hardware Manufacturer" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="Hardware_Model" EXTERNALNAME="Hardware Model" TYPE="ignore"  />
+	<COLUMN NAME="Capability_Types" EXTERNALNAME="Capability Types" TYPE="ignore"  />
+	<COLUMN NAME="COST_CENTER" EXTERNALNAME="Cost Center" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="SERIAL_NUMBER" EXTERNALNAME="Serial Number" TYPE="attribute" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="ASSET_DESCRIPTION" EXTERNALNAME="Description" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="BuildingCode" EXTERNALNAME="Building Code" TYPE="ignore"  />
+	<COLUMN NAME="LOCATION_CODE" EXTERNALNAME="AXP Site ID" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="LOCATION_BUILDING" EXTERNALNAME="Name" TYPE="attribute" PROCESS="TRIM" POSITION="17"  />
+	<COLUMN NAME="Street" EXTERNALNAME="Street" TYPE="ignore"  />
+	<COLUMN NAME="City" EXTERNALNAME="City" TYPE="ignore"  />
+	<COLUMN NAME="Country" EXTERNALNAME="Country" TYPE="ignore"  />
+	<COLUMN NAME="ManagedBy" EXTERNALNAME="Managed By" TYPE="ignore"  />
+	<COLUMN NAME="GROUP_NAME" EXTERNALNAME="Supported By" TYPE="attribute" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="REL_TYPE_NAME" TYPE="virtual" VALUE="ASSET_SUPPORTED_BY_GROUP" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="TIME_ZONE" TYPE="virtual" VALUE="US/Michigan"  />
+</blz:FEED>
+

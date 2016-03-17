@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:SOURCE NAME="FOUNDSTONE" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig"  xmlns:xi="http://www.w3.org/2001/XInclude">
+	<FEEDS>
+		<xi:include href="FOUNDSTONE/FEED_FOUNDSTONE.xml"/>
+		<xi:include href="FOUNDSTONE/FEED_FOUNDSTONE_OS.xml"/>
+	</FEEDS>
+	<xi:include href="FOUNDSTONE/LINKS.xml"/>
+	<ENTITIES>
+		<xi:include href="FOUNDSTONE/ENTITY_COMPUTER.xml"/>
+	</ENTITIES>
+</blz:SOURCE>
+

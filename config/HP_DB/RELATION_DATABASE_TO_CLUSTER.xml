@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:RELATIONSHIP ALIAS="DATABASE_TO_CLUSTER" FROMENTITY="DATABASE" TOENTITY="CLUSTER" TYPE="DATABASE_RUNS_ON_ASSET" DESCRIPTION="" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig" >
+</blz:RELATIONSHIP>
+

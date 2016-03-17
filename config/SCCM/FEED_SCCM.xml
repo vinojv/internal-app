@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:FEED NAME="SCCM" TYPE="[ASSET]" ISPRIMARY="TRUE" PROPAGATE="FALSE" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig" >
+	<fileparameters>
+		<parameter name="headerRowCount"  value="1" />
+		<parameter name="dateFormatMask"  value="MM/DD/YYYY" />
+		<parameter name="fieldDelimiter" type="ascii" value="124" />
+		<parameter name="recordDelimiter" type="namedDelimiter" value="NEWLINE" />
+	</fileparameters>
+	<COLUMN NAME="TENANT_DATA_PARTITION_ID" TYPE="virtual" VALUE="1" />
+	<COLUMN NAME="IF_SOURCE_ID" TYPE="virtual" VALUE="3" />
+    <COLUMN NAME="TENANT_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM" />
+    <COLUMN NAME="DATA_PARTITION_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM" />
+    <COLUMN NAME="SOURCE_CODE" TYPE="virtual" VALUE="SCCM" PROCESS="UPPER_TRIM" />
+    <COLUMN NAME="DATE_FORMAT_MASK" TYPE="virtual" VALUE="yyyy-MM-dd HH:mm:ss" PROCESS="TRIM" />
+    <COLUMN NAME="REL_TYPE_LABEL" TYPE="virtual" VALUE="Used by::Uses" />
+	<COLUMN NAME="ASSET_NAME" TYPE="identifier" EXTERNALNAME="SystemName" />
+	<COLUMN NAME="SERIAL_NUMBER" TYPE="identifier" EXTERNALNAME="BIOSSerialNumber" PROCESS="UPPER_TRIM" />
+	<COLUMN NAME="MODEL_MANUFACTURER" TYPE="attribute" EXTERNALNAME="ComputerManufacturer" PROCESS="TRIM" />
+	<COLUMN NAME="MODEL" TYPE="attribute" EXTERNALNAME="ComputerModel" />
+	<COLUMN NAME="DISTINGUISHED_NAME" TYPE="attribute" EXTERNALNAME="DistinguisedName" PROCESS="TRIM" />
+	<COLUMN NAME="Full_Domain_Name" TYPE="ignore" EXTERNALNAME="Full_Domain_Name" />
+	<COLUMN NAME="LOCATION_CODE" TYPE="attribute" EXTERNALNAME="ADS_Site_Name" PROCESS="TRIM" />
+	<COLUMN NAME="Client_Version" TYPE="ignore" EXTERNALNAME="Client_Version" />
+	<COLUMN NAME="CPUType" TYPE="ignore" EXTERNALNAME="CPUType" />
+	<COLUMN NAME="IS_VIRTUAL" TYPE="attribute" EXTERNALNAME="Is_Virtual_Machine" PROCESS="TRIM_DROP_HIGH_LOW_ASCII" />
+	<COLUMN NAME="USER_LOGIN_DATE" TYPE="attribute" EXTERNALNAME="Last_Logon_Timestamp" PROCESS="CONVERT_STRING_TO_DATE(DATE_FORMAT_MASK,TIME_ZONE)" />
+	<COLUMN NAME="USER_LOGIN_DATE_O" TYPE="attribute" EXTERNALNAME="Last_Logon_Timestamp" />
+	<COLUMN NAME="USER_LOGIN_NAME" TYPE="attribute" EXTERNALNAME="UserName" PROCESS="TRIM" />
+	<COLUMN NAME="CPUHash" TYPE="ignore" EXTERNALNAME="CPUHash" />
+	<COLUMN NAME="CPUKey" TYPE="ignore" EXTERNALNAME="CPUKey" />
+	<COLUMN NAME="CurrentClockSpeed" TYPE="ignore" EXTERNALNAME="CurrentClockSpeed" />
+	<COLUMN NAME="DataWidth" TYPE="ignore" EXTERNALNAME="DataWidth" />
+	<COLUMN NAME="DeviceID" TYPE="ignore" EXTERNALNAME="DeviceID" />
+	<COLUMN NAME="Is64Bit" TYPE="ignore" EXTERNALNAME="Is64Bit" />
+	<COLUMN NAME="IsHyperthreadCapable" TYPE="ignore" EXTERNALNAME="IsHyperthreadCapable" />
+	<COLUMN NAME="IsHyperthreadEnabled" TYPE="ignore" EXTERNALNAME="IsHyperthreadEnabled" />
+	<COLUMN NAME="IsMobile" TYPE="ignore" EXTERNALNAME="IsMobile" />
+	<COLUMN NAME="IsTrustedExecutionCapable" TYPE="ignore" EXTERNALNAME="IsTrustedExecutionCapable" />
+	<COLUMN NAME="IsVitualizationCapable" TYPE="ignore" EXTERNALNAME="IsVitualizationCapable" />
+	<COLUMN NAME="L2CacheSize" TYPE="ignore" EXTERNALNAME="L2CacheSize" />
+	<COLUMN NAME="L2CacheSpeed" TYPE="ignore" EXTERNALNAME="L2CacheSpeed" />
+	<COLUMN NAME="L3CacheSize" TYPE="ignore" EXTERNALNAME="L3CacheSize" />
+	<COLUMN NAME="CPU_MANUFACTURER" TYPE="attribute" EXTERNALNAME="CPUManufacturer" PROCESS="TRIM" />
+	<COLUMN NAME="MaxClockSpeed" TYPE="ignore" EXTERNALNAME="MaxClockSpeed" />
+	<COLUMN NAME="CPU_MODEL" TYPE="attribute" EXTERNALNAME="CPUModelName" PROCESS="TRIM" />
+	<COLUMN NAME="NormSpeed" TYPE="ignore" EXTERNALNAME="NormSpeed" />
+	<COLUMN NAME="CPU_CORE_COUNT" TYPE="attribute" EXTERNALNAME="NumberOfCores" PROCESS="EXTRACT_FIRST_NUMERIC" />
+	<COLUMN NAME="CPU_COUNT" TYPE="attribute" EXTERNALNAME="NumberOfLogicalProcessors" PROCESS="EXTRACT_FIRST_NUMERIC" />
+	<COLUMN NAME="SocketDesignation" TYPE="ignore" EXTERNALNAME="SocketDesignation" />
+	<COLUMN NAME="LastOnline" TYPE="ignore" EXTERNALNAME="LastOnline" />
+	<COLUMN NAME="LastHWScanTime" TYPE="ignore" EXTERNALNAME="LastHWScanTime" />
+	<COLUMN NAME="LastSWScanTime" TYPE="ignore" EXTERNALNAME="LastSWScanTime" />
+	<COLUMN NAME="LastHealthEvaluation" TYPE="ignore" EXTERNALNAME="LastHealthEvaluation" />
+	<COLUMN NAME="TotalPageFileSpace" TYPE="ignore" EXTERNALNAME="TotalPageFileSpace" />
+	<COLUMN NAME="TotalPhysicalMemory" TYPE="ignore" EXTERNALNAME="TotalPhysicalMemory" />
+	<COLUMN NAME="TotalVirtualMemory" TYPE="ignore" EXTERNALNAME="TotalVirtualMemory" />
+	<COLUMN NAME="OS_INSTALL_DATE" TYPE="attribute" EXTERNALNAME="OSInstallDate" PROCESS="CONVERT_STRING_TO_DATE(DATE_FORMAT_MASK,TIME_ZONE)" />
+	<COLUMN NAME="OS_INSTALL_DATE_O" TYPE="attribute" EXTERNALNAME="OSInstallDate" />
+	<COLUMN NAME="LastBootUpTime" TYPE="ignore" EXTERNALNAME="LastBootUpTime" />
+	<COLUMN NAME="OSLanguage" TYPE="ignore" EXTERNALNAME="OSLanguage" />
+	<COLUMN NAME="BuildNumber" TYPE="ignore" EXTERNALNAME="BuildNumber" />
+	<COLUMN NAME="OS_NAME" TYPE="attribute" EXTERNALNAME="OSName" />
+	<COLUMN NAME="OSInstallLocation" TYPE="ignore" EXTERNALNAME="OSInstallLocation" />
+	<COLUMN NAME="CountryCode" TYPE="ignore" EXTERNALNAME="CountryCode" />
+	<COLUMN NAME="CSDVersion" TYPE="ignore" EXTERNALNAME="CSDVersion" />
+	<COLUMN NAME="BIOSManufacture" TYPE="ignore" EXTERNALNAME="BIOSManufacture" />
+	<COLUMN NAME="BIOSName" TYPE="ignore" EXTERNALNAME="BIOSName" />
+	<COLUMN NAME="BIOSReleaseDate" TYPE="ignore" EXTERNALNAME="BIOSReleaseDate" />
+	<COLUMN NAME="BIOSVersion" TYPE="ignore" EXTERNALNAME="BIOSVersion" />
+	<COLUMN NAME="Timestamp1" TYPE="ignore" EXTERNALNAME="Timestamp" />
+    <COLUMN NAME="SCAN_DATE" TYPE="virtual" VALUE="= return helper.instance().getLatestDate([rec.get('LastHWScanTime'),rec.get('LastSWScanTime'),rec.get('Timestamp1')], rec.get('DATE_FORMAT_MASK'));" RECENCY_INDICATOR="LATEST" PROCESS="CONVERT_STRING_TO_DATE(DATE_FORMAT_MASK,TIME_ZONE)" />
+	<COLUMN NAME="TIME_ZONE" TYPE="virtual" VALUE="US/Michigan"  />
+</blz:FEED>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:SOURCE NAME="AMEX_VOICE" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig"  xmlns:xi="http://www.w3.org/2001/XInclude">
+	<FEEDS>
+		<xi:include href="AMEX_VOICE/FEED_AMEX_VOICE.xml"/>
+	</FEEDS>
+	<ENTITIES>
+		<xi:include href="AMEX_VOICE/ENTITY_COMPUTER.xml"/>
+		<xi:include href="AMEX_VOICE/ENTITY_GROUP.xml"/>
+	</ENTITIES>
+	<RELATIONS>
+		<xi:include href="AMEX_VOICE/RELATION_COMPUTER_GROUP.xml"/>
+	</RELATIONS>
+</blz:SOURCE>
+

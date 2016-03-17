@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:FEED NAME="MAC" TYPE="[ASSET]" ISPRIMARY="TRUE" PROPAGATE="FALSE" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig" >
+	<fileparameters>
+		<parameter name="headerRowCount"  value="1" />
+		<parameter name="dateFormatMask"  value="MM/DD/YYYY" />
+		<parameter name="fieldDelimiter" type="ascii" value="124" />
+		<parameter name="recordDelimiter" type="namedDelimiter" value="NEWLINE" />
+	</fileparameters>
+	<COLUMN NAME="TENANT_DATA_PARTITION_ID" TYPE="virtual" VALUE="1" />
+	<COLUMN NAME="IF_SOURCE_ID" TYPE="virtual" VALUE="23" />
+	<COLUMN NAME="TENANT_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATA_PARTITION_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="SOURCE_CODE" TYPE="virtual" VALUE="MAC" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATE_FORMAT_MASK" TYPE="virtual" VALUE="MM/dd/yyyy" PROCESS="TRIM"  />
+	<COLUMN NAME="ASSET_NAME" EXTERNALNAME="Computer Name" TYPE="identifier"   />
+	<COLUMN NAME="USERNAME" EXTERNALNAME="Username" TYPE="ignore"  />
+	<COLUMN NAME="FULL_NAME" EXTERNALNAME="Full Name" TYPE="ignore"  />
+	<COLUMN NAME="OS_NAME" EXTERNALNAME="Operating System" TYPE="attribute"    />
+	<COLUMN NAME="SERIAL_NUMBER" EXTERNALNAME="Serial Number" TYPE="identifier" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="MODEL" EXTERNALNAME="Model" TYPE="attribute"  PROCESS="TRIM" />
+	<COLUMN NAME="MODEL_MANUFACTURER" EXTERNALNAME="Make" TYPE="attribute" PROCESS="TRIM" />
+	<COLUMN NAME="MAC_ADDRESS" EXTERNALNAME="MAC Address" TYPE="attribute"  PROCESS="TRIM" />
+	<COLUMN NAME="SCAN_DATE_O" EXTERNALNAME="Last Check-in" TYPE="attribute"  />
+	<COLUMN NAME="SCAN_DATE" TYPE="virtual" VALUE="=return regexp_substr(rec.get('SCAN_DATE_O'),'[\\d]{2}[/][\\d]{2}[/][\\d]{4}');" RECENCY_INDICATOR="LATEST" DATATYPE="noquote" PROCESS="CONVERT_STRING_TO_DATE(DATE_FORMAT_MASK,TIME_ZONE)"  />
+	<COLUMN NAME="TIME_ZONE" TYPE="virtual" VALUE="US/Michigan"  />
+</blz:FEED>
+

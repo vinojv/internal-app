@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blz:FEED NAME="ARIBA_PO_LINE_ITEM" TYPE="[PO_LINE_ITEM]" ISPRIMARY="TRUE" PROPAGATE="FALSE" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig" >
+	<fileparameters>
+		<parameter name="headerRowCount"  value="1" />
+		<parameter name="dateFormatMask"  value="MM/DD/YYYY" />
+		<parameter name="fieldDelimiter" type="ascii" value="124" />
+		<parameter name="recordDelimiter" type="namedDelimiter" value="NEWLINE" />
+	</fileparameters>
+	<COLUMN NAME="TENANT_DATA_PARTITION_ID" TYPE="virtual" VALUE="1" />
+	<COLUMN NAME="IF_SOURCE_ID" TYPE="virtual" VALUE="38" />
+	<COLUMN NAME="TENANT_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATA_PARTITION_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="SOURCE_CODE" TYPE="virtual" VALUE="ARIBA" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATE_FORMAT_MASK" TYPE="virtual" VALUE="yyyyMMdd" PROCESS="TRIM"  />
+	<COLUMN NAME="TIME_ZONE" TYPE="virtual" VALUE="America/Los_Angeles"  />
+    <COLUMN NAME="NATIVE_SYSTEM_ID" EXTERNALNAME="Id" TYPE="attribute" PROCESS="TRIM"/>
+	<COLUMN NAME="PURCHASING_SYSTEM_PO_LINE_ITEM_NUMBER" EXTERNALNAME="LineNumber" TYPE="identifier" PROCESS="TRIM" />
+	<COLUMN NAME="Quantity" EXTERNALNAME="Quantity" TYPE="ignore" />
+	<COLUMN NAME="RequisitionRequester" EXTERNALNAME="RequisitionRequester" TYPE="ignore" />
+	<COLUMN NAME="ERP_COMMODITY_CODE" EXTERNALNAME="ERPCommodityCode" TYPE="attribute" PROCESS="TRIM" />
+	<COLUMN NAME="SupplierPartAuxID" EXTERNALNAME="SupplierPartAuxID" TYPE="ignore" />
+	<COLUMN NAME="PURCHASING_SYSTEM_PO_NUMBER" EXTERNALNAME="PONumber" TYPE="identifier" PROCESS="TRIM" />
+	<COLUMN NAME="Price" EXTERNALNAME="Price" TYPE="ignore" />
+	<COLUMN NAME="Price_Currency" EXTERNALNAME="Price_Currency" TYPE="ignore" />
+	<COLUMN NAME="UnitPrice" EXTERNALNAME="UnitPrice" TYPE="ignore" />
+	<COLUMN NAME="SupplierPartNumber" EXTERNALNAME="SupplierPartNumber" TYPE="ignore" />
+	<COLUMN NAME="RequisitionID" EXTERNALNAME="RequisitionID" TYPE="ignore" />
+	<COLUMN NAME="DeliverTo" EXTERNALNAME="DeliverTo" TYPE="ignore" />
+	<COLUMN NAME="UnitPrice_Currency" EXTERNALNAME="UnitPrice_Currency" TYPE="ignore" />
+	<COLUMN NAME="Comments" EXTERNALNAME="Comments" TYPE="ignore" />
+	<COLUMN NAME="ShortName" EXTERNALNAME="ShortName" TYPE="ignore" />
+	<COLUMN NAME="UnitOfMeasure" EXTERNALNAME="UnitOfMeasure" TYPE="ignore" />
+	<COLUMN NAME="ShippingAddress_UniqueName" EXTERNALNAME="ShippingAddress_UniqueName" TYPE="ignore" />
+	<COLUMN NAME="Description" EXTERNALNAME="Description" TYPE="ignore" />
+	<COLUMN NAME="UnitPrice_InBaseCurrency" EXTERNALNAME="UnitPrice_InBaseCurrency" TYPE="ignore" />
+	<COLUMN NAME="NumberShipped" EXTERNALNAME="NumberShipped" TYPE="ignore" />
+	<COLUMN NAME="COMMODITY_CODE" EXTERNALNAME="CommodityCode" TYPE="attribute" PROCESS="TRIM"/>
+	<COLUMN NAME="VENDOR_LINE_ITEM_NUMBER" EXTERNALNAME="ExternalLineNumber" TYPE="identifier" PROCESS="EXTRACT_FIRST_NUMERIC" />
+	<COLUMN NAME="Version" EXTERNALNAME="Version" TYPE="ignore" />
+	<COLUMN NAME="NeedBy" EXTERNALNAME="NeedBy" TYPE="ignore" />
+	<COLUMN NAME="Price_InBaseCurrency" EXTERNALNAME="Price_InBaseCurrency" TYPE="ignore" />
+	<COLUMN NAME="BillingAddress_UniqueName" EXTERNALNAME="BillingAddress_UniqueName" TYPE="ignore" />
+	<COLUMN NAME="ExportLineItems_POLineItem_cus_ExpenseType" EXTERNALNAME="ExportLineItems_POLineItem_cus_ExpenseType" TYPE="ignore" />
+	<COLUMN NAME="ExportLineItems_POLineItem_cus_Channel" EXTERNALNAME="ExportLineItems_POLineItem_cus_Channel" TYPE="ignore" />
+    <COLUMN NAME="ExportLineItems_POLineItem_cus_ShipTo_UniqueName" EXTERNALNAME="ExportLineItems_POLineItem_cus_ShipTo_UniqueName" TYPE="ignore" />
+	<COLUMN NAME="SHIP_TO_ADDRESS_CODE" EXTERNALNAME="ExportLineItems_POLineItem_cus_ShipTo_UniqueName" TYPE="attribute" PROCESS="TRIM"/>
+	<COLUMN NAME="PO_LINE_ITEM_NUMBER" VALUE="=if(rec.get('VENDOR_LINE_ITEM_NUMBER') != null) return rec.get('VENDOR_LINE_ITEM_NUMBER'); else return rec.get('PURCHASING_SYSTEM_PO_LINE_ITEM_NUMBER');" TYPE="virtual" PROCESS="TRIM"/>
+	<COLUMN NAME="NATIVE_NATURAL_KEY" VALUE="= var poli = rec.get('PO_LINE_ITEM_NUMBER'); var po = rec.get('PURCHASING_SYSTEM_PO_NUMBER'); if(po != null &amp;&amp; poli != null) return po+'-'+poli; else null;" TYPE="virtual" PROCESS="TRIM"/>
+</blz:FEED>

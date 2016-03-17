@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:LINKS xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig">
+	<LINK NAME="OCI_DB_INSTANCE" FROMFEED="PDIOCI" FROMCOLUMN="CHILD_CI" TOFEED="PDI" TOCOLUMN="PARENT_ASSET_NAME"  />
+</blz:LINKS>
+

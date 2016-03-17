@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:SOURCE NAME="AXP_CLOUD" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig"  xmlns:xi="http://www.w3.org/2001/XInclude">
+	<FEEDS>
+		<xi:include href="AXP_CLOUD/FEED_AMEX_CLOUD.xml"/>
+	</FEEDS>
+	<ENTITIES>
+		<xi:include href="AXP_CLOUD/ENTITY_COMPUTER.xml"/>
+		<xi:include href="AXP_CLOUD/ENTITY_GROUP.xml"/>
+	</ENTITIES>
+	<RELATIONS>
+		<xi:include href="AXP_CLOUD/RELATION_COMPUTER_GROUP.xml"/>
+	</RELATIONS>
+</blz:SOURCE>
+

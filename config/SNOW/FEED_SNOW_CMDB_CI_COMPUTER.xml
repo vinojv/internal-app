@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:FEED NAME="SNOW_CMDB_CI_COMPUTER" TYPE="[ASSET]" ISPRIMARY="TRUE" PROPAGATE="TRUE" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig" >
+	<fileparameters>
+		<parameter name="headerRowCount"  value="1" />
+		<parameter name="fieldDelimiter" type="ascii" value="124" />
+		<parameter name="recordDelimiter" type="namedDelimiter" value="NEWLINE" />
+	</fileparameters>
+	<COLUMN NAME="TENANT_DATA_PARTITION_ID" TYPE="virtual" VALUE="1" />
+	<COLUMN NAME="IF_SOURCE_ID" TYPE="virtual" VALUE="1" />
+	<COLUMN NAME="TENANT_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATA_PARTITION_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="SOURCE_CODE" TYPE="virtual" VALUE="SNOW" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATE_FORMAT_MASK" TYPE="virtual" VALUE="MM-dd-yyyy HH:mm:ss" PROCESS="TRIM"  />
+	<COLUMN NAME="NATIVE_ASSET_ID" EXTERNALNAME="u_guid" TYPE="identifier" PROCESS="TRIM"  />
+	<COLUMN NAME="ASSET_NAME" EXTERNALNAME="name" TYPE="attribute"   />
+	<COLUMN NAME="SERIAL_NUMBER" EXTERNALNAME="serial_number" TYPE="attribute" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="ASSET_TAG" EXTERNALNAME="asset_tag" TYPE="attribute" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="ASSET_CLASS_CATEGORY" EXTERNALNAME="sys_class_name" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="ASSET_COMMENT" EXTERNALNAME="comments" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="COST_CENTER" EXTERNALNAME="cost_center.name" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="COST_CENTER_REFERENCE_GUID" EXTERNALNAME="cost_center.u_guid" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="COST_CENTER_CODE" EXTERNALNAME="cost_center.code" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="AGENT_NAME" EXTERNALNAME="discovery_source" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="LOCATION" EXTERNALNAME="location.name" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="LOCATION_STREET_ADDRESS_1" EXTERNALNAME="location.street" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="LOCATION_CITY" EXTERNALNAME="location.city" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="LOCATION_STATE" EXTERNALNAME="location.state" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="ci_location_zip" EXTERNALNAME="location.zip" TYPE="ignore"  />
+	<COLUMN NAME="LOCATION_COUNTRY" EXTERNALNAME="location.country" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="LOCATION_REFERENCE_GUID" EXTERNALNAME="location.u_guid" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="DEPARTMENT_ID" EXTERNALNAME="department.id" TYPE="ignore"  />
+	<COLUMN NAME="DEPARTMENT" EXTERNALNAME="department.name" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="MODEL_REFERENCE_LABEL" EXTERNALNAME="model_id.display_name" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="MODEL" EXTERNALNAME="model_id.name" TYPE="ignore"    />
+	<COLUMN NAME="CI_MODEL_ID_MANUFACTURER_NAME" EXTERNALNAME="model_id.manufacturer.name" TYPE="ignore"  />
+	<COLUMN NAME="MODEL_CODE" EXTERNALNAME="model_id.model_number" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="CI_MODEL_IDCMDB_MODEL_CATEGORY" EXTERNALNAME="model_id.cmdb_model_category" TYPE="ignore"  />
+	<COLUMN NAME="CI_MODEL_ID_SHORT_DESCRIPTION" EXTERNALNAME="model_id.short_description" TYPE="ignore"  />
+	<COLUMN NAME="MODEL_REFERENCE_GUID" EXTERNALNAME="model_id.u_guid" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="CI_MODEL_NUMBER" EXTERNALNAME="model_number" TYPE="ignore"  />
+	<COLUMN NAME="CI_OPERATIONAL_STATUS" EXTERNALNAME="operational_status" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="ASSET_OWNER" EXTERNALNAME="owned_by.name" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="ASSET_OWNER_REFERENCE_GUID" EXTERNALNAME="owned_by.u_guid" TYPE="ignore" PROCESS="TRIM"  />
+	<COLUMN NAME="CPU_MANUFACTURER" EXTERNALNAME="cpu_manufacturer.name" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="ci_cpu_name" EXTERNALNAME="cpu_name" TYPE="ignore"  />
+	<COLUMN NAME="CPU_SPEED" EXTERNALNAME="cpu_speed" TYPE="attribute"   />
+	<COLUMN NAME="CI_CPU_TYPE" EXTERNALNAME="cpu_type" TYPE="ignore"  />
+	<COLUMN NAME="ci_cpu_count" EXTERNALNAME="cpu_count" TYPE="ignore"  />
+	<COLUMN NAME="CPU_CORE_COUNT" EXTERNALNAME="cpu_core_count" TYPE="attribute" PROCESS="EXTRACT_FIRST_NUMERIC"  />
+	<COLUMN NAME="ASSET_DESCRIPTION" EXTERNALNAME="short_description" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="chassis_type" EXTERNALNAME="chassis_type" TYPE="ignore"  />
+	<COLUMN NAME="ASSET_DOMAIN" EXTERNALNAME="dns_domain" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="RECORD_CREATED_DATE" EXTERNALNAME="sys_created_on" TYPE="attribute" PROCESS="CONVERT_STRING_TO_DATE(DATE_FORMAT_MASK,TIME_ZONE)"  />
+	<COLUMN NAME="RECORD_CREATED_DATE_O" EXTERNALNAME="sys_created_on" TYPE="attribute" />
+	<COLUMN NAME="RECORD_UPDATED_DATE" EXTERNALNAME="sys_updated_on" TYPE="attribute" PROCESS="CONVERT_STRING_TO_DATE(DATE_FORMAT_MASK,TIME_ZONE)"  />
+	<COLUMN NAME="RECORD_UPDATED_DATE_O" EXTERNALNAME="sys_updated_on" TYPE="attribute" />
+	<COLUMN NAME="ORDERED_DATE" EXTERNALNAME="order_date" TYPE="attribute" PROCESS="CONVERT_STRING_TO_DATE(DATE_FORMAT_MASK,TIME_ZONE)"  />
+	<COLUMN NAME="ORDERED_DATE_O" EXTERNALNAME="order_date" TYPE="attribute" />
+	<COLUMN NAME="DELIVERY_DATE" EXTERNALNAME="delivery_date" TYPE="attribute" PROCESS="CONVERT_STRING_TO_DATE(DATE_FORMAT_MASK,TIME_ZONE)"  />
+	<COLUMN NAME="DELIVERY_DATE_O" EXTERNALNAME="delivery_date" TYPE="attribute" />
+	<COLUMN NAME="ASSET_INSTALL_DATE" EXTERNALNAME="install_date" TYPE="attribute" PROCESS="CONVERT_STRING_TO_DATE(DATE_FORMAT_MASK,TIME_ZONE)"  />
+	<COLUMN NAME="ASSET_INSTALL_DATE_O" EXTERNALNAME="install_date" TYPE="attribute" />
+	<COLUMN NAME="ASSET_DISCOVERED_DATE" EXTERNALNAME="first_discovered" TYPE="attribute" PROCESS="CONVERT_STRING_TO_DATE(DATE_FORMAT_MASK,TIME_ZONE)"  />
+	<COLUMN NAME="ASSET_DISCOVERED_DATE_O" EXTERNALNAME="first_discovered" TYPE="attribute" />
+	<COLUMN NAME="SCAN_DATE" EXTERNALNAME="last_discovered" TYPE="attribute" RECENCY_INDICATOR="LATEST" PROCESS="CONVERT_STRING_TO_DATE(DATE_FORMAT_MASK,TIME_ZONE)"  />
+	<COLUMN NAME="SCAN_DATE_O" EXTERNALNAME="last_discovered" TYPE="attribute" />
+	<COLUMN NAME="install_status" EXTERNALNAME="install_status" TYPE="ignore"  />
+	<COLUMN NAME="NETWORK_EXEMPT" EXTERNALNAME="monitor" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="WARRANTY_EXPIRATION_DATE" EXTERNALNAME="warranty_expiration" TYPE="attribute" PROCESS="CONVERT_STRING_TO_DATE(DATE_FORMAT_MASK,TIME_ZONE)"  />
+	<COLUMN NAME="WARRANTY_EXPIRATION_DATE_O" EXTERNALNAME="warranty_expiration" TYPE="attribute" />
+	<COLUMN NAME="OS_NAME" EXTERNALNAME="os" TYPE="attribute"   />
+	<COLUMN NAME="OS_VERSION" EXTERNALNAME="os_version" TYPE="attribute"   />
+	<COLUMN NAME="OS_SERVICE_PACK" EXTERNALNAME="os_service_pack" TYPE="attribute"    />
+	<COLUMN NAME="OS_ARCHITECTURE" EXTERNALNAME="os_address_width" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="OS_PLATFORM" EXTERNALNAME="os_domain" TYPE="attribute"   />
+	<COLUMN NAME="ci_ram" EXTERNALNAME="ram" TYPE="ignore"  />
+	<COLUMN NAME="USER_LOGIN_NAME" EXTERNALNAME="assigned_to" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="ROLE" EXTERNALNAME="u_release_environment" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="CI_COST" EXTERNALNAME="cost" TYPE="ignore"  />
+	<COLUMN NAME="IP_ADDRESS" EXTERNALNAME="ip_address" TYPE="ignore" PROCESS="TRIM"  />
+	<COLUMN NAME="MAC_ADDRESS" EXTERNALNAME="mac_address" TYPE="ignore" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="CI_MANUFACTURER" EXTERNALNAME="manufacturer" TYPE="ignore"  />
+	<COLUMN NAME="TOTAL_DISK" EXTERNALNAME="disk_space" TYPE="attribute" />
+	<COLUMN NAME="CI_FORM_FACTOR" EXTERNALNAME="form_factor" TYPE="ignore"  />
+	<COLUMN NAME="CI_SYS_MOD_COUNT" EXTERNALNAME="sys_mod_count" TYPE="ignore"  />
+	<COLUMN NAME="NATIVE_ALM_SYS_ID" EXTERNALNAME="asset.u_guid" TYPE="ignore"  />
+	<COLUMN NAME="CI_ASSIGNED" EXTERNALNAME="assigned" TYPE="ignore"  />
+	<COLUMN NAME="CI_COMPANY_NAME" EXTERNALNAME="company.name" TYPE="ignore"  />
+	<COLUMN NAME="CI_COMPANY_U_GUID" EXTERNALNAME="company.u_guid" TYPE="ignore"  />
+	<COLUMN NAME="CI_GL_ACCOUNT" EXTERNALNAME="gl_account" TYPE="ignore"  />
+	<COLUMN NAME="CI_LEASE_ID" EXTERNALNAME="lease_id" TYPE="ignore"  />
+	<COLUMN NAME="CI_PO_NUMBER" EXTERNALNAME="po_number" TYPE="ignore"  />
+	<COLUMN NAME="CI_MANAGED_BY_NAME" EXTERNALNAME="managed_by.name" TYPE="ignore"  />
+	<COLUMN NAME="CI_MANAGED_BY_U_GUID" EXTERNALNAME="managed_by.u_guid" TYPE="ignore"  />
+	<COLUMN NAME="CI_SUPPORTED_BY_NAME" EXTERNALNAME="supported_by.name" TYPE="ignore"  />
+	<COLUMN NAME="CI_SUPPORTED_BY_U_GUID" EXTERNALNAME="supported_by.u_guid" TYPE="ignore"  />
+	<COLUMN NAME="CI_SUPPORT_GROUP_NAME" EXTERNALNAME="support_group.name" TYPE="ignore"  />
+	<COLUMN NAME="CI_SUPPORT_GROUP_U_GUID" EXTERNALNAME="support_group.u_guid" TYPE="ignore"  />
+	<COLUMN NAME="CI_VENDOR_NAME" EXTERNALNAME="vendor.name" TYPE="ignore"  />
+	<COLUMN NAME="CI_VENDOR_U_GUID" EXTERNALNAME="vendor.u_guid" TYPE="ignore"  />
+	<COLUMN NAME="CI_U_BLAZENT_KEY" EXTERNALNAME="u_blazent_key" TYPE="ignore"  />
+	<COLUMN NAME="SHORT_DESCRIPTION" EXTERNALNAME="u_description" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="U_PROC_MODEL_U_MODEL_ID" EXTERNALNAME="u_processoer_model.u_model_id" TYPE="ignore"  />
+	<COLUMN NAME="CPU_MODEL" EXTERNALNAME="u_processoer_model.display_name" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="U_PROC_MODEL_NAME" EXTERNALNAME="u_processoer_model.name" TYPE="ignore"  />
+	<COLUMN NAME="U_PROC_MODEL_MANUF_NAME" EXTERNALNAME="u_processoer_model.manufacturer.name" TYPE="ignore"  />
+	<COLUMN NAME="U_PROC_MODEL_MODEL_NUMBER" EXTERNALNAME="u_processoer_model.model_number" TYPE="ignore"  />
+	<COLUMN NAME="U_PROC_MODEL_CMDB_MODEL_CAT" EXTERNALNAME="u_processoer_model.cmdb_model_category" TYPE="ignore"  />
+	<COLUMN NAME="CPU_MODEL_REFERENCE_GUID" EXTERNALNAME="u_processoer_model.u_guid" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="CPU_COUNT" EXTERNALNAME="u_processor_count" TYPE="attribute" PROCESS="EXTRACT_FIRST_NUMERIC"  />
+	<COLUMN NAME="U_MEM_COUNT" EXTERNALNAME="u_memory_count" TYPE="ignore"  />
+	<COLUMN NAME="U_MEM_MODEL_U_MODEL_ID" EXTERNALNAME="u_memory_model.u_model_id" TYPE="ignore"  />
+	<COLUMN NAME="U_MEM_MODEL_DISPLAY_NAME" EXTERNALNAME="u_memory_model.display_name" TYPE="ignore"  />
+	<COLUMN NAME="U_MEM_MODEL_NAME" EXTERNALNAME="u_memory_model.name" TYPE="ignore"  />
+	<COLUMN NAME="U_MEM_MODEL_MANF_NAME" EXTERNALNAME="u_memory_model.manufacturer.name" TYPE="ignore"  />
+	<COLUMN NAME="U_MEM_MODEL_MODEL_NUMBER" EXTERNALNAME="u_memory_model.model_number" TYPE="ignore"  />
+	<COLUMN NAME="U_MEM_MODEL_CMDB_MODEL_CAT" EXTERNALNAME="u_memory_model.cmdb_model_category" TYPE="ignore"  />
+	<COLUMN NAME="MEMORY_MODEL_REFERENCE_GUID" EXTERNALNAME="u_memory_model.u_guid" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="virtual" EXTERNALNAME="virtual" TYPE="ignore"  />
+	<COLUMN NAME="SERVICE_PROVIDER" EXTERNALNAME="u_service_provider" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="TOTAL_MEMORY" EXTERNALNAME="u_total_memory_size" TYPE="attribute" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="IS_VIRTUAL" EXTERNALNAME="u_virtual" TYPE="attribute" PROCESS="TRIM_DROP_HIGH_LOW_ASCII"  />
+	<COLUMN NAME="MODEL_MANUFACTURER" TYPE="virtual" VALUE="=return coalesce(rec.get('CI_MODEL_ID_MANUFACTURER_NAME'), rec.get('CI_MANUFACTURER'));" DATATYPE="noquote" PROCESS="TRIM" />
+	<COLUMN NAME="CPU_SPEED_UNITS" TYPE="virtual" VALUE="MHZ" PROCESS="TRIM"  />
+	<COLUMN NAME="TOTAL_DISK_UNITS" TYPE="virtual" VALUE="GB" PROCESS="TRIM"  />
+	<COLUMN NAME="TOTAL_MEMORY_UNITS" TYPE="virtual" VALUE="MB" PROCESS="TRIM"  />
+	<COLUMN NAME="TIME_ZONE" TYPE="virtual" VALUE="US/Michigan"  />
+</blz:FEED>
+

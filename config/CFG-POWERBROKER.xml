@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:SOURCE NAME="POWERBROKER" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig"  xmlns:xi="http://www.w3.org/2001/XInclude">
+	<FEEDS>
+		<xi:include href="POWERBROKER/FEED_POWERBROKER.xml"/>
+	</FEEDS>
+	<ENTITIES>
+		<xi:include href="POWERBROKER/ENTITY_COMPUTER.xml"/>
+	</ENTITIES>
+</blz:SOURCE>
+

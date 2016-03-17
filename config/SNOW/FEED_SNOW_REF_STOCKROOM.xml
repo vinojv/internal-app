@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:FEED NAME="SNOW_REF_STOCKROOM" TYPE="[REFERENCE]" ISPRIMARY="TRUE" PROPAGATE="FALSE" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig" >
+	<fileparameters>
+		<parameter name="headerRowCount"  value="1" />
+		<parameter name="fieldDelimiter" type="ascii" value="44" />
+		<parameter name="recordDelimiter" type="namedDelimiter" value="NEWLINE" />
+	</fileparameters>
+	<COLUMN NAME="TENANT_DATA_PARTITION_ID" TYPE="virtual" VALUE="1" />
+	<COLUMN NAME="IF_SOURCE_ID" TYPE="virtual" VALUE="1" />
+	<COLUMN NAME="DATE_FORMAT_MASK" TYPE="virtual" VALUE="MM-dd-yyyy" PROCESS="TRIM"  />
+	<COLUMN NAME="TENANT_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATA_PARTITION_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="SOURCE_CODE" TYPE="virtual" VALUE="SNOW" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="STOCKROOM_REFERENCE_GUID" EXTERNALNAME="u_guid" TYPE="attribute" MAPVALUE="true" MAPPOSITION="1" PROCESS="TRIM"  />
+	<COLUMN NAME="STOCKROOM_REFERENCE_LABEL" EXTERNALNAME="name" TYPE="attribute" MAPVALUE="true" MAPPOSITION="2" PROCESS="TRIM" />
+	<COLUMN NAME="DISPLAY_NAME" EXTERNALNAME="location" TYPE="identifier" KEY="true" KEYPOSITION="1" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="STATUS" EXTERNALNAME="u_status" TYPE="attribute" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="FILTER" TYPE="virtual" VALUE="=var status = rec.get('STATUS'); if(status != null) if(status == 'ACTIVE') return status; return null;" CONDITION="NOT NULL"  />
+</blz:FEED>
+

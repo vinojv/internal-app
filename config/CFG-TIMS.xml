@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:SOURCE NAME="TIMS" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig"  xmlns:xi="http://www.w3.org/2001/XInclude">
+	<FEEDS>
+		<xi:include href="TIMS/FEED_TIMS_SERVER.xml"/>
+		<xi:include href="TIMS/FEED_TIMS_EUC_SERVER.xml"/>
+		<xi:include href="TIMS/FEED_TIMS_DIALER_SERVER.xml"/>
+		<xi:include href="TIMS/FEED_TIMS_SERVER_OS.xml"/>
+		<xi:include href="TIMS/FEED_TIMS.xml"/>
+	</FEEDS>
+	<xi:include href="TIMS/LINKS.xml"/>
+	<ENTITIES>
+		<xi:include href="TIMS/ENTITY_TIMS_SERVER.xml"/>
+		<xi:include href="TIMS/ENTITY_TIMS_EUC_SERVER.xml"/>
+		<xi:include href="TIMS/ENTITY_TIMS_DIALER_SERVER.xml"/>
+		<xi:include href="TIMS/ENTITY_CLUSTER.xml"/>
+		<xi:include href="TIMS/ENTITY_SERVER.xml"/>
+		<xi:include href="TIMS/ENTITY_DATABASE.xml"/>
+		<xi:include href="TIMS/ENTITY_DB_INSTANCE.xml"/>
+		<xi:include href="TIMS/ENTITY_GROUP.xml"/>
+		<xi:include href="TIMS/ENTITY_EUC_GROUP.xml"/>
+		<xi:include href="TIMS/ENTITY_DIALER_GROUP.xml"/>
+	</ENTITIES>
+	<RELATIONS>
+		<xi:include href="TIMS/RELATION_SERVER_GROUP.xml"/>
+		<xi:include href="TIMS/RELATION_DB_TO_INSTANCE.xml"/>
+		<xi:include href="TIMS/RELATION_DB_TO_CLUSTER.xml"/>
+		<xi:include href="TIMS/RELATION_DB_TO_SERVER.xml"/>
+	</RELATIONS>
+</blz:SOURCE>
+

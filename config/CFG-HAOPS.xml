@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:SOURCE NAME="HAOPS" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig"  xmlns:xi="http://www.w3.org/2001/XInclude">
+	<FEEDS>
+		<xi:include href="HAOPS/FEED_HAOPS.xml"/>
+		<xi:include href="HAOPS/FEED_DB_INSTANCE_HAOPS.xml"/>
+	</FEEDS>
+	<ENTITIES>
+		<xi:include href="HAOPS/ENTITY_COMPUTER.xml"/>
+		<xi:include href="HAOPS/ENTITY_GROUP.xml"/>
+		<xi:include href="HAOPS/ENTITY_CLUSTER.xml"/>
+		<xi:include href="HAOPS/ENTITY_SERVER.xml"/>
+		<xi:include href="HAOPS/ENTITY_DATABASE.xml"/>
+		<xi:include href="HAOPS/ENTITY_DB_INSTANCE.xml"/>
+	</ENTITIES>
+	<RELATIONS>
+		<xi:include href="HAOPS/RELATION_COMPUTER_GROUP.xml"/>
+		<xi:include href="HAOPS/RELATION_DB_TO_INSTANCE.xml"/>
+		<xi:include href="HAOPS/RELATION_DATABASE_TO_CLUSTER.xml"/>
+		<xi:include href="HAOPS/RELATION_DATABASE_TO_SERVER.xml"/>
+	</RELATIONS>
+</blz:SOURCE>
+

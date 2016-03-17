@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:SOURCE NAME="SCCM" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig"  xmlns:xi="http://www.w3.org/2001/XInclude">
+	<FEEDS>
+		<xi:include href="SCCM/FEED_SCCM.xml"/>
+		<xi:include href="SCCM/FEED_SCCM_SOFTWARE.xml"/>
+		<xi:include href="SCCM/FEED_DISK_SCCM.xml"/>
+		<xi:include href="SCCM/FEED_NETWORK_ADAPTER_SCCM.xml"/>
+	</FEEDS>
+	<xi:include href="SCCM/LINKS.xml"/>
+	<ENTITIES>
+		<xi:include href="SCCM/ENTITY_COMPUTER.xml"/>
+		<xi:include href="SCCM/ENTITY_SCCM_SOFTWARE.xml"/>
+		<xi:include href="SCCM/ENTITY_DISK_SCCM.xml"/>
+		<xi:include href="SCCM/ENTITY_NET_ADAPTER_SCCM.xml"/>
+	</ENTITIES>
+	<RELATIONS>
+		<xi:include href="SCCM/RELATION_SW_COMPUTER.xml"/>
+		<xi:include href="SCCM/RELATION_DISK_TO_COMPUTER.xml"/>
+		<xi:include href="SCCM/RELATION_COMPUTER_NETADAPTER.xml"/>
+	</RELATIONS>
+</blz:SOURCE>
+

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:SOURCE NAME="PGP" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig"  xmlns:xi="http://www.w3.org/2001/XInclude">
+	<FEEDS>
+		<xi:include href="PGP/FEED_PGP.xml"/>
+	</FEEDS>
+	<ENTITIES>
+		<xi:include href="PGP/ENTITY_COMPUTER.xml"/>
+	</ENTITIES>
+</blz:SOURCE>
+

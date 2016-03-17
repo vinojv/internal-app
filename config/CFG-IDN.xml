@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:SOURCE NAME="IDN" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig"  xmlns:xi="http://www.w3.org/2001/XInclude">
+	<FEEDS>
+		<xi:include href="IDN/FEED_IDN_SERVER.xml"/>
+		<xi:include href="IDN/FEED_IDN_MSSQL.xml"/>
+		<xi:include href="IDN/FEED_IDN_SYBASE.xml"/>
+	</FEEDS>
+	<ENTITIES>
+		<xi:include href="IDN/ENTITY_IDN_SERVER.xml"/>
+		<xi:include href="IDN/ENTITY_CLUSTER_MSSQL.xml"/>
+		<xi:include href="IDN/ENTITY_CLUSTER_SYBASE.xml"/>
+		<xi:include href="IDN/ENTITY_SERVER_MSSQL.xml"/>
+		<xi:include href="IDN/ENTITY_SERVER_SYBASE.xml"/>
+		<xi:include href="IDN/ENTITY_DB_MSSQL.xml"/>
+		<xi:include href="IDN/ENTITY_DB_SYBASE.xml"/>
+		<xi:include href="IDN/ENTITY_DB_INSTANCE_MSSQL.xml"/>
+		<xi:include href="IDN/ENTITY_DB_INSTANCE_SYBASE.xml"/>
+		<xi:include href="IDN/ENTITY_GROUP.xml"/>
+	</ENTITIES>
+	<RELATIONS>
+		<xi:include href="IDN/RELATION_GROUP_SERVER.xml"/>
+		<xi:include href="IDN/RELATION_DB_TO_DBINSTANCE.xml"/>
+		<xi:include href="IDN/RELATION_DB_TO_CLUSTER.xml"/>
+		<xi:include href="IDN/RELATION_DB_TO_SERVER.xml"/>
+	</RELATIONS>
+</blz:SOURCE>
+

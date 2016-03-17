@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blz:FEED NAME="SNOW_STORAGE_DEVICE" TYPE="[STORAGE_DEVICE]" ISPRIMARY="TRUE" PROPAGATE="FALSE" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig" >
+	<fileparameters>
+		<parameter name="headerRowCount"  value="1" />
+		<parameter name="dateFormatMask"  value="YYYY-MM-DD HH:MI:SS" />
+		<parameter name="fieldDelimiter" type="ascii" value="124" />
+		<parameter name="recordDelimiter" type="namedDelimiter" value="NEWLINE" />
+	</fileparameters>
+	<COLUMN NAME="TENANT_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"/>
+	<COLUMN NAME="DATA_PARTITION_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"/>
+	<COLUMN NAME="SOURCE_CODE" TYPE="virtual" VALUE="SNOW" PROCESS="UPPER_TRIM"/>
+	<COLUMN NAME="DATE_FORMAT_MASK" TYPE="virtual" VALUE="EXCEL_DATE" PROCESS="TRIM"/>
+	<COLUMN NAME="IF_SOURCE_ID" TYPE="virtual" VALUE="1" />
+	<COLUMN NAME="TIME_ZONE" TYPE="virtual" VALUE="US/Michigan"/>
+	<COLUMN NAME="NATIVE_STORAGE_DEVICE_ID" EXTERNALNAME="u_guid" TYPE="attribute"/>
+	<COLUMN NAME="STORAGE_DEVICE_NAME" EXTERNALNAME="name" TYPE="identifier" PROCESS="TRIM"/>
+	<COLUMN NAME="ASSET_TAG_R" EXTERNALNAME="asset_tag" TYPE="ignore"/>
+	<COLUMN NAME="STORAGE_DEVICE_SERIAL_NUMBER" EXTERNALNAME="serial_number" TYPE="identifier" PROCESS="TRIM"/>
+	<COLUMN NAME="STORAGE_MODEL_REFERENCE_LABEL" EXTERNALNAME="model_id.display_name" TYPE="attribute" PROCESS="TRIM"/>
+	<COLUMN NAME="MODEL_ID_NAME" EXTERNALNAME="model_id.name" TYPE="ignore"/>
+	<COLUMN NAME="MODEL_ID_MANUFACTURER" EXTERNALNAME="model_id.manufacturer" TYPE="ignore"/>
+	<COLUMN NAME="MODEL_ID_MODEL_NUMBER" EXTERNALNAME="model_id.model_number" TYPE="ignore"/>
+	<COLUMN NAME="MODEL_ID_CMDB_MODEL_CATEGORY" EXTERNALNAME="model_id.cmdb_model_category" TYPE="ignore"/>
+	<COLUMN NAME="STORAGE_MODEL_REFERENCE_GUID" EXTERNALNAME="model_id.u_guid" TYPE="attribute" PROCESS="TRIM"/>
+	<COLUMN NAME="MANUFACTURER_NAME" EXTERNALNAME="manufacturer.name" TYPE="ignore"/>
+	<COLUMN NAME="MODEL_NUMBER" EXTERNALNAME="model_number" TYPE="ignore"/>
+	<COLUMN NAME="CAPACITY" EXTERNALNAME="capacity" TYPE="ignore"/>
+	<COLUMN NAME="DEVICE_TYPE" EXTERNALNAME="device_type" TYPE="attribute" PROCESS="TRIM"/>
+	<COLUMN NAME="DISK_DRIVES" EXTERNALNAME="disk_drives" TYPE="ignore"/>
+	<COLUMN NAME="DISK_SIZE" EXTERNALNAME="disk_size" TYPE="ignore"/>
+	<COLUMN NAME="RAID_TYPE" EXTERNALNAME="raid_type" TYPE="attribute" PROCESS="TRIM"/>
+	<COLUMN NAME="ATTACHED_TO_NAME" EXTERNALNAME="attached_to.name" TYPE="ignore"/>
+	<COLUMN NAME="ATTACHED_TO_U_GUID" EXTERNALNAME="attached_to.u_guid" TYPE="ignore"/>
+	<COLUMN NAME="ATTACHED_TO_U_GUID" EXTERNALNAME="attached_to.u_guid" TYPE="ignore"/>
+	<COLUMN NAME="DR_BACKUP_NAME" EXTERNALNAME="dr_backup.name" TYPE="ignore"/>
+	<COLUMN NAME="DR_BACKUP_U_GUID" EXTERNALNAME="dr_backup.u_guid" TYPE="ignore"/>
+	<COLUMN NAME="LOCATION_NAME" EXTERNALNAME="location.name" TYPE="ignore"/>
+	<COLUMN NAME="LOCATION_STREET" EXTERNALNAME="location.street" TYPE="ignore"/>
+	<COLUMN NAME="LOCATION_CITY" EXTERNALNAME="location.city" TYPE="ignore"/>
+	<COLUMN NAME="LOCATION_STATE" EXTERNALNAME="location.state" TYPE="ignore"/>
+	<COLUMN NAME="LOCATION_ZIP" EXTERNALNAME="location.zip" TYPE="ignore"/>
+	<COLUMN NAME="LOCATION_COUNTRY" EXTERNALNAME="location.country" TYPE="ignore"/>
+	<COLUMN NAME="LOCATION_REFERENCE_GUID" EXTERNALNAME="location.u_guid" TYPE="attribute"/>
+	<COLUMN NAME="DISCOVERY_SOURCE" EXTERNALNAME="discovery_source" TYPE="ignore"/>
+	<COLUMN NAME="SYS_CLASS_NAME" EXTERNALNAME="sys_class_name" TYPE="ignore"/>
+	<COLUMN NAME="SYS_MOD_COUNT" EXTERNALNAME="sys_mod_count" TYPE="ignore"/>
+	<COLUMN NAME="SYS_CREATED_ON" EXTERNALNAME="sys_created_on" TYPE="ignore"/>
+	<COLUMN NAME="SYS_CREATED_BY" EXTERNALNAME="sys_created_by" TYPE="ignore"/>
+	<COLUMN NAME="SYS_UPDATED_ON" EXTERNALNAME="sys_updated_on" TYPE="ignore"/>
+	<COLUMN NAME="SYS_UPDATED_BY" EXTERNALNAME="sys_updated_by" TYPE="ignore"/>
+	<COLUMN NAME="ASSET_U_GUID" EXTERNALNAME="asset.u_guid" TYPE="ignore"/>
+	<COLUMN NAME="ASSIGNED" EXTERNALNAME="assigned" TYPE="ignore"/>
+	<COLUMN NAME="COMPANY_NAME" EXTERNALNAME="company.name" TYPE="ignore"/>
+	<COLUMN NAME="COMPANY_U_GUID" EXTERNALNAME="company.u_guid" TYPE="ignore"/>
+	<COLUMN NAME="GL_ACCOUNT_R" EXTERNALNAME="gl_account" TYPE="ignore"/>
+	<COLUMN NAME="LEASE_ID" EXTERNALNAME="lease_id" TYPE="ignore"/>
+	<COLUMN NAME="PO_NUMBER" EXTERNALNAME="po_number" TYPE="ignore"/>
+	<COLUMN NAME="MANAGED_BY_NAME" EXTERNALNAME="managed_by.name" TYPE="ignore"/>
+	<COLUMN NAME="MANAGED_BY_U_GUID" EXTERNALNAME="managed_by.u_guid" TYPE="ignore"/>
+	<COLUMN NAME="SUPPORTED_BY_NAME" EXTERNALNAME="supported_by.name" TYPE="ignore"/>
+	<COLUMN NAME="SUPPORTED_BY_U_GUID" EXTERNALNAME="supported_by.u_guid" TYPE="ignore"/>
+	<COLUMN NAME="SUPPORT_GROUP_REFERENCE_LABEL" EXTERNALNAME="support_group.name" TYPE="attribute"/>
+	<COLUMN NAME="SUPPORT_GROUP_REFERENCE_GUID" EXTERNALNAME="support_group.u_guid" TYPE="attribute"/>
+	<COLUMN NAME="VENDOR" EXTERNALNAME="vendor.name" TYPE="attribute" />
+	<COLUMN NAME="VENDOR_REFERENCE_GUID" EXTERNALNAME="vendor.u_guid" TYPE="attribute"/>
+	<COLUMN NAME="SNOW_OPERATIONAL_STATUS" EXTERNALNAME="operational_status" TYPE="attribute"/>
+	<COLUMN NAME="BUID" EXTERNALNAME="u_blazent_key" TYPE="attribute"/>
+</blz:FEED>                     
+

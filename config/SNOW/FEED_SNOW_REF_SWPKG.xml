@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:FEED NAME="SNOW_REF_SWPKG" TYPE="[REFERENCE]" ISPRIMARY="TRUE" PROPAGATE="FALSE" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig" >
+	<fileparameters>
+		<parameter name="headerRowCount"  value="1" />
+		<parameter name="fieldDelimiter" type="ascii" value="44" />
+		<parameter name="recordDelimiter" type="namedDelimiter" value="NEWLINE" />
+	</fileparameters>
+	<COLUMN NAME="TENANT_DATA_PARTITION_ID" TYPE="virtual" VALUE="1" />
+	<COLUMN NAME="IF_SOURCE_ID" TYPE="virtual" VALUE="1" />
+	<COLUMN NAME="DATE_FORMAT_MASK" TYPE="virtual" VALUE="MM-dd-yyyy" PROCESS="TRIM"  />
+	<COLUMN NAME="TENANT_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATA_PARTITION_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="SOURCE_CODE" TYPE="virtual" VALUE="SNOW" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="SW_REFERENCE_GUID" EXTERNALNAME="u_guid" TYPE="attribute" MAPVALUE="true" MAPPOSITION="1" RECENCY_INDICATOR="SORTA"  />
+	<COLUMN NAME="DISPLAY_NAME" EXTERNALNAME="model_id.display_name" TYPE="identifier" MAPVALUE="true" MAPPOSITION="2"  />
+	<COLUMN NAME="SW_REFERENCE_VERSION" EXTERNALNAME="model_id.version" TYPE="attribute" MAPVALUE="true" MAPPOSITION="3"  />
+	<COLUMN NAME="SW_REFERENCE_CATEGORY" EXTERNALNAME="model_id.cmdb_model_category" TYPE="attribute" MAPVALUE="true" MAPPOSITION="4"  />
+	<COLUMN NAME="FILTER" TYPE="virtual"  VALUE="= var cat = rec.get('SW_REFERENCE_CATEGORY'); if(cat == null) return null; if(cat.match(/(Operating System)/gi) != null) return cat; else return null;" CONDITION="NOT NULL"  />
+</blz:FEED>
+

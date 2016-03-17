@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:SOURCE NAME="TECHNOLOGENT" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig"  xmlns:xi="http://www.w3.org/2001/XInclude">
+	<FEEDS>
+		<xi:include href="TECHNOLOGENT/FEED_PO_LINE_ITEM_TECHNOLOGENT.xml"/>
+	</FEEDS>
+	<ENTITIES>
+		<xi:include href="TECHNOLOGENT/ENTITY_PO_LINE_ITEM_TECHNOLOGENT.xml"/>
+		<xi:include href="TECHNOLOGENT/ENTITY_PURCHASE_ORDER_TECHNOLOGENT.xml"/>
+	</ENTITIES>
+	<RELATIONS>
+		<xi:include href="TECHNOLOGENT/RELATION_PO_POLI.xml"/>
+	</RELATIONS>
+</blz:SOURCE>
+

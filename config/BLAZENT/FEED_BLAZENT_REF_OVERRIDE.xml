@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:FEED NAME="AMEX_OVERRIDE" TYPE="[REFERENCE]" ISPRIMARY="TRUE" PROPAGATE="FALSE" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig" >
+	<fileparameters>
+		<parameter name="headerRowCount"  value="1" />
+		<parameter name="fieldDelimiter" type="ascii" value="124" />
+		<parameter name="recordDelimiter" type="namedDelimiter" value="NEWLINE" />
+	</fileparameters>
+	<COLUMN NAME="TENANT_DATA_PARTITION_ID" TYPE="virtual" VALUE="1" />
+	<COLUMN NAME="IF_SOURCE_ID" TYPE="virtual" VALUE="1000" />
+	<COLUMN NAME="DATE_FORMAT_MASK" TYPE="virtual" VALUE="yyyyMMdd" PROCESS="TRIM"  />
+	<COLUMN NAME="TIME_ZONE" TYPE="virtual" VALUE="US/Michigan"  />
+	<COLUMN NAME="TENANT_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATA_PARTITION_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="SOURCE_CODE" TYPE="virtual" VALUE="BLAZENT" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DISPLAY_NAME_IN" EXTERNALNAME="DISPLAY_NAME_IN" TYPE="identifier" KEY="true" KEYPOSITION="1" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DISPLAY_NAME_OUT" EXTERNALNAME="SUGGESTED_MATCH" TYPE="attribute" MAPVALUE="true" MAPPOSITION="1" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="CATEGORY" EXTERNALNAME="CATEGORY" TYPE="identifier" KEY="true" KEYPOSITION="2" PROCESS="UPPER_TRIM" />
+	<COLUMN NAME="ADD_DATE" EXTERNALNAME="ADD_DATE" TYPE="attribute" RECENCY_INDICATOR="LARGEST" PROCESS="TRIM" />
+</blz:FEED>
+

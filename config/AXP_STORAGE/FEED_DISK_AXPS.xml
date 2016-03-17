@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:FEED NAME="AXPSTORAGE_DISK" TYPE="[DISK]" ISPRIMARY="TRUE" PROPAGATE="FALSE" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig" >
+	<fileparameters>
+		<parameter name="headerRowCount"  value="1" />
+		<parameter name="dateFormatMask"  value="yyyy/MM/dd" />
+		<parameter name="fieldDelimiter" type="ascii" value="124" />
+		<parameter name="recordDelimiter" type="namedDelimiter" value="NEWLINE" />
+	</fileparameters>
+	<COLUMN NAME="TENANT_DATA_PARTITION_ID" TYPE="virtual" VALUE="1" />
+	<COLUMN NAME="IF_SOURCE_ID" TYPE="virtual" VALUE="28" />
+    <COLUMN NAME="TENANT_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM" />
+    <COLUMN NAME="DATA_PARTITION_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM" />
+    <COLUMN NAME="SOURCE_CODE" TYPE="virtual" VALUE="AXP_STORAGE" PROCESS="UPPER_TRIM" />
+    <COLUMN NAME="DATE_FORMAT_MASK" TYPE="virtual" VALUE="yyyy/MM/dd" PROCESS="TRIM" />
+	<COLUMN NAME="DISK_MANUFACTURER" TYPE="attribute" EXTERNALNAME="Manufacturer" PROCESS="TRIM" />
+	<COLUMN NAME="DISK_MODEL" TYPE="attribute" EXTERNALNAME="Model" PROCESS="TRIM" />
+	<COLUMN NAME="DISK_SERIAL_NUMBER" TYPE="identifier" EXTERNALNAME="Serial Number" PROCESS="UPPER_TRIM" />	
+	<COLUMN NAME="DISK_PART_NUMBER" TYPE="attribute" EXTERNALNAME="Part Number" PROCESS="TRIM" />
+	<COLUMN NAME="NATIVE_PHYSICAL_STATUS" TYPE="attribute" EXTERNALNAME="Status" PROCESS="TRIM" />
+	<COLUMN NAME="SCAN_DATE" TYPE="attribute" EXTERNALNAME="Last Scan Date" RECENCY_INDICATOR="LATEST" PROCESS="CONVERT_STRING_TO_DATE(DATE_FORMAT_MASK,TIME_ZONE)" />
+	<COLUMN NAME="SCAN_DATE_O" TYPE="attribute" EXTERNALNAME="Last Scan Date" />
+	<COLUMN NAME="DISK_SIZE_UNITS" TYPE="attribute" EXTERNALNAME="Capacity Unit" PROCESS="UPPER_TRIM" />
+	<COLUMN NAME="DISK_SIZE" TYPE="attribute" EXTERNALNAME="Capacity" PROCESS="TRIM" />
+	<COLUMN NAME="INTERFACE_TYPE" TYPE="attribute" EXTERNALNAME="Drive Type" PROCESS="TRIM"  />
+	<COLUMN NAME="ARRAY_SERIAL_NUMBER" TYPE="ignore" EXTERNALNAME="Array Serial Number" />
+	<COLUMN NAME="ASSET_NAME" TYPE="identifier" EXTERNALNAME="Array Name"  />
+	<COLUMN NAME="SLOT_NUMBER" TYPE="attribute" EXTERNALNAME="Slot Number" PROCESS="TRIM" />
+	<COLUMN NAME="DISK_NAME" TYPE="virtual" VALUE="= var an = rec.get('ASSET_NAME'); var dsn = rec.get('DISK_SERIAL_NUMBER'); var result = ''; if(an != null) result+=an+'-'; else result+='-'; if(dsn != null) result+=dsn; return result;"  />
+	<COLUMN NAME="TIME_ZONE" TYPE="virtual" VALUE="US/Michigan"  />
+</blz:FEED>

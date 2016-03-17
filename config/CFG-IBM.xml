@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:SOURCE NAME="IBM" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig"  xmlns:xi="http://www.w3.org/2001/XInclude">
+	<FEEDS>
+		<xi:include href="IBM/FEED_IBM_MANAGED_SERVERS.xml"/>
+		<xi:include href="IBM/FEED_IBM_MANAGED_IP_ADDR.xml"/>
+		<xi:include href="IBM/FEED_IBM_LOCATION_LU.xml"/>
+		<xi:include href="IBM/FEED_IBM_IP_NET_ADAPTER.xml"/>
+		<xi:include href="IBM/FEED_IBM.xml"/>
+	</FEEDS>
+	<ENTITIES>
+		<xi:include href="IBM/ENTITY_MANAGED_SERVER.xml"/>
+		<xi:include href="IBM/ENTITY_CLUSTER.xml"/>
+		<xi:include href="IBM/ENTITY_SERVER.xml"/>
+		<xi:include href="IBM/ENTITY_DATABASE.xml"/>
+		<xi:include href="IBM/ENTITY_DB_INSTANCE.xml"/>
+		<xi:include href="IBM/ENTITY_GROUP.xml"/>
+		<xi:include href="IBM/ENTITY_IBM_REF_LOCATION.xml"/>
+	</ENTITIES>
+	<RELATIONS>
+		<xi:include href="IBM/RELATION_DB_TO_INSTANCE.xml"/>
+		<xi:include href="IBM/RELATION_DB_TO_CLUSTER.xml"/>
+		<xi:include href="IBM/RELATION_DB_TO_SERVER.xml"/>
+	</RELATIONS>
+</blz:SOURCE>
+

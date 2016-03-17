@@ -1,0 +1,12 @@
+[{
+	"tenant" : "AMEX",
+	"active" : true,
+	"databaseHost" : "10.156.46.68",
+	"databasePort" : 50504,
+	"databaseMaxPoolSize" : 5,
+	"databaseName" : "maindb",
+	"databaseUsername" : "blazent_dw",
+	"databasePassword" : "blazent",
+	"restUsername" : "blazent",
+	"restPassword" : "password"
+}]

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:SOURCE NAME="NCIRCLE" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig"  xmlns:xi="http://www.w3.org/2001/XInclude">
+	<FEEDS>
+		<xi:include href="NCIRCLE/FEED_NCIRCLE_CCM.xml"/>
+		<xi:include href="NCIRCLE/FEED_NCIRCLE_IP360.xml"/>
+	</FEEDS>
+	<ENTITIES>
+		<xi:include href="NCIRCLE/ENTITY_COMPUTER_CCM.xml"/>
+		<xi:include href="NCIRCLE/ENTITY_COMPUTER_IP360.xml"/>
+	</ENTITIES>
+</blz:SOURCE>
+

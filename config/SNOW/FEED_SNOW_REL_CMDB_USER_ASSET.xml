@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:FEED NAME="SNOW_REL_CMDB_USER_ASSET" TYPE="[RELATIONSHIP]" ISPRIMARY="FALSE" PROPAGATE="TRUE" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig" >
+	<fileparameters>
+		<parameter name="headerRowCount"  value="1" />
+		<parameter name="fieldDelimiter" type="ascii" value="44" />
+		<parameter name="recordDelimiter" type="namedDelimiter" value="NEWLINE" />
+	</fileparameters>
+	<COLUMN NAME="TENANT_DATA_PARTITION_ID" TYPE="virtual" VALUE="1" />
+	<COLUMN NAME="IF_SOURCE_ID" TYPE="virtual" VALUE="1" />
+	<COLUMN NAME="DATE_FORMAT_MASK" TYPE="virtual" VALUE="MM-dd-yyyy" PROCESS="TRIM"  />
+	<COLUMN NAME="TENANT_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATA_PARTITION_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="SOURCE_CODE" TYPE="virtual" VALUE="SNOW" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="REL_TYPE_LABEL" TYPE="virtual" VALUE="Assigns::Assigned To"  />
+	<COLUMN NAME="NATIVE_USER_ASSET_ID" EXTERNALNAME="u_guid" TYPE="identifier" PROCESS="TRIM"  />
+	<COLUMN NAME="ci_sys_class_name" EXTERNALNAME="ci.sys_class_name" TYPE="ignore"  />
+	<COLUMN NAME="NATIVE_ASSET_ID" EXTERNALNAME="ci.u_guid" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="type_u_guid" EXTERNALNAME="type.u_guid" TYPE="ignore"  />
+	<COLUMN NAME="type_name" EXTERNALNAME="type.name" TYPE="ignore"  />
+	<COLUMN NAME="NATIVE_USER_ID" EXTERNALNAME="user.u_guid" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="user_sys_class_name" EXTERNALNAME="user.sys_class_name" TYPE="ignore"  />
+</blz:FEED>
+

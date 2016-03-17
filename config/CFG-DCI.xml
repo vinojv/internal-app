@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:SOURCE NAME="DCI" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig"  xmlns:xi="http://www.w3.org/2001/XInclude">
+	<FEEDS>
+		<xi:include href="DCI/FEED_ITSM_DCI_DEVICES.xml"/>
+		<xi:include href="DCI/FEED_ITSM_DCI_RACKS.xml"/>
+	</FEEDS>
+	<xi:include href="DCI/LINKS.xml"/>
+	<ENTITIES>
+		<xi:include href="DCI/ENTITY_COMPUTER.xml"/>
+		<xi:include href="DCI/ENTITY_RACK.xml"/>
+	</ENTITIES>
+	<RELATIONS>
+		<xi:include href="DCI/RELATION_COMPUTER_RACK.xml"/>
+	</RELATIONS>
+</blz:SOURCE>
+

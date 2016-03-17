@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:FEED NAME="PDIOCI" TYPE="[DB_CITOCI]" ISPRIMARY="FALSE" PROPAGATE="FALSE" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig" >
+	<fileparameters>
+		<parameter name="headerRowCount"  value="1" />
+		<parameter name="dateFormatMask"  value="MM/DD/YYYY" />
+		<parameter name="fieldDelimiter" type="ascii" value="124" />
+		<parameter name="recordDelimiter" type="namedDelimiter" value="NEWLINE" />
+	</fileparameters>
+	<COLUMN NAME="TENANT_DATA_PARTITION_ID" TYPE="virtual" VALUE="1" />
+	<COLUMN NAME="IF_SOURCE_ID" TYPE="virtual" VALUE="19" />
+	<COLUMN NAME="TENANT_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATA_PARTITION_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="SOURCE_CODE" TYPE="virtual" VALUE="PDI" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATE_FORMAT_MASK" TYPE="virtual" VALUE="MM/dd/yyyy" PROCESS="TRIM"  />
+	<COLUMN NAME="CHILD_CI" EXTERNALNAME="Child CI" TYPE="identifier" PROCESS="TRIM"  />
+	<COLUMN NAME="CHILD_CI_CLASS" EXTERNALNAME="Child CI Class" TYPE="attribute" PROCESS="UPPER_TRIM" RECENCY_INDICATOR="SORTA"  />
+	<COLUMN NAME="PARENT_CI" EXTERNALNAME="Parent CI" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="PARENT_CI_CLASS" EXTERNALNAME="Parent CI Class" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="RELATIONSHIP_TYPE" EXTERNALNAME="Relationship Type" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="BLAZENT_ID" EXTERNALNAME="Blazent ID" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="ASSET_CLASS" TYPE="virtual" VALUE="=if(rec.get('CHILD_CI_CLASS') == 'U_AXP_CMDB_CLUSTER_POOL') return 'SERVER CLUSTER'; else if(rec.get('CHILD_CI_CLASS') == 'CMDB_CI_COMPUTER') return 'SERVER'; else return null;" CONDITION="NOT NULL" />
+	<COLUMN NAME="TIME_ZONE" TYPE="virtual" VALUE="US/Michigan"  />
+</blz:FEED>
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:SOURCE NAME="HP_DB" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig"  xmlns:xi="http://www.w3.org/2001/XInclude">
+	<FEEDS>
+		<xi:include href="HP_DB/FEED_HP.xml"/>
+	</FEEDS>
+	<ENTITIES>
+		<xi:include href="HP_DB/ENTITY_CLUSTER.xml"/>
+		<xi:include href="HP_DB/ENTITY_SERVER.xml"/>
+		<xi:include href="HP_DB/ENTITY_DATABASE.xml"/>
+		<xi:include href="HP_DB/ENTITY_DB_INSTANCE.xml"/>
+	</ENTITIES>
+	<RELATIONS>
+		<xi:include href="HP_DB/RELATION_DB_TO_INSTANCE.xml"/>
+		<xi:include href="HP_DB/RELATION_DATABASE_TO_CLUSTER.xml"/>
+		<xi:include href="HP_DB/RELATION_DATABASE_TO_SERVER.xml"/>
+	</RELATIONS>
+</blz:SOURCE>
+

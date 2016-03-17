@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blz:FEED NAME="COUPA_PO_LINE_ITEM" TYPE="[PO_LINE_ITEM]" ISPRIMARY="TRUE" PROPAGATE="FALSE" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig" >
+	<fileparameters>
+		<parameter name="headerRowCount"  value="1" />
+		<parameter name="dateFormatMask"  value="MM/DD/YYYY" />
+		<parameter name="fieldDelimiter" type="ascii" value="124" />
+		<parameter name="recordDelimiter" type="namedDelimiter" value="NEWLINE" />
+	</fileparameters>
+	<COLUMN NAME="TENANT_DATA_PARTITION_ID" TYPE="virtual" VALUE="1" />
+	<COLUMN NAME="IF_SOURCE_ID" TYPE="virtual" VALUE="36" />
+	<COLUMN NAME="TENANT_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATA_PARTITION_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"/>
+    <COLUMN NAME="SOURCE_CODE" TYPE="virtual" VALUE="COUPA" PROCESS="UPPER_TRIM"/>
+    <COLUMN NAME="DATE_FORMAT_MASK" TYPE="virtual" VALUE="MM/dd/yyyy" PROCESS="TRIM"/>
+    <COLUMN NAME="TIME_ZONE" TYPE="virtual" VALUE="US/Michigan" />
+    <COLUMN NAME="PURCHASING_SYSTEM" TYPE="virtual" VALUE="Coupa"/>
+    <COLUMN NAME="PURCHASING_SYSTEM_PO_NUMBER" EXTERNALNAME="PO Number" TYPE="identifier" PROCESS="TRIM" />
+ 	<COLUMN NAME="PURCHASING_SYSTEM_PO_LINE_ITEM_NUMBER" EXTERNALNAME="Line" TYPE="identifier" PROCESS="TRIM" />
+ 	<COLUMN NAME="PO_LINE_ITEM_NUMBER" EXTERNALNAME="Line" TYPE="attribute" PROCESS="TRIM" />
+  	<COLUMN NAME="QUANTITY_ORDERED" EXTERNALNAME="Qty" TYPE="attribute" PROCESS="EXTRACT_FIRST_NUMERIC" />
+    <COLUMN NAME="QUANTITY_ORDERED_O" EXTERNALNAME="Qty" TYPE="attribute" />
+    <COLUMN NAME="SUPPLIER" EXTERNALNAME="Supplier" TYPE="attribute" PROCESS="TRIM" />
+    <COLUMN NAME="PO_STATUS" EXTERNALNAME="Order Status" TYPE="attribute" PROCESS="TRIM" />
+    <COLUMN NAME="Order Transmission Status" EXTERNALNAME="Order Transmission Status" TYPE="ignore"  />
+    <COLUMN NAME="COMMODITY_CODE" EXTERNALNAME="Commodity" TYPE="attribute" PROCESS="TRIM" />
+    <COLUMN NAME="PRODUCT_NAME" EXTERNALNAME="Item Name" TYPE="attribute" PROCESS="TRIM" />
+    <COLUMN NAME="LINE_ITEM_PRODUCT_DESCRIPTION" EXTERNALNAME="Item" TYPE="attribute" PROCESS="TRIM" />
+    <COLUMN NAME="Item #" EXTERNALNAME="Item #" TYPE="ignore" />
+    <COLUMN NAME="LINE_ITEM_TOTAL_COST" EXTERNALNAME="Line Total" TYPE="attribute" PROCESS="EXTRACT_FIRST_NUMERIC" />
+    <COLUMN NAME="LINE_ITEM_TOTAL_COST_O" EXTERNALNAME="Line Total" TYPE="attribute"/>
+    <COLUMN NAME="PO_TOTAL_COST" EXTERNALNAME="Order Total" TYPE="attribute" PROCESS="EXTRACT_FIRST_NUMERIC" />
+    <COLUMN NAME="PO_TOTAL_COST_O" EXTERNALNAME="Order Total" TYPE="attribute" />
+    <COLUMN NAME="Invoiced" EXTERNALNAME="Invoiced" TYPE="ignore"  />
+    <COLUMN NAME="Received" EXTERNALNAME="Received" TYPE="ignore"  />
+    <COLUMN NAME="Acknowledged At" EXTERNALNAME="Acknowledged At" TYPE="ignore"  />
+    <COLUMN NAME="COMMENTS" EXTERNALNAME="Comments" TYPE="attribute" PROCESS="TRIM" />
+    <COLUMN NAME="Payment Term" EXTERNALNAME="Payment Term" TYPE="ignore"  />
+    <COLUMN NAME="Shipping" EXTERNALNAME="Shipping" TYPE="ignore"  />
+    <COLUMN NAME="PO_STATUS_CHANGE_DATE" EXTERNALNAME="Last Updated Date" TYPE="attribute" PROCESS="CONVERT_STRING_TO_DATE(DATE_FORMAT_MASK,TIME_ZONE)" />
+    <COLUMN NAME="PO_STATUS_CHANGE_DATE_O" EXTERNALNAME="Last Updated Date" TYPE="attribute"  />
+    <COLUMN NAME="Last Updated By" EXTERNALNAME="Last Updated By" TYPE="ignore"  />
+    <COLUMN NAME="Account" EXTERNALNAME="Account" TYPE="ignore" />
+    <COLUMN NAME="Accounting Total" EXTERNALNAME="Accounting Total" TYPE="ignore" />
+    <COLUMN NAME="Accounting Total Currency" EXTERNALNAME="Accounting Total Currency" TYPE="ignore"  />
+    <COLUMN NAME="Asset Tags" EXTERNALNAME="Asset Tags" TYPE="ignore"  />
+    <COLUMN NAME="Contract" EXTERNALNAME="Contract" TYPE="ignore"  />
+    <COLUMN NAME="PO_LINE_ITEM_CURRENCY" EXTERNALNAME="Currency" TYPE="attribute"  />
+    <COLUMN NAME="PO_CURRENCY" EXTERNALNAME="Currency" TYPE="attribute"/>
+    <COLUMN NAME="Department" EXTERNALNAME="Department" TYPE="ignore" />
+    <COLUMN NAME="PO_DUE_DATE" EXTERNALNAME="Need By" TYPE="attribute" PROCESS="CONVERT_STRING_TO_DATE(DATE_FORMAT_MASK,TIME_ZONE)" />
+    <COLUMN NAME="PO_DUE_DATE_O" EXTERNALNAME="Need By" TYPE="attribute"  />
+    <COLUMN NAME="Online Order Number" EXTERNALNAME="Online Order Number" TYPE="ignore"  />
+    <COLUMN NAME="Price" EXTERNALNAME="Price" TYPE="ignore" />
+    <COLUMN NAME="Reporting Total" EXTERNALNAME="Reporting Total" TYPE="ignore" />
+    <COLUMN NAME="Savings (%)" EXTERNALNAME="Savings (%)" TYPE="ignore"  />
+    <COLUMN NAME="MANUFACTURER_SKU" EXTERNALNAME="Part Number" TYPE="attribute" PROCESS="TRIM"/>
+    <COLUMN NAME="LINE_ITEM_STATUS" EXTERNALNAME="Line Status" TYPE="attribute" PROCESS="TRIM"/>
+    <COLUMN NAME="Supplier Order #" EXTERNALNAME="Supplier Order #" TYPE="ignore"  />
+    <COLUMN NAME="Supp Aux Part Num" EXTERNALNAME="Supp Aux Part Num" TYPE="ignore"  />
+    <COLUMN NAME="Type" EXTERNALNAME="Type" TYPE="ignore"  />
+    <COLUMN NAME="UOM" EXTERNALNAME="UOM" TYPE="ignore"  />
+    <COLUMN NAME="PRODUCT_VERSION" EXTERNALNAME="Version" TYPE="attribute" PROCESS="TRIM" />
+    <COLUMN NAME="MANUFACTURER" EXTERNALNAME="Manufacturer" TYPE="attribute" PROCESS="TRIM"  />
+    <COLUMN NAME="Form Name" EXTERNALNAME="Form Name" TYPE="ignore"  />
+    <COLUMN NAME="Form Response" EXTERNALNAME="Form Response" TYPE="ignore"  />
+    <COLUMN NAME="Questionnaire Name" EXTERNALNAME="Questionnaire Name" TYPE="ignore"  />
+    <COLUMN NAME="Contract Number" EXTERNALNAME="Contract Number" TYPE="ignore"  />
+    <COLUMN NAME="Created By" EXTERNALNAME="Created By" TYPE="ignore"  />
+    <COLUMN NAME="Email Opened" EXTERNALNAME="Email Opened" TYPE="ignore"  />
+    <COLUMN NAME="PO_ORDERED_DATE" EXTERNALNAME="Order Date" TYPE="attribute"  PROCESS="CONVERT_STRING_TO_DATE(DATE_FORMAT_MASK,TIME_ZONE)"/>
+    <COLUMN NAME="PO_ORDERED_DATE_O" EXTERNALNAME="Order Date" TYPE="attribute"/>
+    <COLUMN NAME="P-Card Number" EXTERNALNAME="P-Card Number" TYPE="ignore"  />
+    <COLUMN NAME="P-Card Expiration" EXTERNALNAME="P-Card Expiration" TYPE="ignore"  />
+    <COLUMN NAME="Pending PO Change" EXTERNALNAME="Pending PO Change" TYPE="ignore"  />
+    <COLUMN NAME="Req. Need By Date" EXTERNALNAME="Req. Need By Date" TYPE="ignore"  />
+    <COLUMN NAME="PO_DATE" EXTERNALNAME="Req. Submitted Date" TYPE="attribute" PROCESS="CONVERT_STRING_TO_DATE(DATE_FORMAT_MASK,TIME_ZONE)"  />
+    <COLUMN NAME="PO_DATE_O" EXTERNALNAME="Req. Submitted Date" TYPE="attribute"  />
+    <COLUMN NAME="Requested By" EXTERNALNAME="Requested By" TYPE="ignore"  />
+    <COLUMN NAME="Revision" EXTERNALNAME="Revision" TYPE="ignore"  />
+    <COLUMN NAME="SHIPPING_ADDRESS" EXTERNALNAME="Shipping Address" TYPE="attribute" PROCESS="TRIM"  />
+    <COLUMN NAME="Ship To" EXTERNALNAME="Ship To" TYPE="ignore"  />
+    <COLUMN NAME="SHIP_TO_ADDRESS_CODE" EXTERNALNAME="Ship-To Address Nickname" TYPE="attribute" PROCESS="TRIM"  />
+    <COLUMN NAME="Supplier #" EXTERNALNAME="Supplier #" TYPE="ignore"  />
+    <COLUMN NAME="Last Opened" EXTERNALNAME="Last Opened" TYPE="ignore"  />
+    <COLUMN NAME="Project Code" EXTERNALNAME="Project Code" TYPE="ignore"  />
+    <COLUMN NAME="NATIVE_NATURAL_KEY" VALUE="= var poli = rec.get('PO_LINE_ITEM_NUMBER'); var po = rec.get('PURCHASING_SYSTEM_PO_NUMBER'); if(po != null &amp;&amp; poli != null) return po+'-'+poli; else null;" TYPE="virtual" PROCESS="TRIM"/>
+</blz:FEED>

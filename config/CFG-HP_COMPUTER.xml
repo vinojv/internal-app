@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:SOURCE NAME="HP_COMPUTER" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig"  xmlns:xi="http://www.w3.org/2001/XInclude">
+	<FEEDS>
+		<xi:include href="HP_COMPUTER/FEED_HP_EUC.xml"/>
+		<xi:include href="HP_COMPUTER/FEED_HP_SERVER.xml"/>
+	</FEEDS>
+	<ENTITIES>
+		<xi:include href="HP_COMPUTER/ENTITY_COMPUTER.xml"/>
+		<xi:include href="HP_COMPUTER/ENTITY_SERVER.xml"/>
+		<xi:include href="HP_COMPUTER/ENTITY_USER.xml"/>
+	</ENTITIES>
+	<RELATIONS>
+		<xi:include href="HP_COMPUTER/RELATION_EUC_USER.xml"/>
+	</RELATIONS>
+</blz:SOURCE>
+

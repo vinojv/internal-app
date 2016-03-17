@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blz:FEED NAME="ARIBA_PO" TYPE="[PURCHASE_ORDER]" ISPRIMARY="TRUE" PROPAGATE="FALSE" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig" >
+	<fileparameters>
+		<parameter name="headerRowCount"  value="1" />
+		<parameter name="dateFormatMask"  value="MM/DD/YYYY" />
+		<parameter name="fieldDelimiter" type="ascii" value="124" />
+		<parameter name="recordDelimiter" type="namedDelimiter" value="NEWLINE" />
+	</fileparameters>
+	<COLUMN NAME="TENANT_DATA_PARTITION_ID" TYPE="virtual" VALUE="1" />
+	<COLUMN NAME="IF_SOURCE_ID" TYPE="virtual" VALUE="38" />
+	<COLUMN NAME="TENANT_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATA_PARTITION_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="SOURCE_CODE" TYPE="virtual" VALUE="ARIBA" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATE_FORMAT_MASK" TYPE="virtual" VALUE="yyyy-MM-dd HH:mm:ss" PROCESS="TRIM"  />
+	<COLUMN NAME="TIME_ZONE" TYPE="virtual" VALUE="America/Los_Angeles"  />
+	<COLUMN NAME="OriginatingSystemReferenceID" EXTERNALNAME="OriginatingSystemReferenceID" TYPE="ignore"  />
+    <COLUMN NAME="NATIVE_SYSTEM_ID" EXTERNALNAME="Id" TYPE="attribute" />
+    <COLUMN NAME="NATIVE_ENTITY_ID" EXTERNALNAME="Id" TYPE="attribute" />
+    <COLUMN NAME="TrackingNumber"  EXTERNALNAME="TrackingNumber" TYPE="ignore" />
+	<COLUMN NAME="PO_STATE"  EXTERNALNAME="EventStatus" TYPE="attribute" PROCESS="TRIM" />
+	<COLUMN NAME="COMMENTS"  EXTERNALNAME="Comments" TYPE="attribute" PROCESS="TRIM" />
+    <COLUMN NAME="PO_SHORT_DESCRIPTION"  EXTERNALNAME="Title" TYPE="attribute" PROCESS="TRIM" />
+	<COLUMN NAME="OriginatingSystem"  EXTERNALNAME="OriginatingSystem" TYPE="ignore" />
+	<COLUMN NAME="PO_OPEN_CLOSE_STATE"  EXTERNALNAME="ClosePOStatus" TYPE="attribute" PROCESS="TRIM" />
+	<COLUMN NAME="SUPPLIER"  EXTERNALNAME="Supplier" TYPE="attribute" PROCESS="TRIM_DROP_HIGH_LOW_ASCII" />
+    <COLUMN NAME="ShipmentDate"  EXTERNALNAME="ShipmentDate" TYPE="ignore" />
+	<COLUMN NAME="DeliveryDate"  EXTERNALNAME="DeliveryDate" TYPE="ignore" />
+	<COLUMN NAME="PO_STATUS"  EXTERNALNAME="EventType" TYPE="attribute"  PROCESS="TRIM"/>
+	<COLUMN NAME="ShippingCarrier"  EXTERNALNAME="ShippingCarrier" TYPE="ignore" />
+    <COLUMN NAME="PURCHASING_SYSTEM_PO_NUMBER"  EXTERNALNAME="PONumber" TYPE="identifier" PROCESS="TRIM"/>
+	<COLUMN NAME="PO_STATUS_CHANGE_DATE_O"  EXTERNALNAME="EventDate" TYPE="attribute" />
+	<COLUMN NAME="PO_STATUS_CHANGE_DATE"  TYPE="virtual" VALUE="= var eventDate = rec.get('PO_STATUS_CHANGE_DATE_O'); if(eventDate != null) return eventDate.substr(0,19); else return null;" PROCES="CONVERT_STRING_TO_DATE(DATE_FORMAT_MASK,TIME_ZONE)" />
+	<COLUMN NAME="PO_ORDERED_DATE"  VALUE="= if(rec.get('PO_STATUS') == 'Ordered') return rec.get('PO_STATUS_CHANGE_DATE'); else return null;" TYPE="virtual" />
+	<COLUMN NAME="PO_DATE"  VALUE="= return rec.get('PO_ORDERED_DATE');" TYPE="virtual" />
+    <COLUMN NAME="PAYMENT_TERMS"  EXTERNALNAME="PaymentTerms" TYPE="attribute"  PROCESS="TRIM"/>
+	<COLUMN NAME="SupplierLocation"  EXTERNALNAME="SupplierLocation" TYPE="ignore" />
+    <COLUMN NAME="VERSION"  EXTERNALNAME="Version" TYPE="attribute" PROCESS="TRIM"/>
+    <COLUMN NAME="PROCUREMENT_UNIT"  EXTERNALNAME="ProcurementUnit" TYPE="attribute" PROCESS="TRIM" />
+	<COLUMN NAME="ASNNumber"  EXTERNALNAME="ASNNumber" TYPE="ignore" />
+	<COLUMN NAME="HIGH_RISK"  EXTERNALNAME="PurchaseOrder_cus_HighRisk" TYPE="attribute" />
+	<COLUMN NAME="ShipNoticeDate"  EXTERNALNAME="ShipNoticeDate" TYPE="ignore" />
+	<COLUMN NAME="FINANCIAL_TRANSACTION_TYPE"  EXTERNALNAME="PurchaseOrder_cus_TransactionType_UniqueName" TYPE="attribute" PROCESS="TRIM" />
+	<COLUMN NAME="LEGAL_ENTITY"  EXTERNALNAME="PurchaseOrder_cus_LegalEntity_UniqueName" TYPE="attribute"  PROCESS="TRIM"/>
+	<COLUMN NAME="PO_TOTAL_COST_O"  EXTERNALNAME="PurchaseOrder_cus_TotalCost" TYPE="attribute" />
+	<COLUMN NAME="PO_TOTAL_COST"  EXTERNALNAME="PurchaseOrder_cus_TotalCost" TYPE="attribute" PROCESS="EXTRACT_FIRST_NUMERIC"  />
+	<COLUMN NAME="PO_CURRENCY"  EXTERNALNAME="PurchaseOrder_cus_TotalCost_Currency" TYPE="attribute" />
+	<COLUMN NAME="PO_TOTAL_COST_IN_BASE_CURRENCY_O"  EXTERNALNAME="PurchaseOrder_cus_TotalCost_InBaseCurrency" TYPE="attribute" />
+	<COLUMN NAME="PO_TOTAL_COST_IN_BASE_CURRENCY"  EXTERNALNAME="PurchaseOrder_cus_TotalCost_InBaseCurrency" TYPE="attribute" PROCESS="EXTRACT_FIRST_NUMERIC" />
+	<COLUMN NAME="PURCHASING_SYSTEM" VALUE="Ariba On Demand (USA)" TYPE="virtual" PROCESS="TRIM"/>
+	</blz:FEED>

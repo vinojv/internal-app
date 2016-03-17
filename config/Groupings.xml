@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Groupings>
+	<GroupingAlgorithm type="identifierbased">
+		<DefaultSourceRanking>
+			<Source name="SNOW" />
+			<Source name="TIMS" />
+			<Source name="SCCM" />
+			<Source name="MCAFEE" />
+			<Source name="PGP" />
+			<Source name="EMC" />
+			<Source name="FOUNDSTONE" />
+			<Source name="HP_COMPUTER" />
+			<Source name="HP_NETWORK" />
+			<Source name="IBM" />
+			<Source name="IDN" />
+			<Source name="NCIRCLE" />
+			<Source name="POWERBROKER" />
+			<Source name="STRATUS" />
+			<Source name="MSL" />
+			<Source name="DCI" />
+			<Source name="AD" />
+			<Source name="AZURE" />
+			<Source name="PDI" />
+			<Source name="HP_DB" />
+			<Source name="GSS" />
+			<Source name="AMEX_NETWORK" />
+			<Source name="MAC" />
+			<Source name="AMEX_VOICE" />
+			<Source name="AXP_CLOUD" />
+			<Source name="HAOPS" />
+		</DefaultSourceRanking>
+		<AttributeRanking>
+		</AttributeRanking>
+	</GroupingAlgorithm>
+</Groupings>

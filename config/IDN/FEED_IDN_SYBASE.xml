@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:FEED NAME="IDN_SYBASE" TYPE="[DB_INSTANCE]" ISPRIMARY="TRUE" PROPAGATE="FALSE" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig" >
+	<fileparameters>
+		<parameter name="headerRowCount"  value="1" />
+		<parameter name="dateFormatMask"  value="MM/DD/YYYY" />
+		<parameter name="fieldDelimiter" type="ascii" value="124" />
+		<parameter name="recordDelimiter" type="namedDelimiter" value="NEWLINE" />
+	</fileparameters>
+	<COLUMN NAME="TENANT_DATA_PARTITION_ID" TYPE="virtual" VALUE="1" />
+	<COLUMN NAME="IF_SOURCE_ID" TYPE="virtual" VALUE="11" />
+	<COLUMN NAME="TENANT_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATA_PARTITION_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="SOURCE_CODE" TYPE="virtual" VALUE="IDN" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATE_FORMAT_MASK" TYPE="virtual" VALUE="MM/dd/yyyy" PROCESS="TRIM"  />
+	<COLUMN NAME="DATABASE_NAME" EXTERNALNAME="Instance Name" TYPE="identifier" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DB_INSTANCE_NAME" EXTERNALNAME="Database Name" TYPE="identifier" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DB_INSTANCE_TYPE" EXTERNALNAME="Database DBMS" TYPE="attribute" PROCESS="TRIM_DROP_HIGH_LOW_ASCII"  />
+	<COLUMN NAME="SERVER_NAME" EXTERNALNAME="Host Name" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="AIM_APPLICATION_ID" EXTERNALNAME="AIM Application ID" TYPE="ignore"  />
+	<COLUMN NAME="APPLICATIONDATABASERELATIONSHI" EXTERNALNAME="Application Database Relationship Type" TYPE="ignore"  />
+	<COLUMN NAME="DBA_SUPPORT_TEAM" EXTERNALNAME="DBA Support Team" TYPE="ignore"  />
+	<COLUMN NAME="DB_INSTANCE_DESCRIPTION" EXTERNALNAME="Business Name/Purpose" TYPE="attribute" PROCESS="TRIM_DROP_HIGH_LOW_ASCII"  />
+	<COLUMN NAME="CLUSTER_NAME" EXTERNALNAME="Cluster Name" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="LoadBalancerName" EXTERNALNAME="Load Balancer Name." TYPE="ignore"  />
+	<COLUMN NAME="Version" EXTERNALNAME="Load Balancer Name." TYPE="ignore"  />
+	<COLUMN NAME="NATIVE_OPERATIONAL_STATUS" TYPE="virtual" VALUE="Available" PROCESS="TRIM_DROP_HIGH_LOW_ASCII"  />
+	<COLUMN NAME="OPERATIONAL_STATUS" TYPE="virtual" VALUE="Available"   />
+	<COLUMN NAME="SERVER_CLASS" TYPE="virtual" VALUE="SERVER"  />
+	<COLUMN NAME="CLUSTER_CLASS" TYPE="virtual" VALUE="SERVER CLUSTER"  />
+	<COLUMN NAME="ASSET_NAME" TYPE="virtual" VALUE="=if(rec.get('CLUSTER_NAME') != null) return null; else return rec.get('SERVER_NAME');" PROCESS="TRIM"  />
+	<COLUMN NAME="TIME_ZONE" TYPE="virtual" VALUE="US/Michigan"  />
+	<COLUMN NAME="NATIVE_NATURAL_KEY" TYPE="virtual" VALUE=" "  />
+</blz:FEED>
+

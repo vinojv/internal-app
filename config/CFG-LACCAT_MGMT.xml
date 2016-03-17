@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:SOURCE NAME="LACCAT_MGMT" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig"  xmlns:xi="http://www.w3.org/2001/XInclude">
+	<FEEDS>
+		<xi:include href="LACCAT_MGMT/FEED_PO_LINE_ITEM_LACCAT_MGMT.xml"/>
+	</FEEDS>
+	<ENTITIES>
+		<xi:include href="LACCAT_MGMT/ENTITY_PO_LINE_ITEM_LACCAT_MGMT.xml"/>
+		<xi:include href="LACCAT_MGMT/ENTITY_PURCHASE_ORDER_LACCAT_MGMT.xml"/>
+	</ENTITIES>
+	<RELATIONS>
+		<xi:include href="LACCAT_MGMT/RELATION_PO_POLI.xml"/>
+	</RELATIONS>
+</blz:SOURCE>
+

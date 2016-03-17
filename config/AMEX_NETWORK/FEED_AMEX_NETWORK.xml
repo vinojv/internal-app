@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:FEED NAME="AMEX_NETWORK" TYPE="[ASSET]" ISPRIMARY="TRUE" PROPAGATE="FALSE" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig" >
+	<fileparameters>
+		<parameter name="headerRowCount"  value="1" />
+		<parameter name="dateFormatMask"  value="MM/DD/YYYY" />
+		<parameter name="fieldDelimiter" type="ascii" value="124" />
+		<parameter name="recordDelimiter" type="namedDelimiter" value="NEWLINE" />
+	</fileparameters>
+	<COLUMN NAME="TENANT_DATA_PARTITION_ID" TYPE="virtual" VALUE="1" />
+	<COLUMN NAME="IF_SOURCE_ID" TYPE="virtual" VALUE="22" />
+	<COLUMN NAME="TENANT_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATA_PARTITION_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="SOURCE_CODE" TYPE="virtual" VALUE="AMEX_NETWORK" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATE_FORMAT_MASK" TYPE="virtual" VALUE="yyyy-MM-dd HH:mm:ss.SSSSSSSSS" PROCESS="TRIM"  />
+	<COLUMN NAME="ASSET_CLASS" TYPE="virtual" VALUE="ROUTER" PROCESS="TRIM"  />
+	<COLUMN NAME="ASSET_NAME" EXTERNALNAME="Hostname" TYPE="identifier"   />
+	<COLUMN NAME="IP_ADDRESS" EXTERNALNAME="IP Address" TYPE="ignore" PROCESS="TRIM"  />
+	<COLUMN NAME="NATIVE_PHYSICAL_STATUS" EXTERNALNAME="Device Status" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="CREATE_DATE" EXTERNALNAME="Create Date" TYPE="ignore"  />
+	<COLUMN NAME="SCAN_DATE" EXTERNALNAME="Last Update Date" TYPE="attribute" RECENCY_INDICATOR="LATEST" PROCESS="CONVERT_STRING_TO_DATE(DATE_FORMAT_MASK,TIME_ZONE)"  />
+	<COLUMN NAME="SCAN_DATE_O" EXTERNALNAME="Last Update Date" TYPE="attribute"  />
+	<COLUMN NAME="MODEL" EXTERNALNAME="Device Model" TYPE="attribute"    />
+	<COLUMN NAME="MODEL_MAKE" EXTERNALNAME="Device Make" TYPE="attribute"   />
+	<COLUMN NAME="ASSET_CLASS_EX" EXTERNALNAME="Device Type" TYPE="ignore"  />
+	<COLUMN NAME="SERIAL_NUMBER" EXTERNALNAME="Device Serial Number" TYPE="attribute" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="REGION" EXTERNALNAME="Region" TYPE="ignore"  />
+	<COLUMN NAME="LOCATION" EXTERNALNAME="Site ID" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="NETWORK_ROLE" EXTERNALNAME="Network Role" TYPE="ignore"  />
+	<COLUMN NAME="ROLE" EXTERNALNAME="Environment" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="OperatingSystem" EXTERNALNAME="Operating System" TYPE="ignore"  />
+	<COLUMN NAME="TIME_ZONE" TYPE="virtual" VALUE="US/Michigan"  />
+</blz:FEED>
+

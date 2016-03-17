@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fileorder>
+	<!-- Commented NETWORK INTERFACE/ADAPTER feeds for time being as per Nathan's comment -->
+	<!-- MAP FEEDS -->
+	<file name="amex_location.*.csv" order="1" />
+	<file name="core_company.*.csv" order="1" />
+	<file name="alm_stockroom.*.csv" order="1" />
+	<file name="cmdb_sw_license_calculation.*.csv" order="1" />
+	<file name="amex_model.*.csv" order="1" />
+	<file name="amex_costcenter.*.csv" order="1" />
+	<file name="GROUP-SERVICENOW*.*.TXT" order="1" />
+	<file name="amex_software_package.*.csv" order="1" />
+	<file name="IBM_LOCATION_LU.*.TXT" order="1" />	
+	<file name="AMEX_OVERRIDES.*.csv" order="1" />
+	<file name="BLAZENT_LUCENE_OVERRIDE_MODEL.*.csv" order="1" />
+	<file name="BLAZENT_LUCENE_OVERRIDE_OS.*.csv" order="1" />
+	
+	
+	
+	
+	<!-- Added sccm first for test -->
+	<file name="DISK_Latest.*.TXT" order="6" />
+	<!-- <file name="Network Adapters (included Macadd NULL).*.TXT" order="6" /> -->
+	<file name="ASSET-SCCM.*.TXT" order="6" />
+	<file name="rzr-ITSM_SCCM_KNOWN_SOFTWARE.*.TXT" order="6" />
+	<!--  ONLY SCCM MOVED UP-->
+	
+	
+	<!-- RELATIONSHIP FEEDS -->
+	<file name="amex_relationship.*.csv" order="2" />
+	<file name="amex_relationship_cluster.*.csv" order="2" />
+	<file name="amex_relationship_database.*.csv" order="2" />
+	<file name="amex_relationship_db_instance.*.csv" order="2" />
+	<file name="USER_ASSET-SNOW_CMDB.*.TXT" order="2" />
+	<file name="GROUP_ASSET-SERVICENOW.*.TXT" order="2" />
+	<file name="GROUP_ASSET-SNOW_DUMMY_REL_GROUP.*.TXT" order="2" />
+	<!-- SECONDARY FEEDS -->
+	<file name="ASSET-FOUNDSTONE_OS.*.TXT" order="3" />
+	<file name="ASSET_OS-TIMS_SERVER_OS.*.TXT" order="3" />
+	<file name="amex_software_instance.*.csv" order="3" />
+	<file name="DB_CITOCI-PDI.*.TXT" order="3" />
+	<!-- LINKED PRIMAY FEED WITH CARDINAL ONE -->
+	<file name="RACK-ITSM_DCI_RACKS.*.TXT" order="4" />
+	<!-- <file name="GROUP-SERVICENOW.*.TXT" order="4" /> -->
+	<file name="GROUP-SNOW_DUMMY_GROUP*.*.TXT" order="1" />
+	<file name="RACK-SERVICENOW_CMDB_CI_RACK.*.TXT" order="4" />
+	<file name="DATABASE-SNOW.*.TXT" order="4" />
+	<file name="ASSET_STORD-AXP_STORAGE.*.TXT" order="4" />
+	
+	
+	
+	
+	<!-- <file name=".*PurchaseOrderExport.*.TXT" order="4" /> -->
+	<file name="rzr-ITSM_ARIBA_PURCHASEORDEREXPORT.*.TXT" order="4" />
+	<!-- PRIMARY FEEDS WHICH SPLIT TO FORM MULTIPLE ENTITIES -->
+	<file name="DB_INSTANCE-HP.*.TXT" order="5" />
+	<file name="DB_INSTANCE-HAOPS.*.TXT" order="5" />
+	<file name="DB_INSTANCE-IBM_MSQL.*.TXT" order="5" />
+	<file name="DB_INSTANCE-IBM_ORACLE.*.TXT" order="5" />
+	<file name="DB_INSTANCE-IBM_SYBASE.*.TXT" order="5" />
+	<file name="DB_INSTANCE-IBM_UDB.*.TXT" order="5" />
+	<file name="DB_INSTANCE-IDN_MSSQL.*.TXT" order="5" />
+	<file name="DB_INSTANCE-IDN_SYBASE.*.TXT" order="5" />
+	<file name="DB_INSTANCE-PDI.*.TXT" order="5" />
+	<file name="DB_INSTANCE-STRATUS.*.TXT" order="5" />
+	<file name="DB_INSTANCE-TIMS.*.TXT" order="5" />
+	<file name="ASSET-AMEX_VOICE.*.TXT" order="5" />
+	<file name="ASSET-AZURE.*.TXT" order="5" />
+	<file name="ASSET-EMC_SERVER.*.TXT" order="5" />
+	<file name="ASSET-GSS.*.TXT" order="5" />
+	<file name="ASSET-IBM_MANAGED_SERVERS.*.TXT" order="5" />
+	<file name="ASSET-IDN_SERVER.*.TXT" order="5" />
+	<file name="ASSET-STRATUS.*.TXT" order="5" />
+	<file name="ASSET-TIMS_SERVER_DIALER_SERVERS.*.TXT" order="5" />
+	<file name="ASSET-TIMS_SERVER.*.TXT" order="5" />
+	<file name="ASSET-TIMS_EUC_SERVERS.*.TXT" order="5" />
+	<file name="ASSET-TIMS_NICE_SERVERS.*.TXT" order="5" />
+	<!-- PRIMARY FEEDS -->
+	<file name="USER-SNOW_CMDB.*.TXT" order="6" />
+	<file name="DB_INSTANCE-SNOW.*.TXT" order="6" />
+	<file name="ASSET-AD.*.TXT" order="6" />
+	<file name="ASSET-HAOPS.*.TXT" order="6" />
+	<file name="ASSET-AMEX_CLOUD.*.TXT" order="6" />
+	<file name="ASSET-AMEX_NETWORK.*.TXT" order="6" />
+	<file name="ASSET-FOUNDSTONE.*.TXT" order="6" />
+	<file name="ASSET-HP_EUC.*.TXT" order="6" />
+	<file name="ASSET-HP_SERVER.*.TXT" order="6" />
+	<file name="ASSET-ITSM_DCI_DEVICES.*.TXT" order="6" />
+	<file name="ASSET-MAC.*.TXT" order="6" />
+	<file name="ASSET-MCAFEE_EPO_AZURE.*.TXT" order="6" />
+	<file name="ASSET-MCAFEE_EPO_E2.*.TXT" order="6" />
+	<file name="ASSET-MCAFEE_EPO_IPC1.*.TXT" order="6" />
+	<file name="ASSET-MCAFEE_EPO_IPC2.*.TXT" order="6" />
+	<file name="ASSET-NCIRCLE_CCM.*.TXT" order="6" />
+	<file name="ASSET-NCIRCLE_IP360.*.TXT" order="6" />
+	<file name="ASSET-PGP.*.TXT" order="6" />
+	<file name="ASSET-POWERBROKER.*.TXT" order="6" />
+	<file name="ASSET-SERVICENOW_CMDB_CI_NETWORK.*.TXT" order="6" />
+	<file name="ASSET-SERVICENOW_CMDB_CLUSTER.*.TXT" order="6" />
+	<file name="ASSET-SERVICENOW_CMDB_CI_COMPUTER.*.TXT" order="6" />
+	<file name="ASSET-SERVICENOW_COMPUTER_DUMMY_REL_GROUP.*.TXT" order="6" />
+	<file name="ASSET-IQUATE*.TXT" order="6" />
+	<!-- <file name=".*PurchaseOrderDetailExport.*.TXT" order="6" /> -->
+	<file name="rzr-ITSM_ARIBA_PURCHASEORDERDETAILEXPORT.*.TXT" order="6" />
+	<file name="rzr-ITSM_INSIGHT_PO_DETAILS.*.TXT" order="6" />
+	<file name="rzr-ITSM_LACCATMGMT_PO_DETAILS.*.TXT" order="6" />
+	<file name="rzr-ITSM_TECHNOLOGENT_PO_DETAILS.*.TXT" order="6" />
+	<file name="rzr-ITSM_MILLENNIUM_PO_DETAILS.*.TXT" order="6" />
+	<file name="rzr-ITSM_ONX_PO_DETAILS.*.TXT" order="6" />
+	<file name="rzr-ITSM_WWT_PO_DETAILS.*.TXT" order="6" />
+	<file name="rzr-COUPA_PO_DATA.*.TXT" order="6" />
+	<file name="AEXP_PO_PR_and_PO_Details.*.TXT" order="6" />
+	
+	<file name="rzr-ITSM_IQUATE_SOFTWARE.*.TXT" order="6" />
+	<file name="STORAGE_DEVICE-AXP_STORAGE.*.TXT" order="6" />
+	<file name="rzr-ITSM_AXPSTORAGE_LUN.*.TXT" order="6" />
+	<file name="rzr-ITSM_AXPSTORAGE_DISK.*.TXT" order="6" />
+	<file name="STORAGE_DEVICE-SNOW.*.TXT" order="6" />
+
+	<!-- IGNORED FEEDS -->
+	<file name="ignoreASSET_NET-IBM_MANAGED_IP_ADDR.*.TXT" order="7" />
+	<file name="ignoreNET_INTERFACE-IBM_IP_NET_ADAPTER.*.TXT" order="7" />
+</fileorder>

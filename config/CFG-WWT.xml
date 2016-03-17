@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:SOURCE NAME="WWT" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig"  xmlns:xi="http://www.w3.org/2001/XInclude">
+	<FEEDS>
+		<xi:include href="WWT/FEED_PO_LINE_ITEM_WWT.xml"/>
+	</FEEDS>
+	<ENTITIES>
+		<xi:include href="WWT/ENTITY_PO_LINE_ITEM_WWT.xml"/>
+		<xi:include href="WWT/ENTITY_PURCHASE_ORDER_WWT.xml"/>
+	</ENTITIES>
+	<RELATIONS>
+		<xi:include href="WWT/RELATION_PO_POLI.xml"/>
+	</RELATIONS>
+</blz:SOURCE>
+

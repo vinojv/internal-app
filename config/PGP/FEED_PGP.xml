@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:FEED NAME="PGP" TYPE="[ASSET]" ISPRIMARY="TRUE" PROPAGATE="FALSE" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig" >
+	<fileparameters>
+		<parameter name="headerRowCount"  value="1" />
+		<parameter name="dateFormatMask"  value="MM/DD/YYYY" />
+		<parameter name="fieldDelimiter" type="ascii" value="124" />
+		<parameter name="recordDelimiter" type="namedDelimiter" value="NEWLINE" />
+	</fileparameters>
+	<COLUMN NAME="TENANT_DATA_PARTITION_ID" TYPE="virtual" VALUE="1" />
+	<COLUMN NAME="IF_SOURCE_ID" TYPE="virtual" VALUE="5" />
+	<COLUMN NAME="TENANT_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATA_PARTITION_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="SOURCE_CODE" TYPE="virtual" VALUE="PGP" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATE_FORMAT_MASK" TYPE="virtual" VALUE="MM/dd/yyyy" PROCESS="TRIM"  />
+	<COLUMN NAME="ASSET_NAME" EXTERNALNAME="#hostname" TYPE="identifier"   />
+	<COLUMN NAME="ASSET_DOMAIN" EXTERNALNAME="domain" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="UID_R" EXTERNALNAME="uid_FLD" TYPE="ignore"  />
+	<COLUMN NAME="SCAN_DATE_O" EXTERNALNAME="host_datetime" TYPE="attribute"  />
+	<COLUMN NAME="LOG_DATETIME" EXTERNALNAME="log_datetime" TYPE="ignore"  />
+	<COLUMN NAME="EPO_LOGDATETIME" EXTERNALNAME="epo_logdatetime" TYPE="ignore"  />
+	<COLUMN NAME="PGP_INSTALLED" EXTERNALNAME="pgp_installed" TYPE="ignore"  />
+	<COLUMN NAME="PGP_VERSION" EXTERNALNAME="pgp_version" TYPE="ignore"  />
+	<COLUMN NAME="PCT_ENCR" EXTERNALNAME="pct_encr" TYPE="ignore"  />
+	<COLUMN NAME="EPO_PCT_ENCRYPTED" EXTERNALNAME="epo_pct_encrypted" TYPE="ignore"  />
+	<COLUMN NAME="COMP_TYPE" EXTERNALNAME="comp_type" TYPE="ignore"  />
+	<COLUMN NAME="EPO_COMPTYPE" EXTERNALNAME="epo_comptype" TYPE="ignore"  />
+	<COLUMN NAME="CREATE_TS" EXTERNALNAME="create_ts" TYPE="ignore"  />
+	<COLUMN NAME="SCAN_DATE" TYPE="virtual" VALUE="=return substr(rec.get('SCAN_DATE_O'),1,10);" RECENCY_INDICATOR="LATEST" DATATYPE="noquote" PROCESS="CONVERT_STRING_TO_DATE(DATE_FORMAT_MASK,TIME_ZONE)"  />
+	<COLUMN NAME="TIME_ZONE" TYPE="virtual" VALUE="US/Michigan"  />
+</blz:FEED>
+

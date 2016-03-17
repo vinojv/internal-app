@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:SOURCE NAME="COUPA" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig"  xmlns:xi="http://www.w3.org/2001/XInclude">
+	<FEEDS>
+		<xi:include href="COUPA/FEED_PO_LINE_ITEM_COUPA.xml"/>
+	</FEEDS>
+	<ENTITIES>
+		<xi:include href="COUPA/ENTITY_PO_LINE_ITEM_COUPA.xml"/>
+		<xi:include href="COUPA/ENTITY_PURCHASE_ORDER_COUPA.xml"/>
+	</ENTITIES>
+	<RELATIONS>
+		<xi:include href="COUPA/RELATION_PO_POLI.xml"/>
+	</RELATIONS>
+</blz:SOURCE>
+

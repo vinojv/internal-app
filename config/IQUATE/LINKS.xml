@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:LINKS xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig">
+	<LINK NAME="IQUATE_SW_COMPUTER" FROMFEED="IQUATE_SOFTWARE" FROMCOLUMN="NATIVE_DEVICE_ENTITY_ID" TOFEED="IQUATE_COMPUTER" TOCOLUMN="NATIVE_ASSET_ID"  />
+</blz:LINKS>
+

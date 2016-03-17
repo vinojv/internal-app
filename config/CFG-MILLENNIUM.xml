@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:SOURCE NAME="MILLENNIUM" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig"  xmlns:xi="http://www.w3.org/2001/XInclude">
+	<FEEDS>
+		<xi:include href="MILLENNIUM/FEED_PO_LINE_ITEM_MILLENNIUM.xml"/>
+	</FEEDS>
+	<ENTITIES>
+		<xi:include href="MILLENNIUM/ENTITY_PO_LINE_ITEM_MILLENNIUM.xml"/>
+		<xi:include href="MILLENNIUM/ENTITY_PURCHASE_ORDER_MILLENNIUM.xml"/>
+	</ENTITIES>
+	<RELATIONS>
+		<xi:include href="MILLENNIUM/RELATION_PO_POLI.xml"/>
+	</RELATIONS>
+</blz:SOURCE>
+

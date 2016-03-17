@@ -1,0 +1,25 @@
+[{
+	"tenant" : "AMEX",
+	"active" : true,
+	"databaseHost" : "10.156.46.68",
+	"databasePort" : 50504,
+	"databaseMaxPoolSize" : 60,
+	"databaseName" : "maindb",
+	"databaseUsername" : "blazent_dw",
+	"databasePassword" : "blazent",
+	"restUsername" : "blazent",
+	"restPassword" : "password",
+	"restUrl" : "https://sample.blazenthosting.com"
+},{
+	"tenant" : "CONTENT_MAP",
+	"active" : true,
+	"databaseHost" : "10.156.46.68",
+	"databasePort" : 50504,
+	"databaseMaxPoolSize" : 5,
+	"databaseName" : "maindb",
+	"databaseUsername" : "blazent_content",
+	"databasePassword" : "blazent",
+	"restUsername" : "blazent",
+	"restPassword" : "password",
+	"restUrl" : "https://sample.blazenthosting.com"
+}]

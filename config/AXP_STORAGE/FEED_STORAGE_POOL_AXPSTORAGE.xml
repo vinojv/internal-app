@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:FEED NAME="AXPSTORAGE_STORAGE_POOL" TYPE="[STORAGE_POOL]" ISPRIMARY="TRUE" PROPAGATE="FALSE" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig" >
+	<fileparameters>
+		<parameter name="headerRowCount"  value="1" />
+		<parameter name="dateFormatMask"  value="MM/DD/YYYY" />
+		<parameter name="fieldDelimiter" type="ascii" value="124" />
+		<parameter name="recordDelimiter" type="namedDelimiter" value="NEWLINE" />
+	</fileparameters>
+	<COLUMN NAME="TENANT_DATA_PARTITION_ID" TYPE="virtual" VALUE="1" />
+	<COLUMN NAME="IF_SOURCE_ID" TYPE="virtual" VALUE="28" />
+	<COLUMN NAME="TENANT_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATA_PARTITION_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="SOURCE_CODE" TYPE="virtual" VALUE="AXP_STORAGE" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATE_FORMAT_MASK" TYPE="virtual" VALUE="yyyyMMdd" PROCESS="TRIM"  />
+    <COLUMN NAME="STORAGE_POOL_NAME" TYPE="identifier" EXTERNALNAME="Name" />
+	<COLUMN NAME="NETWORK_PATH" TYPE="attribute" EXTERNALNAME="Network Path" PROCESS="TRIM"/>
+	<COLUMN NAME="TOTAL_CAPACITY_UNITS" TYPE="attribute" EXTERNALNAME="Capacity Unit"/>
+	<COLUMN NAME="TOTAL_CAPACITY" TYPE="attribute" EXTERNALNAME="Capacity"/>
+	<COLUMN NAME="SCAN_DATE" TYPE="attribute" EXTERNALNAME="Last Scan Date" PROCESS="CONVERT_STRING_TO_DATE(DATE_FORMAT_MASK,TIME_ZONE)" />
+	<COLUMN NAME="SCAN_DATE_O" TYPE="attribute" EXTERNALNAME="Last Scan Date" />
+	<COLUMN NAME="RELEASE_ENVIRONMENT" TYPE="attribute" EXTERNALNAME="Release Environment"/>
+	<COLUMN NAME="TIME_ZONE" TYPE="virtual" VALUE="US/Michigan"  />
+	</blz:FEED>

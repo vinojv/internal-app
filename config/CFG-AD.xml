@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:SOURCE NAME="AD" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig"  xmlns:xi="http://www.w3.org/2001/XInclude">
+	<FEEDS>
+		<xi:include href="AD/FEED_AD.xml"/>
+	</FEEDS>
+	<ENTITIES>
+		<xi:include href="AD/ENTITY_COMPUTER.xml"/>
+	</ENTITIES>
+</blz:SOURCE>
+

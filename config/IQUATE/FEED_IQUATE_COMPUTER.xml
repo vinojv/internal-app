@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:FEED NAME="IQUATE_COMPUTER" TYPE="[ASSET]" ISPRIMARY="TRUE" PROPAGATE="FALSE" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig">
+	<fileparameters>
+		<parameter name="headerRowCount" value="1" />
+		<parameter name="dateFormatMask" value="MM/DD/YYYY" />
+		<parameter name="fieldDelimiter" TYPE="ascii" value="124" />
+		<parameter name="recordDelimiter" TYPE="namedDelimiter"	value="NEWLINE" />
+	</fileparameters>
+	<COLUMN NAME="TENANT_DATA_PARTITION_ID" TYPE="virtual" VALUE="1" />
+	<COLUMN NAME="IF_SOURCE_ID" TYPE="virtual" VALUE="29" />
+	<COLUMN NAME="TENANT_DATA_PARTITION_ID" TYPE="virtual" VALUE="1" />
+	<COLUMN NAME="TENANT_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM" />
+	<COLUMN NAME="DATA_PARTITION_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM" />
+	<COLUMN NAME="SOURCE_CODE" TYPE="virtual" VALUE="IQUATE" PROCESS="UPPER_TRIM" />
+	<COLUMN NAME="DATE_FORMAT_MASK" TYPE="virtual" VALUE="yyyy-MM-dd HH:mm:ss.SSSSSSSSS" PROCESS="TRIM" />
+	<COLUMN NAME="NATIVE_ASSET_ID" EXTERNALNAME="DeviceID" TYPE="identifier" PROCESS="TRIM"  />
+	<COLUMN NAME="NATIVE_DEVICE_TYPE" TYPE="ignore" EXTERNALNAME="Product" />
+	<COLUMN NAME="ASSET_NAME" EXTERNALNAME="Hostname"  TYPE="attribute" PROCESS="TRIM" />
+	<COLUMN NAME="FQDN" EXTERNALNAME="DNSHostname"  TYPE="attribute" PROCESS="TRIM" />
+	<COLUMN NAME="CPU_SPEED" EXTERNALNAME="ProcessorSpeed" TYPE="attribute"/>
+	<COLUMN NAME="IS_VIRTUAL" EXTERNALNAME="DeviceIsVirtualized"  TYPE="attribute" PROCESS="TRIM_DROP_HIGH_LOW_ASCII"/>
+	<COLUMN NAME="VIRTUALIZATIONMETHOD" TYPE="ignore" EXTERNALNAME="VirtualizationMethod" />
+	<COLUMN NAME="PHYSICALDEVICEID" TYPE="ignore" EXTERNALNAME="PhysicalDeviceID" />
+	<COLUMN NAME="PARENT_ASSET_NAME" EXTERNALNAME="PhysicalHostname"  TYPE="attribute" PROCESS="TRIM"/>
+	<COLUMN NAME="OS_NAME" EXTERNALNAME="Operating System Name"  TYPE="attribute" />
+	<COLUMN NAME="OS_VERSION" EXTERNALNAME="Operating System Version"  TYPE="attribute"/>
+	<COLUMN NAME="OS_EDITION" EXTERNALNAME="Operating System Edition"  TYPE="attribute"/>
+	<COLUMN NAME="OPERATING_SYSTEM_RELEASE" TYPE="ignore" EXTERNALNAME="Operating System Release" />
+	<COLUMN NAME="OS_INSTALL_DATE"  TYPE="attribute" EXTERNALNAME="Operating System InstallDate" PROCESS="CONVERT_STRING_TO_DATE(DATE_FORMAT_MASK,TIME_ZONE)"  />
+	<COLUMN NAME="OS_INSTALL_DATE_O"  TYPE="attribute" EXTERNALNAME="Operating System InstallDate" />
+	<COLUMN NAME="BIOSNAME" TYPE="ignore" EXTERNALNAME="BiosName" />
+	<COLUMN NAME="BIOSVERSION" TYPE="ignore" EXTERNALNAME="BiosVersion" />
+	<COLUMN NAME="BIOSVENDOR" TYPE="ignore" EXTERNALNAME="BiosVendor" />
+	<COLUMN NAME="SERIAL_NUMBER"  TYPE="attribute" EXTERNALNAME="DeviceSerialNumber"  PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="MODEL_MANUFACTURER"  TYPE="attribute" EXTERNALNAME="DeviceVendor" PROCESS="TRIM"  />
+	<COLUMN NAME="MODEL_MAKE"  TYPE="attribute" EXTERNALNAME="DeviceModel" />
+	<COLUMN NAME="CPU_COUNT"  TYPE="attribute" EXTERNALNAME="ProcessorCount"  PROCESS="EXTRACT_FIRST_NUMERIC" />
+	<COLUMN NAME="PROCESSORCORESPERPROCESSOR" TYPE="attribute" EXTERNALNAME="ProcessorCoresPerProcessor" PROCESS="EXTRACT_FIRST_NUMERIC" />
+	<COLUMN NAME="MOTHERBOARDPROCESSORSOCKETCOUN" TYPE="ignore" EXTERNALNAME="MotherboardProcessorSocketCount" />
+	<COLUMN NAME="TOTAL_MEMORY"  TYPE="attribute" EXTERNALNAME="TotalMemory" PROCESS="TRIM"  />
+	<COLUMN NAME="SCANSTATUS" TYPE="ignore" EXTERNALNAME="ScanStatus" />
+	<COLUMN NAME="SCAN_DATE"  TYPE="attribute" EXTERNALNAME="LastSeenDate"  PROCESS="CONVERT_STRING_TO_DATE(DATE_FORMAT_MASK,TIME_ZONE)" />
+	<COLUMN NAME="SCAN_DATE_O"  TYPE="attribute" EXTERNALNAME="LastSeenDate" />
+	<COLUMN NAME="TOTAL_MEMORY_UNITS" TYPE="virtual" value="MB" />
+	<COLUMN NAME="CPU_CORE_COUNT" TYPE="virtual" VALUE="= var a1=rec.get('CPU_COUNT'); var a2=rec.get('PROCESSORCORESPERPROCESSOR'); if (a1 === 'number' &amp;&amp; typeof a2 === 'number' &amp;&amp; a1 != null &amp;&amp; a2 != null) return a1*a2; return null;" />
+	<COLUMN NAME="TIME_ZONE" TYPE="virtual" VALUE="US/Michigan" />
+</blz:FEED>
+

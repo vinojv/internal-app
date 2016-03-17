@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:FEED NAME="MCAFEE" TYPE="[ASSET]" ISPRIMARY="TRUE" PROPAGATE="FALSE" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig" >
+	<fileparameters>
+		<parameter name="headerRowCount"  value="1" />
+		<parameter name="dateFormatMask"  value="MM/DD/YYYY HH:MI:SS AM" />
+		<parameter name="fieldDelimiter" type="ascii" value="124" />
+		<parameter name="recordDelimiter" type="namedDelimiter" value="NEWLINE" />
+	</fileparameters>
+	<COLUMN NAME="TENANT_DATA_PARTITION_ID" TYPE="virtual" VALUE="1" />
+	<COLUMN NAME="IF_SOURCE_ID" TYPE="virtual" VALUE="4" />
+	<COLUMN NAME="TENANT_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATA_PARTITION_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="SOURCE_CODE" TYPE="virtual" VALUE="MCAFEE" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATE_FORMAT_MASK" TYPE="virtual" VALUE="MM/dd/yyyy" PROCESS="TRIM"  />
+	<COLUMN NAME="TOTAL_MEMORY_UNITS" TYPE="virtual" VALUE="BYTE" PROCESS="TRIM"  />
+	<COLUMN NAME="PARENTID" EXTERNALNAME="#parentid" TYPE="ignore"  />
+	<COLUMN NAME="ASSET_NAME" EXTERNALNAME="computername" TYPE="identifier"   />
+	<COLUMN NAME="DOMAINNAME" EXTERNALNAME="domainname" TYPE="ignore"  />
+	<COLUMN NAME="IP_ADDRESS_EX" EXTERNALNAME="ipaddress" TYPE="ignore"  />
+	<COLUMN NAME="OS_NAME" EXTERNALNAME="ostype" TYPE="attribute"    />
+	<COLUMN NAME="OS_VERSION" EXTERNALNAME="osversion" TYPE="attribute"    />
+	<COLUMN NAME="OS_SERVICE_PACK" EXTERNALNAME="osservicepackver" TYPE="attribute"    />
+	<COLUMN NAME="OSBUILDNUM" EXTERNALNAME="osbuildnum" TYPE="ignore"  />
+	<COLUMN NAME="OSOEMID" EXTERNALNAME="osoemid" TYPE="ignore"  />
+	<COLUMN NAME="CPU_MODEL" EXTERNALNAME="cputype" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="CPU_SPEED" EXTERNALNAME="cpuspeed" TYPE="attribute"  />
+	<COLUMN NAME="CPU_COUNT" EXTERNALNAME="numofcpu" TYPE="attribute" PROCESS="EXTRACT_FIRST_NUMERIC"  />
+	<COLUMN NAME="TOTAL_MEMORY" EXTERNALNAME="totalphysicalmemory" TYPE="attribute" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="FREEDISKSPACE" EXTERNALNAME="freediskspace" TYPE="ignore"  />
+	<COLUMN NAME="TOTALDISKSPACE" EXTERNALNAME="totaldiskspace" TYPE="ignore"  />
+	<COLUMN NAME="TIMEZONE1" EXTERNALNAME="timezone" TYPE="ignore"  />
+	<COLUMN NAME="DEFAULTLANGID" EXTERNALNAME="defaultlangid" TYPE="ignore"  />
+	<COLUMN NAME="MAC_ADDRESS_ex" EXTERNALNAME="netaddress" TYPE="ignore"  />
+	<COLUMN NAME="USERNAME" EXTERNALNAME="username" TYPE="ignore"  />
+	<COLUMN NAME="CPUSERIALNUM" EXTERNALNAME="cpuserialnum" TYPE="ignore"  />
+	<COLUMN NAME="OSPLATFORM" EXTERNALNAME="osplatform" TYPE="ignore"  />
+	<COLUMN NAME="FREEMEMORY" EXTERNALNAME="freememory" TYPE="ignore"  />
+	<COLUMN NAME="ASSET_DOMAIN_EX" EXTERNALNAME="iphostname" TYPE="ignore"  />
+	<COLUMN NAME="IPXADDRESS" EXTERNALNAME="ipxaddress" TYPE="ignore"  />
+	<COLUMN NAME="THETIMESTAMP" EXTERNALNAME="thetimestamp" TYPE="ignore"  />
+	<COLUMN NAME="THEHIDDENTIMESTAMP" EXTERNALNAME="thehiddentimestamp" TYPE="ignore"  />
+	<COLUMN NAME="SUBNETADDRESS" EXTERNALNAME="subnetaddress" TYPE="ignore"  />
+	<COLUMN NAME="SUBNETMASK" EXTERNALNAME="subnetmask" TYPE="ignore"  />
+	<COLUMN NAME="DESCRIPTION" EXTERNALNAME="description" TYPE="ignore"  />
+	<COLUMN NAME="ISPORTABLE" EXTERNALNAME="isportable" TYPE="ignore"  />
+	<COLUMN NAME="OSBITMODE" EXTERNALNAME="osbitmode" TYPE="ignore"  />
+	<COLUMN NAME="USERPROPERTY1" EXTERNALNAME="userproperty1" TYPE="ignore"  />
+	<COLUMN NAME="USERPROPERTY2" EXTERNALNAME="userproperty2" TYPE="ignore"  />
+	<COLUMN NAME="USERPROPERTY3" EXTERNALNAME="userproperty3" TYPE="ignore"  />
+	<COLUMN NAME="USERPROPERTY4" EXTERNALNAME="userproperty4" TYPE="ignore"  />
+	<COLUMN NAME="IPV6" EXTERNALNAME="ipv6" TYPE="ignore"  />
+	<COLUMN NAME="IPV4X" EXTERNALNAME="ipv4x" TYPE="ignore"  />
+	<COLUMN NAME="LASTAGENTHANDLER" EXTERNALNAME="lastagenthandler" TYPE="ignore"  />
+	<COLUMN NAME="SYSVOLFREESPACE" EXTERNALNAME="sysvolfreespace" TYPE="ignore"  />
+	<COLUMN NAME="SYSVOLTOTALSPACE" EXTERNALNAME="sysvoltotalspace" TYPE="ignore"  />
+	<COLUMN NAME="IPSUBNET" EXTERNALNAME="ipsubnet" TYPE="ignore"  />
+	<COLUMN NAME="IPSUBNETMASK" EXTERNALNAME="ipsubnetmask" TYPE="ignore"  />
+	<COLUMN NAME="SYSTEMDESCRIPTION" EXTERNALNAME="systemdescription" TYPE="ignore"  />
+	<COLUMN NAME="MANAGEMENTTYPE" EXTERNALNAME="managementtype" TYPE="ignore"  />
+	<COLUMN NAME="STAMP1" EXTERNALNAME="stamp" TYPE="ignore"  />
+	<COLUMN NAME="CREATE_TS" EXTERNALNAME="create_ts" TYPE="ignore"  />
+	<COLUMN NAME="SCAN_DATE_O" EXTERNALNAME="lastupdate" TYPE="attribute"  />
+	<COLUMN NAME="ASSET_DOMAIN" TYPE="virtual" VALUE="=return substr(rec.get('ASSET_DOMAIN_EX'),1,100);" DATATYPE="noquote" PROCESS="TRIM"  />
+	<COLUMN NAME="SCAN_DATE" TYPE="virtual" VALUE="=return substr(rec.get('SCAN_DATE_O'),1,10);" RECENCY_INDICATOR="LATEST" DATATYPE="noquote" PROCESS="CONVERT_STRING_TO_DATE(DATE_FORMAT_MASK,TIME_ZONE)"  />
+	<COLUMN NAME="TIME_ZONE" TYPE="virtual" VALUE="US/Michigan"  />
+</blz:FEED>
+

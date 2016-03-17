@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:LINKS xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig">
+	<LINK NAME="PO_POLI" FROMFEED="ARIBA_PO" FROMCOLUMN="PURCHASING_SYSTEM_PO_NUMBER" TOFEED="ARIBA_PO_LINE_ITEM" TOCOLUMN="PURCHASING_SYSTEM_PO_NUMBER"  />
+</blz:LINKS>
+

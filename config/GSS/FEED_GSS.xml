@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:FEED NAME="GSS" TYPE="[ASSET, GROUP, GROUP_ASSET]" ISPRIMARY="TRUE" PROPAGATE="FALSE" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig" >
+	<fileparameters>
+		<parameter name="headerRowCount"  value="1" />
+		<parameter name="fieldDelimiter" type="ascii" value="124" />
+		<parameter name="recordDelimiter" type="namedDelimiter" value="NEWLINE" />
+	</fileparameters>
+	<COLUMN NAME="TENANT_DATA_PARTITION_ID" TYPE="virtual" VALUE="1" />
+	<COLUMN NAME="IF_SOURCE_ID" TYPE="virtual" VALUE="21" />
+	<COLUMN NAME="TENANT_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATA_PARTITION_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="SOURCE_CODE" TYPE="virtual" VALUE="GSS" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATE_FORMAT_MASK" TYPE="virtual" VALUE="yyyy-MM-dd HH:mm:ss" PROCESS="TRIM"  />
+	<COLUMN NAME="ASSET_NAME" EXTERNALNAME="ServerName" TYPE="identifier"   />
+	<COLUMN NAME="SERVERTYPE" EXTERNALNAME="ServerType" TYPE="ignore"  />
+	<COLUMN NAME="NATIVE_PHYSICAL_STATUS" EXTERNALNAME="LifeCycle" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="ASSETSTATUS" EXTERNALNAME="AssetStatus" TYPE="ignore"  />
+	<COLUMN NAME="ROLE" EXTERNALNAME="Environment" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="SERVERMANAGEDBY" EXTERNALNAME="ServerManagedBy" TYPE="ignore"  />
+	<COLUMN NAME="ASSET_TAG" EXTERNALNAME="AssetTag" TYPE="identifier" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="SERIAL_NUMBER" EXTERNALNAME="SerialNumber" TYPE="identifier" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="REGION" EXTERNALNAME="Region" TYPE="ignore"  />
+	<COLUMN NAME="COUNTRY" EXTERNALNAME="Country" TYPE="ignore"  />
+	<COLUMN NAME="LOCATION_CODE" EXTERNALNAME="AXPSiteID" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="LOCATION_CITY" EXTERNALNAME="City" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="LOCATION_BUILDING" EXTERNALNAME="BuildingCode" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="PRIMARYSUPPORTGROUP" EXTERNALNAME="PrimarySupportGroup" TYPE="ignore"  />
+	<COLUMN NAME="WARRANTY_EXPIRATION_DATE" EXTERNALNAME="WarrEndDate" TYPE="attribute" PROCESS="CONVERT_STRING_TO_DATE(DATE_FORMAT_MASK,TIME_ZONE)"  />
+	<COLUMN NAME="WARRANTY_EXPIRATION_DATE_O" EXTERNALNAME="WarrEndDate" TYPE="attribute" />
+	<COLUMN NAME="PARENTSERVER" EXTERNALNAME="ParentServer" TYPE="ignore"  />
+	<COLUMN NAME="SYSTEMPURPOSE" EXTERNALNAME="SystemPurpose" TYPE="ignore"  />
+	<COLUMN NAME="MODEL" EXTERNALNAME="Model" TYPE="attribute"    />
+	<COLUMN NAME="MODEL_MANUFACTURER" EXTERNALNAME="Manufacturer" TYPE="attribute" PROCESS="TRIM" />
+	<COLUMN NAME="IP_ADDRESS" EXTERNALNAME="PrimaryIPAddress" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="OPERATINSYSTEMMANUFACTURE" EXTERNALNAME="OperatinSystemManufacture" TYPE="ignore"  />
+	<COLUMN NAME="OS_NAME" EXTERNALNAME="OperatingSystemName" TYPE="attribute"   />
+	<COLUMN NAME="OS_SERVICE_PACK" EXTERNALNAME="OperatingSystemServicePack" TYPE="attribute"    />
+	<COLUMN NAME="OS_VERSION" EXTERNALNAME="OperatinSystemVersion" TYPE="attribute"    />
+	<COLUMN NAME="Building" EXTERNALNAME="Building" TYPE="ignore"  />
+	<COLUMN NAME="COST_CENTER_CODE" EXTERNALNAME="CostCenter" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="ACTIVEDATE" EXTERNALNAME="ActiveDate" TYPE="ignore"  />
+	<COLUMN NAME="PROCESSORCOUNT" EXTERNALNAME="ProcessorCount" TYPE="ignore"  />
+	<COLUMN NAME="MEMORY" EXTERNALNAME="Memory" TYPE="ignore"  />
+	<COLUMN NAME="SERVERINSTALLDATE" EXTERNALNAME="ServerInstallDate" TYPE="ignore"  />
+	<COLUMN NAME="REL_TYPE_NAME" TYPE="virtual" VALUE="ASSET_SUPPORTED_BY_GROUP" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="GROUP_NAME" EXTERNALNAME="PrimarySupportGroup" TYPE="attribute" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="TIME_ZONE" TYPE="virtual" VALUE="US/Michigan"  />
+</blz:FEED>
+

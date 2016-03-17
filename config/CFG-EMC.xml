@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:SOURCE NAME="EMC" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig"  xmlns:xi="http://www.w3.org/2001/XInclude">
+	<FEEDS>
+		<xi:include href="EMC/FEED_EMC_SERVER.xml"/>
+	</FEEDS>
+	<ENTITIES>
+		<xi:include href="EMC/ENTITY_COMPUTER.xml"/>
+		<xi:include href="EMC/ENTITY_GROUP.xml"/>
+	</ENTITIES>
+	<RELATIONS>
+		<xi:include href="EMC/RELATION_COMPUTER_GROUP.xml"/>
+	</RELATIONS>
+</blz:SOURCE>
+

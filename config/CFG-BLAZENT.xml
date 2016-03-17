@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:SOURCE NAME="BLAZENT" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig"  xmlns:xi="http://www.w3.org/2001/XInclude">
+	<FEEDS>
+		<xi:include href="BLAZENT/FEED_BLAZENT_REF_OVERRIDE.xml"/>
+		<xi:include href="BLAZENT/FEED_BLAZENT_REF_MODEL.xml"/>
+		<xi:include href="BLAZENT/FEED_BLAZENT_REF_OS.xml"/>
+	</FEEDS>
+	<ENTITIES>
+		<xi:include href="BLAZENT/ENTITY_BLAZENT_REF_OVERRIDE.xml"/>
+		<xi:include href="BLAZENT/ENTITY_BLAZENT_REF_MODEL.xml"/>
+		<xi:include href="BLAZENT/ENTITY_BLAZENT_REF_OS.xml"/>
+	</ENTITIES>
+</blz:SOURCE>
+

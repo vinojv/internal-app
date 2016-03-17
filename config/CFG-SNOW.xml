@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:SOURCE NAME="SNOW" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig"  xmlns:xi="http://www.w3.org/2001/XInclude">
+	<FEEDS>
+		<xi:include href="SNOW/FEED_SNOWGROUP_ASSET.xml"/>
+		<xi:include href="SNOW/FEED_SNOW_CMDB_CI_COMPUTER.xml"/>
+		<xi:include href="SNOW/FEED_SNOW_CMDB_CI_NETWORK.xml"/>
+		<xi:include href="SNOW/FEED_SNOW_CMDB_CLUSTER.xml"/>
+		<xi:include href="SNOW/FEED_SNOW_DB.xml"/>
+		<xi:include href="SNOW/FEED_SNOW_DB_INSTANCE.xml"/>
+		<xi:include href="SNOW/FEED_SNOWGROUP_GROUP.xml"/>
+		<xi:include href="SNOW/FEED_SNOW_CMDB_CI_RACK.xml"/>
+		<xi:include href="SNOW/FEED_SNOW_REF_COST_CENTER.xml"/>
+		<xi:include href="SNOW/FEED_SNOW_REF_LOCATION.xml"/>
+		<xi:include href="SNOW/FEED_SNOW_REF_LICENSE_MODEL.xml"/>
+		<xi:include href="SNOW/FEED_SNOW_REF_COMPANY.xml"/>
+		<xi:include href="SNOW/FEED_SNOW_REF_STOCKROOM.xml"/>
+		<xi:include href="SNOW/FEED_SNOW_REF_MODEL.xml"/>
+		<xi:include href="SNOW/FEED_SNOW_REF_SWPKG.xml"/>
+		<xi:include href="SNOW/FEED_SNOW_REF_SUPPORT_GROUP.xml"/>
+		<xi:include href="SNOW/FEED_SNOW_REL_CMDB_USER_ASSET.xml"/>
+		<xi:include href="SNOW/FEED_SNOW_REL_DB_CLUSTER.xml"/>
+		<xi:include href="SNOW/FEED_SNOW_REL_DB_INSTANCE.xml"/>
+		<xi:include href="SNOW/FEED_SNOW_REL_DB_SERVER.xml"/>
+		<xi:include href="SNOW/FEED_SNOW_REL_RACK.xml"/>
+		<xi:include href="SNOW/FEED_SNOW_SWINSTANCE.xml"/>
+		<xi:include href="SNOW/FEED_SNOW_CMDB_USER.xml"/>
+		<xi:include href="SNOW/FEED_SNOW_STORAGE_DEVICE.xml"/>
+	</FEEDS>
+	<xi:include href="SNOW/LINKS.xml"/>
+	<ENTITIES>
+		<xi:include href="SNOW/ENTITY_COMPUTER.xml"/>
+		<xi:include href="SNOW/ENTITY_NETWORK.xml"/>
+		<xi:include href="SNOW/ENTITY_CLUSTER.xml"/>
+		<xi:include href="SNOW/ENTITY_DATABASE.xml"/>
+		<xi:include href="SNOW/ENTITY_DB_INSTANCE.xml"/>
+		<xi:include href="SNOW/ENTITY_GROUP.xml"/>
+		<xi:include href="SNOW/ENTITY_RACK.xml"/>
+		<xi:include href="SNOW/ENTITY_USER.xml"/>
+		<xi:include href="SNOW/ENTITY_SNOW_REF_COST_CENTER.xml"/>
+		<xi:include href="SNOW/ENTITY_SNOW_REF_LOCATION.xml"/>
+		<xi:include href="SNOW/ENTITY_SNOW_REF_LICENSE_MODEL.xml"/>
+		<xi:include href="SNOW/ENTITY_SNOW_REF_COMPANY.xml"/>
+		<xi:include href="SNOW/ENTITY_SNOW_REF_STOCKROOM.xml"/>
+		<xi:include href="SNOW/ENTITY_SNOW_REF_MODEL.xml"/>
+		<xi:include href="SNOW/ENTITY_SNOW_REF_SWPKG.xml"/>
+		<xi:include href="SNOW/ENTITY_SNOW_REF_SUPPORT_GROUP.xml"/>
+		<xi:include href="SNOW/ENTITY_STORAGE_DEVICE.xml"/>
+	</ENTITIES>
+	<RELATIONS>
+		<xi:include href="SNOW/RELATION_DB_INSTANCE_DATABASE.xml"/>
+		<xi:include href="SNOW/RELATION_DATABASE_SERVER.xml"/>
+		<xi:include href="SNOW/RELATION_DATABASE_CLUSTER.xml"/>
+		<xi:include href="SNOW/RELATION_COMPUTER_RACK.xml"/>
+		<xi:include href="SNOW/RELATION_COMPUTER_USER.xml"/>
+		<xi:include href="SNOW/RELATION_COMPUTER_GROUP.xml"/>
+	</RELATIONS>
+</blz:SOURCE>
+

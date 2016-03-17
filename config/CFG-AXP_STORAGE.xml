@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:SOURCE NAME="AXP_STORAGE" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig"  xmlns:xi="http://www.w3.org/2001/XInclude">
+	<FEEDS>
+		<xi:include href="AXP_STORAGE/FEED_DISK_AXPS.xml"/>
+		<xi:include href="AXP_STORAGE/FEED_STORAGE_DEVICE_AXPS.xml"/>
+		<xi:include href="AXP_STORAGE/FEED_STORAGE_POOL_AXPSTORAGE.xml"/>
+		<xi:include href="AXP_STORAGE/FEED_REL_NETWORK_DEVICE_AXPS.xml"/>
+	</FEEDS>
+	<xi:include href="AXP_STORAGE/LINKS.xml"/>
+	<ENTITIES>
+		<xi:include href="AXP_STORAGE/ENTITY_DISK_AXPS.xml"/>
+		<xi:include href="AXP_STORAGE/ENTITY_STORAGE_DEVICE_AXPS.xml"/>
+		<xi:include href="AXP_STORAGE/ENTITY_STORAGE_POOL_AXPSTORAGE.xml"/>
+		<xi:include href="AXP_STORAGE/ENTITY_NETWORK_DEVICE_AXPS.xml"/>
+	</ENTITIES>
+	<RELATIONS>
+		<xi:include href="AXP_STORAGE/RELATION_MSD_DISK.xml"/>
+		<xi:include href="AXP_STORAGE/RELATION_MSD_NETDEVICE.xml"/>
+	</RELATIONS>
+</blz:SOURCE>
+

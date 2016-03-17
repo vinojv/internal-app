@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:SOURCE NAME="STRATUS" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig"  xmlns:xi="http://www.w3.org/2001/XInclude">
+	<FEEDS>
+		<xi:include href="STRATUS/FEED_STRATUS.xml"/>
+		<xi:include href="STRATUS/FEED_STRATUS_DB.xml"/>
+	</FEEDS>
+	<ENTITIES>
+		<xi:include href="STRATUS/ENTITY_STRATUS_SERVER.xml"/>
+		<xi:include href="STRATUS/ENTITY_CLUSTER.xml"/>
+		<xi:include href="STRATUS/ENTITY_SERVER.xml"/>
+		<xi:include href="STRATUS/ENTITY_DATABASE.xml"/>
+		<xi:include href="STRATUS/ENTITY_DB_INSTANCE.xml"/>
+		<xi:include href="STRATUS/ENTITY_GROUP.xml"/>
+	</ENTITIES>
+	<RELATIONS>
+		<xi:include href="STRATUS/RELATION_SERVER_GROUP.xml"/>
+		<xi:include href="STRATUS/RELATION_DB_TO_INSTANCE.xml"/>
+		<xi:include href="STRATUS/RELATION_DB_TO_CLUSTER.xml"/>
+		<xi:include href="STRATUS/RELATION_DB_TO_SERVER.xml"/>
+	</RELATIONS>
+</blz:SOURCE>
+

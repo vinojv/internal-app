@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:LINKS xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig">
+	<LINK NAME="ASSET_OS" FROMFEED="FOUNDSTONE" FROMCOLUMN="NATIVE_ASSET_ID" TOFEED="FOUNDSTONE_OS" TOCOLUMN="NATIVE_ASSET_ID"  />
+</blz:LINKS>
+

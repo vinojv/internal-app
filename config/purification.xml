@@ -1,0 +1,4231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<purification>
+	<source_credibility>
+		<default>
+			<source name="TIMS" rank="1" />
+			<source name="SCCM" rank="2" />
+			<source name="MCAFEE" rank="3"  />
+			<source name="PGP" rank="4" />
+			<source name="FOUNDSTONE" rank="5" />
+			<source name="NCIRCLE" rank="6"/>
+			<source name="POWERBROKER" rank="7"/>
+			<source name="AZURE" rank="8"/>
+			<source name="EMC" rank="9"/>
+			<source name="HP_COMPUTER" rank="10"/>
+			<source name="HP_NETWORK" rank="11"/>
+			<source name="IBM" rank="12"/>
+			<source name="IDN" rank="13"/>
+			<source name="STRATUS" rank="14"/>
+			<source name="GSS" rank="15"/>
+			<source name="AMEX_NETWORK" rank="16"/>
+			<source name="MAC" rank="17"/>
+			<source name="AMEX_VOICE" rank="18"/>
+			<source name="AD" rank="19"/>
+			<source name="AXP_CLOUD" rank="20"/>
+			<source name="HAOPS" rank="21"/>
+			<source name="DCI" rank="22"/>
+			<source name="PDI" rank="23"/>
+			<source name="HP_DB" rank="24"/>
+			<source name="ARIBA" rank="25"/>
+			<source name="INSIGHT" rank="26"/>
+			<source name="IQUATE" rank="27"/>
+			<source name="AXP_STORAGE" rank="28"/>
+			<source name="TECHNOLOGENT" rank="29"/>
+			<source name="LACCAT_MGMT" rank="30"/>
+			<source name="MSL" rank="31"/>
+			<source name="MILLENNIUM" rank="32"/>
+			<source name="ONX" rank="33"/>
+			<source name="WWT" rank="34"/>
+			<source name="COUPA" rank="35"/>
+			<source name="ORACLE" rank="36"/>
+			<source name="SNOW" rank="37"/>			
+		</default>
+		<entitytype_based>
+			<entity_type name="ASSET"></entity_type>
+			<entity_type name="COMPUTER"></entity_type>
+			<entity_type name="SERVER"></entity_type>
+			<entity_type name="DESKTOP"></entity_type>
+			<entity_type name="LAPTOP"></entity_type>
+			<entity_type name="RACK"></entity_type>
+			<entity_type name="NETWORK_DEVICE"></entity_type>
+			<entity_type name="NETWORK_INTERFACE"></entity_type>
+			<entity_type name="USER"></entity_type>
+			<entity_type name="SOFTWARE"></entity_type>
+			<entity_type name="DATABASE"></entity_type>
+			<entity_type name="DB_INSTANCE"></entity_type>
+			<entity_type name="GROUP"></entity_type>
+			<entity_type name="CLUSTER"></entity_type>
+			<entity_type name="DISK"></entity_type>
+			<entity_type name="STORAGE_DEVICE"></entity_type>
+			<entity_type name="STORAGE_POOL"></entity_type>
+			<entity_type name="PURCHASE_ORDER"></entity_type>
+			<entity_type name="PO_LINE_ITEM"></entity_type>
+		</entitytype_based>	
+		<relationshiptype_based>
+			<relationship_type name="COMPUTER_CONNECTED_TO_NETWORK_INTERFACE" />
+			<relationship_type name="SERVER_CONNECTED_TO_NETWORK_INTERFACE" />
+			<relationship_type name="DB_INSTANCE_INSTANCE_OF_DATABASE" />
+			<relationship_type name="PURCHASE_ORDER_COMPOSED_OF_PO_LINE_ITEM" />
+			<relationship_type name="COMPUTER_CONTAINS_NETWORK_ADAPTER" />
+			<relationship_type name="SERVER_CONTAINS_NETWORK_ADAPTER" />
+			<relationship_type name="STORAGE_DEVICE_CONTAINS_DISK" />
+			<relationship_type name="STORAGE_DEVICE_CONTAINS_STORAGE_DEVICE" />
+			<relationship_type name="STORAGE_DEVICE_CONNECTED_TO_NETWORK_DEVICE" />
+			<relationship_type name="STORAGE_DEVICE_CONNECTED_TO_NETWORK_ADAPTER" />
+			<relationship_type name="STORAGE_DEVICE_CONNECTED_TO_NETWORK_INTERFACE" />
+			<relationship_type name="STORAGE_DEVICE_REPLICATES_TO_STORAGE_DEVICE" />
+			<relationship_type name="RACK_CONTAINS_STORAGE_DEVICE" />
+			<relationship_type name="COMPUTER_CONTAINS_DISK" />
+			<relationship_type name="SERVER_CONTAINS_DISK" />
+			<relationship_type name="DATABASE_RUNS_ON_ASSET" />
+			<relationship_type name="SOFTWARE_INSTALLED_ON_ASSET" />
+			<relationship_type name="ASSET_SUPPORTED_BY_GROUP" />
+			<relationship_type name="ASSET_CONTAINED_IN_RACK" />
+			<relationship_type name="ASSET_RELIES_UPON_STORAGE_DEVICE" />
+			<relationship_type name="ASSET_ASSIGNED_TO_USER" />
+		 </relationshiptype_based>
+	</source_credibility>
+	<attributes>
+	  <attribute algorithm="SOURCE_PRIORITY" name="VIEW_GROUP" type="ASSET">
+	    <sources>
+	      <source name="MCAFEE" rank="1"/>
+	      <source name="PGP" rank="2"/>
+	      <source name="EMC" rank="3"/>
+	      <source name="FOUNDSTONE" rank="4"/>
+	      <source name="HP_COMPUTER" rank="5"/>
+	      <source name="HP_NETWORK" rank="6"/>
+	      <source name="IBM" rank="7"/>
+	      <source name="IDN" rank="8"/>
+	      <source name="NCIRCLE" rank="9"/>
+	      <source name="POWERBROKER" rank="10"/>
+	      <source name="STRATUS" rank="11"/>
+	      <source name="DCI" rank="12"/>
+	      <source name="AZURE" rank="13"/>
+	      <source name="GSS" rank="14"/>
+	      <source name="SNOW" rank="15"/>
+	      <source name="AD" rank="16"/>
+	      <source name="AMEX_NETWORK" rank="17"/>
+	      <source name="MAC" rank="18"/>
+	      <source name="AMEX_VOICE" rank="19"/>
+	      <source name="AXP_CLOUD" rank="20"/>
+	      <source name="HAOPS" rank="21"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="CONFLICT_GROUP_ID" type="ASSET">
+	    <sources>
+	      <source name="MCAFEE" rank="1"/>
+	      <source name="PGP" rank="2"/>
+	      <source name="EMC" rank="3"/>
+	      <source name="FOUNDSTONE" rank="4"/>
+	      <source name="HP_COMPUTER" rank="5"/>
+	      <source name="HP_NETWORK" rank="6"/>
+	      <source name="IBM" rank="7"/>
+	      <source name="IDN" rank="8"/>
+	      <source name="NCIRCLE" rank="9"/>
+	      <source name="POWERBROKER" rank="10"/>
+	      <source name="STRATUS" rank="11"/>
+	      <source name="DCI" rank="12"/>
+	      <source name="AZURE" rank="13"/>
+	      <source name="GSS" rank="14"/>
+	      <source name="AMEX_NETWORK" rank="15"/>
+	      <source name="MAC" rank="16"/>
+	      <source name="AMEX_VOICE" rank="17"/>
+	      <source name="AD" rank="18"/>
+	      <source name="AXP_CLOUD" rank="19"/>
+	      <source name="HAOPS" rank="20"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="PARENT_ASSET_ID" type="ASSET">
+	    <sources>
+	      <source name="MCAFEE" rank="1"/>
+	      <source name="PGP" rank="2"/>
+	      <source name="EMC" rank="3"/>
+	      <source name="FOUNDSTONE" rank="4"/>
+	      <source name="HP_COMPUTER" rank="5"/>
+	      <source name="HP_NETWORK" rank="6"/>
+	      <source name="IBM" rank="7"/>
+	      <source name="IDN" rank="8"/>
+	      <source name="NCIRCLE" rank="9"/>
+	      <source name="POWERBROKER" rank="10"/>
+	      <source name="STRATUS" rank="11"/>
+	      <source name="DCI" rank="12"/>
+	      <source name="AZURE" rank="13"/>
+	      <source name="GSS" rank="14"/>
+	      <source name="AMEX_NETWORK" rank="15"/>
+	      <source name="MAC" rank="16"/>
+	      <source name="AMEX_VOICE" rank="17"/>
+	      <source name="AD" rank="18"/>
+	      <source name="AXP_CLOUD" rank="19"/>
+	      <source name="HAOPS" rank="20"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="ASSET_NAME" type="ASSET">
+	    <sources>
+	      <source name="MCAFEE" rank="1"/>
+	      <source name="PGP" rank="2"/>
+	      <source name="FOUNDSTONE" rank="3"/>
+	      <source name="NCIRCLE" rank="4"/>
+	      <source name="POWERBROKER" rank="5"/>
+	      <source name="AZURE" rank="6"/>
+	      <source name="EMC" rank="7"/>
+	      <source name="HP_COMPUTER" rank="8"/>
+	      <source name="HP_NETWORK" rank="9"/>
+	      <source name="IBM" rank="10"/>
+	      <source name="IDN" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="MAC" rank="15"/>
+	      <source name="AMEX_VOICE" rank="16"/>
+	      <source name="AD" rank="17"/>
+	      <source name="AXP_CLOUD" rank="18"/>
+	      <source name="HAOPS" rank="19"/>
+	      <source name="DCI" rank="20"/>
+	      <source name="PDI" rank="21"/>
+	      <source name="HP_DB" rank="22"/>
+	      <source name="SNOW" rank="23"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="ASSET_TAG" type="ASSET">
+	    <sources>
+	      <source name="MCAFEE" rank="1"/>
+	      <source name="PGP" rank="2"/>
+	      <source name="FOUNDSTONE" rank="3"/>
+	      <source name="NCIRCLE" rank="4"/>
+	      <source name="POWERBROKER" rank="5"/>
+	      <source name="AZURE" rank="6"/>
+	      <source name="EMC" rank="7"/>
+	      <source name="HP_COMPUTER" rank="8"/>
+	      <source name="HP_NETWORK" rank="9"/>
+	      <source name="IBM" rank="10"/>
+	      <source name="IDN" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="MAC" rank="15"/>
+	      <source name="AMEX_VOICE" rank="16"/>
+	      <source name="AD" rank="17"/>
+	      <source name="AXP_CLOUD" rank="18"/>
+	      <source name="HAOPS" rank="19"/>
+	      <source name="DCI" rank="20"/>
+	      <source name="PDI" rank="21"/>
+	      <source name="HP_DB" rank="22"/>
+	      <source name="SNOW" rank="23"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="SERIAL_NUMBER" type="ASSET">
+	    <sources>
+	      <source name="MCAFEE" rank="1"/>
+	      <source name="PGP" rank="2"/>
+	      <source name="FOUNDSTONE" rank="3"/>
+	      <source name="NCIRCLE" rank="4"/>
+	      <source name="POWERBROKER" rank="5"/>
+	      <source name="AZURE" rank="6"/>
+	      <source name="EMC" rank="7"/>
+	      <source name="HP_COMPUTER" rank="8"/>
+	      <source name="HP_NETWORK" rank="9"/>
+	      <source name="IBM" rank="10"/>
+	      <source name="IDN" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="MAC" rank="15"/>
+	      <source name="AMEX_VOICE" rank="16"/>
+	      <source name="AD" rank="17"/>
+	      <source name="AXP_CLOUD" rank="18"/>
+	      <source name="HAOPS" rank="19"/>
+	      <source name="DCI" rank="20"/>
+	      <source name="PDI" rank="21"/>
+	      <source name="HP_DB" rank="22"/>
+	      <source name="SNOW" rank="23"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="DOMAIN" type="ASSET">
+	    <sources>
+	      <source name="PGP" rank="1"/>
+	      <source name="FOUNDSTONE" rank="2"/>
+	      <source name="NCIRCLE" rank="3"/>
+	      <source name="POWERBROKER" rank="4"/>
+	      <source name="AZURE" rank="5"/>
+	      <source name="TIMS" rank="6"/>
+	      <source name="EMC" rank="7"/>
+	      <source name="HP_COMPUTER" rank="8"/>
+	      <source name="HP_NETWORK" rank="9"/>
+	      <source name="IBM" rank="10"/>
+	      <source name="IDN" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="AMEX_VOICE" rank="13"/>
+	      <source name="AD" rank="14"/>
+	      <source name="AXP_CLOUD" rank="15"/>
+	      <source name="HAOPS" rank="16"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="FQDN" type="ASSET">
+	    <sources>
+	      <source name="PGP" rank="1"/>
+	      <source name="FOUNDSTONE" rank="2"/>
+	      <source name="NCIRCLE" rank="3"/>
+	      <source name="POWERBROKER" rank="4"/>
+	      <source name="AZURE" rank="5"/>
+	      <source name="TIMS" rank="6"/>
+	      <source name="EMC" rank="7"/>
+	      <source name="HP_COMPUTER" rank="8"/>
+	      <source name="HP_NETWORK" rank="9"/>
+	      <source name="IBM" rank="10"/>
+	      <source name="IDN" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="AMEX_VOICE" rank="13"/>
+	      <source name="AD" rank="14"/>
+	      <source name="AXP_CLOUD" rank="15"/>
+	      <source name="HAOPS" rank="16"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="DISTINGUISHED_NAME" type="ASSET">
+	    <sources>
+	      <source name="PGP" rank="1"/>
+	      <source name="FOUNDSTONE" rank="2"/>
+	      <source name="NCIRCLE" rank="3"/>
+	      <source name="POWERBROKER" rank="4"/>
+	      <source name="AZURE" rank="5"/>
+	      <source name="TIMS" rank="6"/>
+	      <source name="EMC" rank="7"/>
+	      <source name="HP_COMPUTER" rank="8"/>
+	      <source name="HP_NETWORK" rank="9"/>
+	      <source name="IBM" rank="10"/>
+	      <source name="IDN" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="AMEX_VOICE" rank="13"/>
+	      <source name="AD" rank="14"/>
+	      <source name="AXP_CLOUD" rank="15"/>
+	      <source name="HAOPS" rank="16"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="NATIVE_PHYSICAL_STATUS" type="ASSET">
+	    <sources>
+	      <source name="HP_COMPUTER" rank="1"/>
+	      <source name="HP_NETWORK" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="STRATUS" rank="5"/>
+	      <source name="SCCM" rank="6"/>
+	      <source name="MCAFEE" rank="7"/>
+	      <source name="PGP" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="MAC" rank="15"/>
+	      <source name="AMEX_VOICE" rank="16"/>
+	      <source name="AD" rank="17"/>
+	      <source name="AXP_CLOUD" rank="18"/>
+	      <source name="HAOPS" rank="19"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="MAXIMUM_VALUE" name="NETWORK_EXEMPT" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="MAC" rank="15"/>
+	      <source name="AMEX_VOICE" rank="16"/>
+	      <source name="AD" rank="17"/>
+	      <source name="AXP_CLOUD" rank="18"/>
+	      <source name="HAOPS" rank="19"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="RANK_BY_VALUE" name="OPERATIONAL_PHYSICAL_STATUS" type="ASSET">
+	    <rank_values>
+	        <rank_value value="Active" rank="1"/>
+	        <rank_value value="Inactive" rank="2"/>
+	    </rank_values>
+	    <sources>
+	      <source name="PGP" rank="1"/>
+	      <source name="FOUNDSTONE" rank="2"/>
+	      <source name="NCIRCLE" rank="3"/>
+	      <source name="POWERBROKER" rank="4"/>
+	      <source name="AZURE" rank="5"/>
+	      <source name="AMEX_VOICE" rank="6"/>
+	      <source name="AD" rank="7"/>
+	      <source name="HAOPS" rank="8"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="RANK_BY_VALUE" name="REPOSITORY_PHYSICAL_STATUS" type="ASSET">
+	    <rank_values>
+	        <rank_value value="Active" rank="1"/>
+	        <rank_value value="Inactive" rank="2"/>
+	    </rank_values>
+	    <sources>
+	      <source name="HP_COMPUTER" rank="1"/>
+	      <source name="HP_NETWORK" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="STRATUS" rank="5"/>
+	      <source name="SCCM" rank="6"/>
+	      <source name="MCAFEE" rank="7"/>
+	      <source name="PGP" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="MAC" rank="15"/>
+	      <source name="AMEX_VOICE" rank="16"/>
+	      <source name="AD" rank="17"/>
+	      <source name="AXP_CLOUD" rank="18"/>
+	      <source name="HAOPS" rank="19"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="RANK_BY_VALUE" name="PHYSICAL_STATUS" type="ASSET">
+	    <rank_values>
+	        <rank_value value="Active" rank="1"/>
+	        <rank_value value="Inactive" rank="2"/>
+	    </rank_values>
+	    <sources>
+	      <source name="MCAFEE" rank="1"/>
+	      <source name="PGP" rank="2"/>
+	      <source name="EMC" rank="3"/>
+	      <source name="FOUNDSTONE" rank="4"/>
+	      <source name="HP_COMPUTER" rank="5"/>
+	      <source name="HP_NETWORK" rank="6"/>
+	      <source name="IBM" rank="7"/>
+	      <source name="IDN" rank="8"/>
+	      <source name="NCIRCLE" rank="9"/>
+	      <source name="POWERBROKER" rank="10"/>
+	      <source name="STRATUS" rank="11"/>
+	      <source name="DCI" rank="12"/>
+	      <source name="AZURE" rank="13"/>
+	      <source name="GSS" rank="14"/>
+	      <source name="AMEX_NETWORK" rank="15"/>
+	      <source name="MAC" rank="16"/>
+	      <source name="AMEX_VOICE" rank="17"/>
+	      <source name="AD" rank="18"/>
+	      <source name="AXP_CLOUD" rank="19"/>
+	      <source name="HAOPS" rank="20"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="PHYSICAL_STATUS_REC" type="ASSET">
+	    <sources>
+	      <source name="MCAFEE" rank="1"/>
+	      <source name="PGP" rank="2"/>
+	      <source name="EMC" rank="3"/>
+	      <source name="FOUNDSTONE" rank="4"/>
+	      <source name="HP_COMPUTER" rank="5"/>
+	      <source name="HP_NETWORK" rank="6"/>
+	      <source name="IBM" rank="7"/>
+	      <source name="IDN" rank="8"/>
+	      <source name="NCIRCLE" rank="9"/>
+	      <source name="POWERBROKER" rank="10"/>
+	      <source name="STRATUS" rank="11"/>
+	      <source name="DCI" rank="12"/>
+	      <source name="AZURE" rank="13"/>
+	      <source name="GSS" rank="14"/>
+	      <source name="AMEX_NETWORK" rank="15"/>
+	      <source name="MAC" rank="16"/>
+	      <source name="AMEX_VOICE" rank="17"/>
+	      <source name="AD" rank="18"/>
+	      <source name="AXP_CLOUD" rank="19"/>
+	      <source name="HAOPS" rank="20"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="RANK_BY_VALUE" name="FINANCIAL_STATUS" type="ASSET">
+	    <rank_values>
+	        <rank_value value="Billed" rank="1"/>
+	        <rank_value value="Not Billed" rank="2"/>
+	    </rank_values>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="FUNCTION" type="ASSET">
+	    <sources>
+	      <source name="MCAFEE" rank="1"/>
+	      <source name="PGP" rank="2"/>
+	      <source name="FOUNDSTONE" rank="3"/>
+	      <source name="NCIRCLE" rank="4"/>
+	      <source name="POWERBROKER" rank="5"/>
+	      <source name="AZURE" rank="6"/>
+	      <source name="EMC" rank="7"/>
+	      <source name="HP_COMPUTER" rank="8"/>
+	      <source name="HP_NETWORK" rank="9"/>
+	      <source name="IBM" rank="10"/>
+	      <source name="IDN" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="MAC" rank="15"/>
+	      <source name="AMEX_VOICE" rank="16"/>
+	      <source name="AD" rank="17"/>
+	      <source name="AXP_CLOUD" rank="18"/>
+	      <source name="HAOPS" rank="19"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="ROLE" type="ASSET">
+	    <sources>
+	      <source name="MCAFEE" rank="1"/>
+	      <source name="PGP" rank="2"/>
+	      <source name="FOUNDSTONE" rank="3"/>
+	      <source name="NCIRCLE" rank="4"/>
+	      <source name="POWERBROKER" rank="5"/>
+	      <source name="AZURE" rank="6"/>
+	      <source name="EMC" rank="7"/>
+	      <source name="HP_COMPUTER" rank="8"/>
+	      <source name="HP_NETWORK" rank="9"/>
+	      <source name="IBM" rank="10"/>
+	      <source name="IDN" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="MAC" rank="15"/>
+	      <source name="AMEX_VOICE" rank="16"/>
+	      <source name="AD" rank="17"/>
+	      <source name="AXP_CLOUD" rank="18"/>
+	      <source name="HAOPS" rank="19"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="CHILD_OF_ATTRIBUTE" parent="ASSET_CLASS_CATEGORY" name="ASSET_TYPE" type="ASSET">
+	    <sources>
+	      <source name="MCAFEE" rank="1"/>
+	      <source name="PGP" rank="2"/>
+	      <source name="EMC" rank="3"/>
+	      <source name="FOUNDSTONE" rank="4"/>
+	      <source name="HP_COMPUTER" rank="5"/>
+	      <source name="HP_NETWORK" rank="6"/>
+	      <source name="IBM" rank="7"/>
+	      <source name="IDN" rank="8"/>
+	      <source name="NCIRCLE" rank="9"/>
+	      <source name="POWERBROKER" rank="10"/>
+	      <source name="STRATUS" rank="11"/>
+	      <source name="DCI" rank="12"/>
+	      <source name="AZURE" rank="13"/>
+	      <source name="GSS" rank="14"/>
+	      <source name="AMEX_NETWORK" rank="15"/>
+	      <source name="MAC" rank="16"/>
+	      <source name="AMEX_VOICE" rank="17"/>
+	      <source name="AD" rank="18"/>
+	      <source name="PDI" rank="19"/>
+	      <source name="HP_DB" rank="20"/>
+	      <source name="AXP_CLOUD" rank="21"/>
+	      <source name="HAOPS" rank="22"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="MOST_FREQUENT_VALUE" name="ASSET_CLASS_CATEGORY" type="ASSET">
+	    <sources>
+	      <source name="MCAFEE" rank="1"/>
+	      <source name="PGP" rank="2"/>
+	      <source name="EMC" rank="3"/>
+	      <source name="FOUNDSTONE" rank="4"/>
+	      <source name="HP_COMPUTER" rank="5"/>
+	      <source name="HP_NETWORK" rank="6"/>
+	      <source name="IBM" rank="7"/>
+	      <source name="IDN" rank="8"/>
+	      <source name="NCIRCLE" rank="9"/>
+	      <source name="POWERBROKER" rank="10"/>
+	      <source name="STRATUS" rank="11"/>
+	      <source name="DCI" rank="12"/>
+	      <source name="AZURE" rank="13"/>
+	      <source name="GSS" rank="14"/>
+	      <source name="AMEX_NETWORK" rank="15"/>
+	      <source name="MAC" rank="16"/>
+	      <source name="AMEX_VOICE" rank="17"/>
+	      <source name="AD" rank="18"/>
+	      <source name="PDI" rank="19"/>
+	      <source name="HP_DB" rank="20"/>
+	      <source name="AXP_CLOUD" rank="21"/>
+	      <source name="HAOPS" rank="22"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="CHILD_OF_ATTRIBUTE" parent="ASSET_CLASS_CATEGORY" name="ASSET_CLASS" type="ASSET">
+	    <sources>
+	      <source name="MCAFEE" rank="1"/>
+	      <source name="PGP" rank="2"/>
+	      <source name="EMC" rank="3"/>
+	      <source name="FOUNDSTONE" rank="4"/>
+	      <source name="HP_COMPUTER" rank="5"/>
+	      <source name="HP_NETWORK" rank="6"/>
+	      <source name="IBM" rank="7"/>
+	      <source name="IDN" rank="8"/>
+	      <source name="NCIRCLE" rank="9"/>
+	      <source name="POWERBROKER" rank="10"/>
+	      <source name="STRATUS" rank="11"/>
+	      <source name="DCI" rank="12"/>
+	      <source name="AZURE" rank="13"/>
+	      <source name="GSS" rank="14"/>
+	      <source name="AMEX_NETWORK" rank="15"/>
+	      <source name="MAC" rank="16"/>
+	      <source name="AMEX_VOICE" rank="17"/>
+	      <source name="AD" rank="18"/>
+	      <source name="PDI" rank="19"/>
+	      <source name="HP_DB" rank="20"/>
+	      <source name="AXP_CLOUD" rank="21"/>
+	      <source name="HAOPS" rank="22"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="MODEL_MANUFACTURER" type="ASSET">
+	    <sources>
+	      <source name="PGP" rank="1"/>
+	      <source name="FOUNDSTONE" rank="2"/>
+	      <source name="NCIRCLE" rank="3"/>
+	      <source name="POWERBROKER" rank="4"/>
+	      <source name="AZURE" rank="5"/>
+	      <source name="TIMS" rank="6"/>
+	      <source name="EMC" rank="7"/>
+	      <source name="HP_COMPUTER" rank="8"/>
+	      <source name="HP_NETWORK" rank="9"/>
+	      <source name="IBM" rank="10"/>
+	      <source name="IDN" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="MAC" rank="13"/>
+	      <source name="AMEX_VOICE" rank="14"/>
+	      <source name="AD" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="MODEL_MAKE" type="ASSET">
+	    <sources>
+	      <source name="PGP" rank="1"/>
+	      <source name="FOUNDSTONE" rank="2"/>
+	      <source name="NCIRCLE" rank="3"/>
+	      <source name="POWERBROKER" rank="4"/>
+	      <source name="AZURE" rank="5"/>
+	      <source name="TIMS" rank="6"/>
+	      <source name="EMC" rank="7"/>
+	      <source name="HP_COMPUTER" rank="8"/>
+	      <source name="HP_NETWORK" rank="9"/>
+	      <source name="IBM" rank="10"/>
+	      <source name="IDN" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="MAC" rank="13"/>
+	      <source name="AMEX_VOICE" rank="14"/>
+	      <source name="AD" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="MODEL" type="ASSET">
+	    <sources>
+	      <source name="PGP" rank="1"/>
+	      <source name="FOUNDSTONE" rank="2"/>
+	      <source name="NCIRCLE" rank="3"/>
+	      <source name="POWERBROKER" rank="4"/>
+	      <source name="AZURE" rank="5"/>
+	      <source name="TIMS" rank="6"/>
+	      <source name="EMC" rank="7"/>
+	      <source name="HP_COMPUTER" rank="8"/>
+	      <source name="HP_NETWORK" rank="9"/>
+	      <source name="IBM" rank="10"/>
+	      <source name="IDN" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="MAC" rank="13"/>
+	      <source name="AMEX_VOICE" rank="14"/>
+	      <source name="AD" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="MODEL_CODE" type="ASSET">
+	    <sources>
+	      <source name="PGP" rank="1"/>
+	      <source name="FOUNDSTONE" rank="2"/>
+	      <source name="NCIRCLE" rank="3"/>
+	      <source name="POWERBROKER" rank="4"/>
+	      <source name="AZURE" rank="5"/>
+	      <source name="TIMS" rank="6"/>
+	      <source name="EMC" rank="7"/>
+	      <source name="HP_COMPUTER" rank="8"/>
+	      <source name="HP_NETWORK" rank="9"/>
+	      <source name="IBM" rank="10"/>
+	      <source name="IDN" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="MAC" rank="13"/>
+	      <source name="AMEX_VOICE" rank="14"/>
+	      <source name="AD" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="CHILD_OF_ATTRIBUTE" parent="OS_NAME" name="OS_MANUFACTURER" type="ASSET">
+	    <sources>
+	      <source name="PGP" rank="1"/>
+	      <source name="FOUNDSTONE" rank="2"/>
+	      <source name="NCIRCLE" rank="3"/>
+	      <source name="POWERBROKER" rank="4"/>
+	      <source name="AZURE" rank="5"/>
+	      <source name="TIMS" rank="6"/>
+	      <source name="EMC" rank="7"/>
+	      <source name="HP_COMPUTER" rank="8"/>
+	      <source name="HP_NETWORK" rank="9"/>
+	      <source name="IBM" rank="10"/>
+	      <source name="IDN" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="MAC" rank="13"/>
+	      <source name="AMEX_VOICE" rank="14"/>
+	      <source name="AD" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="CHILD_OF_ATTRIBUTE" parent="OS_NAME" name="OS_PLATFORM_FAMILY" type="ASSET">
+	    <sources>
+	      <source name="PGP" rank="1"/>
+	      <source name="FOUNDSTONE" rank="2"/>
+	      <source name="NCIRCLE" rank="3"/>
+	      <source name="POWERBROKER" rank="4"/>
+	      <source name="AZURE" rank="5"/>
+	      <source name="TIMS" rank="6"/>
+	      <source name="EMC" rank="7"/>
+	      <source name="HP_COMPUTER" rank="8"/>
+	      <source name="HP_NETWORK" rank="9"/>
+	      <source name="IBM" rank="10"/>
+	      <source name="IDN" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="MAC" rank="13"/>
+	      <source name="AMEX_VOICE" rank="14"/>
+	      <source name="AD" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="OS_NAME" type="ASSET">
+	    <sources>
+	      <source name="PGP" rank="1"/>
+	      <source name="FOUNDSTONE" rank="2"/>
+	      <source name="NCIRCLE" rank="3"/>
+	      <source name="POWERBROKER" rank="4"/>
+	      <source name="AZURE" rank="5"/>
+	      <source name="TIMS" rank="6"/>
+	      <source name="EMC" rank="7"/>
+	      <source name="HP_COMPUTER" rank="8"/>
+	      <source name="HP_NETWORK" rank="9"/>
+	      <source name="IBM" rank="10"/>
+	      <source name="IDN" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="MAC" rank="13"/>
+	      <source name="AMEX_VOICE" rank="14"/>
+	      <source name="AD" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="CHILD_OF_ATTRIBUTE" parent="OS_NAME" name="OS_EDITION" type="ASSET">
+	    <sources>
+	      <source name="PGP" rank="1"/>
+	      <source name="FOUNDSTONE" rank="2"/>
+	      <source name="NCIRCLE" rank="3"/>
+	      <source name="POWERBROKER" rank="4"/>
+	      <source name="AZURE" rank="5"/>
+	      <source name="TIMS" rank="6"/>
+	      <source name="EMC" rank="7"/>
+	      <source name="HP_COMPUTER" rank="8"/>
+	      <source name="HP_NETWORK" rank="9"/>
+	      <source name="IBM" rank="10"/>
+	      <source name="IDN" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="MAC" rank="13"/>
+	      <source name="AMEX_VOICE" rank="14"/>
+	      <source name="AD" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="CHILD_OF_ATTRIBUTE" parent="OS_NAME" name="OS_VERSION" type="ASSET">
+	    <sources>
+	      <source name="PGP" rank="1"/>
+	      <source name="FOUNDSTONE" rank="2"/>
+	      <source name="NCIRCLE" rank="3"/>
+	      <source name="POWERBROKER" rank="4"/>
+	      <source name="AZURE" rank="5"/>
+	      <source name="TIMS" rank="6"/>
+	      <source name="EMC" rank="7"/>
+	      <source name="HP_COMPUTER" rank="8"/>
+	      <source name="HP_NETWORK" rank="9"/>
+	      <source name="IBM" rank="10"/>
+	      <source name="IDN" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="MAC" rank="13"/>
+	      <source name="AMEX_VOICE" rank="14"/>
+	      <source name="AD" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="CHILD_OF_ATTRIBUTE" parent="OS_NAME" name="OS_KERNEL_VERSION" type="ASSET">
+	    <sources>
+	      <source name="PGP" rank="1"/>
+	      <source name="FOUNDSTONE" rank="2"/>
+	      <source name="NCIRCLE" rank="3"/>
+	      <source name="POWERBROKER" rank="4"/>
+	      <source name="AZURE" rank="5"/>
+	      <source name="TIMS" rank="6"/>
+	      <source name="EMC" rank="7"/>
+	      <source name="HP_COMPUTER" rank="8"/>
+	      <source name="HP_NETWORK" rank="9"/>
+	      <source name="IBM" rank="10"/>
+	      <source name="IDN" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="MAC" rank="13"/>
+	      <source name="AMEX_VOICE" rank="14"/>
+	      <source name="AD" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="CHILD_OF_ATTRIBUTE" parent="OS_NAME" name="OS_ARCHITECTURE" type="ASSET">
+	    <sources>
+	      <source name="PGP" rank="1"/>
+	      <source name="FOUNDSTONE" rank="2"/>
+	      <source name="NCIRCLE" rank="3"/>
+	      <source name="POWERBROKER" rank="4"/>
+	      <source name="AZURE" rank="5"/>
+	      <source name="TIMS" rank="6"/>
+	      <source name="EMC" rank="7"/>
+	      <source name="HP_COMPUTER" rank="8"/>
+	      <source name="HP_NETWORK" rank="9"/>
+	      <source name="IBM" rank="10"/>
+	      <source name="IDN" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="MAC" rank="13"/>
+	      <source name="AMEX_VOICE" rank="14"/>
+	      <source name="AD" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="CHILD_OF_ATTRIBUTE" parent="OS_NAME" name="OS_SERVICE_PACK" type="ASSET">
+	    <sources>
+	      <source name="PGP" rank="1"/>
+	      <source name="FOUNDSTONE" rank="2"/>
+	      <source name="NCIRCLE" rank="3"/>
+	      <source name="POWERBROKER" rank="4"/>
+	      <source name="AZURE" rank="5"/>
+	      <source name="TIMS" rank="6"/>
+	      <source name="EMC" rank="7"/>
+	      <source name="HP_COMPUTER" rank="8"/>
+	      <source name="HP_NETWORK" rank="9"/>
+	      <source name="IBM" rank="10"/>
+	      <source name="IDN" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="MAC" rank="13"/>
+	      <source name="AMEX_VOICE" rank="14"/>
+	      <source name="AD" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="CPU_MANUFACTURER" type="ASSET">
+	    <sources>
+	      <source name="PGP" rank="1"/>
+	      <source name="FOUNDSTONE" rank="2"/>
+	      <source name="NCIRCLE" rank="3"/>
+	      <source name="POWERBROKER" rank="4"/>
+	      <source name="AZURE" rank="5"/>
+	      <source name="TIMS" rank="6"/>
+	      <source name="EMC" rank="7"/>
+	      <source name="HP_COMPUTER" rank="8"/>
+	      <source name="HP_NETWORK" rank="9"/>
+	      <source name="IBM" rank="10"/>
+	      <source name="IDN" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="MAC" rank="13"/>
+	      <source name="AMEX_VOICE" rank="14"/>
+	      <source name="AD" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="CPU_MODEL" type="ASSET">
+	    <sources>
+	      <source name="PGP" rank="1"/>
+	      <source name="FOUNDSTONE" rank="2"/>
+	      <source name="NCIRCLE" rank="3"/>
+	      <source name="POWERBROKER" rank="4"/>
+	      <source name="AZURE" rank="5"/>
+	      <source name="TIMS" rank="6"/>
+	      <source name="EMC" rank="7"/>
+	      <source name="HP_COMPUTER" rank="8"/>
+	      <source name="HP_NETWORK" rank="9"/>
+	      <source name="IBM" rank="10"/>
+	      <source name="IDN" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="AMEX_VOICE" rank="13"/>
+	      <source name="AD" rank="14"/>
+	      <source name="AXP_CLOUD" rank="15"/>
+	      <source name="HAOPS" rank="16"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="MAXIMUM_VALUE" name="CPU_SPEED" type="ASSET">
+	    <sources>
+	      <source name="PGP" rank="1"/>
+	      <source name="FOUNDSTONE" rank="2"/>
+	      <source name="NCIRCLE" rank="3"/>
+	      <source name="POWERBROKER" rank="4"/>
+	      <source name="AZURE" rank="5"/>
+	      <source name="TIMS" rank="6"/>
+	      <source name="EMC" rank="7"/>
+	      <source name="HP_COMPUTER" rank="8"/>
+	      <source name="HP_NETWORK" rank="9"/>
+	      <source name="IBM" rank="10"/>
+	      <source name="IDN" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="AMEX_VOICE" rank="13"/>
+	      <source name="AD" rank="14"/>
+	      <source name="AXP_CLOUD" rank="15"/>
+	      <source name="HAOPS" rank="16"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="MAXIMUM_VALUE" name="CPU_COUNT" type="ASSET">
+	    <sources>
+	      <source name="PGP" rank="1"/>
+	      <source name="FOUNDSTONE" rank="2"/>
+	      <source name="NCIRCLE" rank="3"/>
+	      <source name="POWERBROKER" rank="4"/>
+	      <source name="AZURE" rank="5"/>
+	      <source name="TIMS" rank="6"/>
+	      <source name="EMC" rank="7"/>
+	      <source name="HP_COMPUTER" rank="8"/>
+	      <source name="HP_NETWORK" rank="9"/>
+	      <source name="IBM" rank="10"/>
+	      <source name="IDN" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="AMEX_VOICE" rank="13"/>
+	      <source name="AD" rank="14"/>
+	      <source name="AXP_CLOUD" rank="15"/>
+	      <source name="HAOPS" rank="16"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="MAXIMUM_VALUE" name="CPU_CORE_COUNT" type="ASSET">
+	    <sources>
+	      <source name="PGP" rank="1"/>
+	      <source name="FOUNDSTONE" rank="2"/>
+	      <source name="NCIRCLE" rank="3"/>
+	      <source name="POWERBROKER" rank="4"/>
+	      <source name="AZURE" rank="5"/>
+	      <source name="TIMS" rank="6"/>
+	      <source name="EMC" rank="7"/>
+	      <source name="HP_COMPUTER" rank="8"/>
+	      <source name="HP_NETWORK" rank="9"/>
+	      <source name="IBM" rank="10"/>
+	      <source name="IDN" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="AMEX_VOICE" rank="13"/>
+	      <source name="AD" rank="14"/>
+	      <source name="AXP_CLOUD" rank="15"/>
+	      <source name="HAOPS" rank="16"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="MAXIMUM_VALUE" name="TOTAL_DISK" type="ASSET">
+	    <sources>
+	      <source name="PGP" rank="1"/>
+	      <source name="FOUNDSTONE" rank="2"/>
+	      <source name="NCIRCLE" rank="3"/>
+	      <source name="POWERBROKER" rank="4"/>
+	      <source name="AZURE" rank="5"/>
+	      <source name="TIMS" rank="6"/>
+	      <source name="EMC" rank="7"/>
+	      <source name="HP_COMPUTER" rank="8"/>
+	      <source name="HP_NETWORK" rank="9"/>
+	      <source name="IBM" rank="10"/>
+	      <source name="IDN" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="AMEX_VOICE" rank="13"/>
+	      <source name="AD" rank="14"/>
+	      <source name="AXP_CLOUD" rank="15"/>
+	      <source name="HAOPS" rank="16"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="MAXIMUM_VALUE" name="USED_DISK" type="ASSET">
+	    <sources>
+	      <source name="PGP" rank="1"/>
+	      <source name="FOUNDSTONE" rank="2"/>
+	      <source name="NCIRCLE" rank="3"/>
+	      <source name="POWERBROKER" rank="4"/>
+	      <source name="AZURE" rank="5"/>
+	      <source name="TIMS" rank="6"/>
+	      <source name="EMC" rank="7"/>
+	      <source name="HP_COMPUTER" rank="8"/>
+	      <source name="HP_NETWORK" rank="9"/>
+	      <source name="IBM" rank="10"/>
+	      <source name="IDN" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="AMEX_VOICE" rank="13"/>
+	      <source name="AD" rank="14"/>
+	      <source name="AXP_CLOUD" rank="15"/>
+	      <source name="HAOPS" rank="16"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="MAXIMUM_VALUE" name="TOTAL_MEMORY" type="ASSET">
+	    <sources>
+	      <source name="PGP" rank="1"/>
+	      <source name="FOUNDSTONE" rank="2"/>
+	      <source name="NCIRCLE" rank="3"/>
+	      <source name="POWERBROKER" rank="4"/>
+	      <source name="AZURE" rank="5"/>
+	      <source name="TIMS" rank="6"/>
+	      <source name="EMC" rank="7"/>
+	      <source name="HP_COMPUTER" rank="8"/>
+	      <source name="HP_NETWORK" rank="9"/>
+	      <source name="IBM" rank="10"/>
+	      <source name="IDN" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="AMEX_VOICE" rank="13"/>
+	      <source name="AD" rank="14"/>
+	      <source name="AXP_CLOUD" rank="15"/>
+	      <source name="HAOPS" rank="16"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="IP_ADDRESS" type="ASSET">
+	    <sources>
+	      <source name="PGP" rank="1"/>
+	      <source name="FOUNDSTONE" rank="2"/>
+	      <source name="NCIRCLE" rank="3"/>
+	      <source name="POWERBROKER" rank="4"/>
+	      <source name="AZURE" rank="5"/>
+	      <source name="TIMS" rank="6"/>
+	      <source name="EMC" rank="7"/>
+	      <source name="HP_COMPUTER" rank="8"/>
+	      <source name="HP_NETWORK" rank="9"/>
+	      <source name="IBM" rank="10"/>
+	      <source name="IDN" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="AMEX_VOICE" rank="13"/>
+	      <source name="AD" rank="14"/>
+	      <source name="AXP_CLOUD" rank="15"/>
+	      <source name="HAOPS" rank="16"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="MAC_ADDRESS" type="ASSET">
+	    <sources>
+	      <source name="PGP" rank="1"/>
+	      <source name="FOUNDSTONE" rank="2"/>
+	      <source name="NCIRCLE" rank="3"/>
+	      <source name="POWERBROKER" rank="4"/>
+	      <source name="AZURE" rank="5"/>
+	      <source name="TIMS" rank="6"/>
+	      <source name="EMC" rank="7"/>
+	      <source name="HP_COMPUTER" rank="8"/>
+	      <source name="HP_NETWORK" rank="9"/>
+	      <source name="IBM" rank="10"/>
+	      <source name="IDN" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="AMEX_VOICE" rank="13"/>
+	      <source name="AD" rank="14"/>
+	      <source name="AXP_CLOUD" rank="15"/>
+	      <source name="HAOPS" rank="16"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="BUSINESS_UNIT_CODE" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="AMEX_VOICE" rank="15"/>
+	      <source name="AD" rank="16"/>
+	      <source name="AXP_CLOUD" rank="17"/>
+	      <source name="HAOPS" rank="18"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="BUSINESS_UNIT" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="AMEX_VOICE" rank="15"/>
+	      <source name="AD" rank="16"/>
+	      <source name="AXP_CLOUD" rank="17"/>
+	      <source name="HAOPS" rank="18"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="ORGANIZATION_CODE" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="AMEX_VOICE" rank="15"/>
+	      <source name="AD" rank="16"/>
+	      <source name="AXP_CLOUD" rank="17"/>
+	      <source name="HAOPS" rank="18"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="ORGANIZATION" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="AMEX_VOICE" rank="15"/>
+	      <source name="AD" rank="16"/>
+	      <source name="AXP_CLOUD" rank="17"/>
+	      <source name="HAOPS" rank="18"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="DEPARTMENT_CODE" type="ASSET">
+	    <sources>
+	      <source name="MCAFEE" rank="1"/>
+	      <source name="PGP" rank="2"/>
+	      <source name="FOUNDSTONE" rank="3"/>
+	      <source name="NCIRCLE" rank="4"/>
+	      <source name="POWERBROKER" rank="5"/>
+	      <source name="AZURE" rank="6"/>
+	      <source name="EMC" rank="7"/>
+	      <source name="HP_COMPUTER" rank="8"/>
+	      <source name="HP_NETWORK" rank="9"/>
+	      <source name="IBM" rank="10"/>
+	      <source name="IDN" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="AMEX_VOICE" rank="15"/>
+	      <source name="AD" rank="16"/>
+	      <source name="AXP_CLOUD" rank="17"/>
+	      <source name="HAOPS" rank="18"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="DEPARTMENT" type="ASSET">
+	    <sources>
+	      <source name="MCAFEE" rank="1"/>
+	      <source name="PGP" rank="2"/>
+	      <source name="FOUNDSTONE" rank="3"/>
+	      <source name="NCIRCLE" rank="4"/>
+	      <source name="POWERBROKER" rank="5"/>
+	      <source name="AZURE" rank="6"/>
+	      <source name="EMC" rank="7"/>
+	      <source name="HP_COMPUTER" rank="8"/>
+	      <source name="HP_NETWORK" rank="9"/>
+	      <source name="IBM" rank="10"/>
+	      <source name="IDN" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="AMEX_VOICE" rank="15"/>
+	      <source name="AD" rank="16"/>
+	      <source name="AXP_CLOUD" rank="17"/>
+	      <source name="HAOPS" rank="18"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="IF_NOT_EXCLUDE" value="In Scope" name="DEPT_SCOPE_STATUS" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="AMEX_VOICE" rank="15"/>
+	      <source name="AD" rank="16"/>
+	      <source name="AXP_CLOUD" rank="17"/>
+	      <source name="HAOPS" rank="18"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="LOCATION_REGION" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="AMEX_VOICE" rank="15"/>
+	      <source name="AD" rank="16"/>
+	      <source name="AXP_CLOUD" rank="17"/>
+	      <source name="HAOPS" rank="18"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="LOCATION_COUNTRY" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="AMEX_VOICE" rank="15"/>
+	      <source name="AD" rank="16"/>
+	      <source name="AXP_CLOUD" rank="17"/>
+	      <source name="HAOPS" rank="18"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="LOCATION_STATE" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="AMEX_VOICE" rank="15"/>
+	      <source name="AD" rank="16"/>
+	      <source name="AXP_CLOUD" rank="17"/>
+	      <source name="HAOPS" rank="18"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="LOCATION_CITY" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="AMEX_VOICE" rank="15"/>
+	      <source name="AD" rank="16"/>
+	      <source name="AXP_CLOUD" rank="17"/>
+	      <source name="HAOPS" rank="18"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="LOCATION_TYPE" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="AMEX_VOICE" rank="15"/>
+	      <source name="AD" rank="16"/>
+	      <source name="AXP_CLOUD" rank="17"/>
+	      <source name="HAOPS" rank="18"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="IF_NOT_EXCLUDE" value="In Scope" name="LOCATION_SCOPE_STATUS" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="AMEX_VOICE" rank="15"/>
+	      <source name="AD" rank="16"/>
+	      <source name="AXP_CLOUD" rank="17"/>
+	      <source name="HAOPS" rank="18"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="LOCATION_CODE" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="AMEX_VOICE" rank="15"/>
+	      <source name="AD" rank="16"/>
+	      <source name="AXP_CLOUD" rank="17"/>
+	      <source name="HAOPS" rank="18"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="LOCATION" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="AMEX_VOICE" rank="15"/>
+	      <source name="AD" rank="16"/>
+	      <source name="AXP_CLOUD" rank="17"/>
+	      <source name="HAOPS" rank="18"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="LOCATION_POSTAL_CODE" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="AMEX_VOICE" rank="15"/>
+	      <source name="AD" rank="16"/>
+	      <source name="AXP_CLOUD" rank="17"/>
+	      <source name="HAOPS" rank="18"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="LOCATION_STREET_ADDRESS_1" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="AMEX_VOICE" rank="15"/>
+	      <source name="AD" rank="16"/>
+	      <source name="AXP_CLOUD" rank="17"/>
+	      <source name="HAOPS" rank="18"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="LOCATION_STREET_ADDRESS_2" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="AMEX_VOICE" rank="15"/>
+	      <source name="AD" rank="16"/>
+	      <source name="AXP_CLOUD" rank="17"/>
+	      <source name="HAOPS" rank="18"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="LOCATION_BUILDING" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="AMEX_VOICE" rank="15"/>
+	      <source name="AD" rank="16"/>
+	      <source name="AXP_CLOUD" rank="17"/>
+	      <source name="HAOPS" rank="18"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="FLOOR" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="AMEX_VOICE" rank="15"/>
+	      <source name="AD" rank="16"/>
+	      <source name="AXP_CLOUD" rank="17"/>
+	      <source name="HAOPS" rank="18"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="MOST_RECENT_DATE" name="AGENT_INSTALL_DATE" type="ASSET">
+	  </attribute>
+	  <attribute algorithm="MOST_RECENT_DATE" name="AGENT_UPDATED_DATE" type="ASSET">
+	  </attribute>
+	  <attribute algorithm="MOST_RECENT_DATE" name="ASSET_DISCOVERED_DATE" type="ASSET">
+	    <sources>
+	      <source name="PGP" rank="1"/>
+	      <source name="FOUNDSTONE" rank="2"/>
+	      <source name="NCIRCLE" rank="3"/>
+	      <source name="POWERBROKER" rank="4"/>
+	      <source name="AZURE" rank="5"/>
+	      <source name="AD" rank="6"/>
+	      <source name="AXP_CLOUD" rank="7"/>
+	      <source name="HAOPS" rank="8"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="MOST_RECENT_DATE" name="AV_DEFINITION_DATE" type="ASSET">
+	  </attribute>
+	  <attribute algorithm="MOST_RECENT_DATE" name="AV_DEFINITION_UPDATED_DATE" type="ASSET">
+	  </attribute>
+	  <attribute algorithm="MOST_RECENT_DATE" name="BOOT_DATE" type="ASSET">
+	    <sources>
+	      <source name="PGP" rank="1"/>
+	      <source name="FOUNDSTONE" rank="2"/>
+	      <source name="NCIRCLE" rank="3"/>
+	      <source name="POWERBROKER" rank="4"/>
+	      <source name="AZURE" rank="5"/>
+	      <source name="AMEX_VOICE" rank="6"/>
+	      <source name="AD" rank="7"/>
+	      <source name="AXP_CLOUD" rank="8"/>
+	      <source name="HAOPS" rank="9"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="MOST_RECENT_DATE" name="FAILURE_DATE" type="ASSET">
+	    <sources>
+	      <source name="PGP" rank="1"/>
+	      <source name="FOUNDSTONE" rank="2"/>
+	      <source name="NCIRCLE" rank="3"/>
+	      <source name="POWERBROKER" rank="4"/>
+	      <source name="AZURE" rank="5"/>
+	      <source name="TIMS" rank="6"/>
+	      <source name="EMC" rank="7"/>
+	      <source name="HP_COMPUTER" rank="8"/>
+	      <source name="HP_NETWORK" rank="9"/>
+	      <source name="IBM" rank="10"/>
+	      <source name="IDN" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="AMEX_VOICE" rank="13"/>
+	      <source name="AD" rank="14"/>
+	      <source name="AXP_CLOUD" rank="15"/>
+	      <source name="HAOPS" rank="16"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="MOST_RECENT_DATE" name="IP_LEASE_START_DATE" type="ASSET">
+	    <sources>
+	      <source name="PGP" rank="1"/>
+	      <source name="FOUNDSTONE" rank="2"/>
+	      <source name="NCIRCLE" rank="3"/>
+	      <source name="POWERBROKER" rank="4"/>
+	      <source name="AZURE" rank="5"/>
+	      <source name="AMEX_VOICE" rank="6"/>
+	      <source name="AD" rank="7"/>
+	      <source name="AXP_CLOUD" rank="8"/>
+	      <source name="HAOPS" rank="9"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="MOST_RECENT_DATE" name="IP_LEASE_END_DATE" type="ASSET">
+	    <sources>
+	      <source name="PGP" rank="1"/>
+	      <source name="FOUNDSTONE" rank="2"/>
+	      <source name="NCIRCLE" rank="3"/>
+	      <source name="POWERBROKER" rank="4"/>
+	      <source name="AZURE" rank="5"/>
+	      <source name="AMEX_VOICE" rank="6"/>
+	      <source name="AD" rank="7"/>
+	      <source name="AXP_CLOUD" rank="8"/>
+	      <source name="HAOPS" rank="9"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="MOST_RECENT_DATE" name="SCAN_DATE" type="ASSET">
+	    <sources>
+	      <source name="PGP" rank="1"/>
+	      <source name="FOUNDSTONE" rank="2"/>
+	      <source name="NCIRCLE" rank="3"/>
+	      <source name="POWERBROKER" rank="4"/>
+	      <source name="AZURE" rank="5"/>
+	      <source name="MAC" rank="6"/>
+	      <source name="AMEX_VOICE" rank="7"/>
+	      <source name="AD" rank="8"/>
+	      <source name="AXP_CLOUD" rank="9"/>
+	      <source name="HAOPS" rank="10"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="MOST_RECENT_DATE" name="USER_LOGIN_DATE" type="ASSET">
+	    <sources>
+	      <source name="PGP" rank="1"/>
+	      <source name="FOUNDSTONE" rank="2"/>
+	      <source name="NCIRCLE" rank="3"/>
+	      <source name="POWERBROKER" rank="4"/>
+	      <source name="AZURE" rank="5"/>
+	      <source name="AMEX_VOICE" rank="6"/>
+	      <source name="AD" rank="7"/>
+	      <source name="AXP_CLOUD" rank="8"/>
+	      <source name="HAOPS" rank="9"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="OLDEST_DATE" name="OS_INSTALL_DATE" type="ASSET">
+	    <sources>
+	      <source name="PGP" rank="1"/>
+	      <source name="FOUNDSTONE" rank="2"/>
+	      <source name="NCIRCLE" rank="3"/>
+	      <source name="POWERBROKER" rank="4"/>
+	      <source name="AZURE" rank="5"/>
+	      <source name="TIMS" rank="6"/>
+	      <source name="EMC" rank="7"/>
+	      <source name="HP_COMPUTER" rank="8"/>
+	      <source name="HP_NETWORK" rank="9"/>
+	      <source name="IBM" rank="10"/>
+	      <source name="IDN" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="AMEX_VOICE" rank="13"/>
+	      <source name="AD" rank="14"/>
+	      <source name="AXP_CLOUD" rank="15"/>
+	      <source name="HAOPS" rank="16"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="MOST_RECENT_DATE" name="LAST_ACTIVITY_DATE" type="ASSET">
+	    <sources>
+	      <source name="PGP" rank="1"/>
+	      <source name="FOUNDSTONE" rank="2"/>
+	      <source name="NCIRCLE" rank="3"/>
+	      <source name="POWERBROKER" rank="4"/>
+	      <source name="AZURE" rank="5"/>
+	      <source name="MAC" rank="6"/>
+	      <source name="AMEX_NETWORK" rank="7"/>
+	      <source name="AMEX_VOICE" rank="8"/>
+	      <source name="AD" rank="9"/>
+	      <source name="AXP_CLOUD" rank="10"/>
+	      <source name="HAOPS" rank="11"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="OLDEST_DATE" name="ORDERED_DATE" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="AMEX_VOICE" rank="13"/>
+	      <source name="AD" rank="14"/>
+	      <source name="AXP_CLOUD" rank="15"/>
+	      <source name="HAOPS" rank="16"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="OLDEST_DATE" name="DELIVERY_DATE" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="AMEX_VOICE" rank="13"/>
+	      <source name="AD" rank="14"/>
+	      <source name="AXP_CLOUD" rank="15"/>
+	      <source name="HAOPS" rank="16"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="OLDEST_DATE" name="ASSET_INSTALL_DATE" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="AMEX_VOICE" rank="13"/>
+	      <source name="AD" rank="14"/>
+	      <source name="AXP_CLOUD" rank="15"/>
+	      <source name="HAOPS" rank="16"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="OLDEST_DATE" name="DEPLOYED_DATE" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="AMEX_VOICE" rank="13"/>
+	      <source name="AD" rank="14"/>
+	      <source name="AXP_CLOUD" rank="15"/>
+	      <source name="HAOPS" rank="16"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="OLDEST_DATE" name="DECOMMISSION_DATE" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="AMEX_VOICE" rank="13"/>
+	      <source name="AD" rank="14"/>
+	      <source name="AXP_CLOUD" rank="15"/>
+	      <source name="HAOPS" rank="16"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="OLDEST_DATE" name="DISPOSSESSION_DATE" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="AMEX_VOICE" rank="13"/>
+	      <source name="AD" rank="14"/>
+	      <source name="AXP_CLOUD" rank="15"/>
+	      <source name="HAOPS" rank="16"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="MOST_RECENT_DATE" name="STATUS_CHANGE_DATE" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="AMEX_VOICE" rank="13"/>
+	      <source name="AD" rank="14"/>
+	      <source name="AXP_CLOUD" rank="15"/>
+	      <source name="HAOPS" rank="16"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="OLDEST_DATE" name="RECORD_CREATED_DATE" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="AMEX_VOICE" rank="15"/>
+	      <source name="AD" rank="16"/>
+	      <source name="AXP_CLOUD" rank="17"/>
+	      <source name="HAOPS" rank="18"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="MOST_RECENT_DATE" name="RECORD_UPDATED_DATE" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="AMEX_VOICE" rank="15"/>
+	      <source name="AD" rank="16"/>
+	      <source name="AXP_CLOUD" rank="17"/>
+	      <source name="HAOPS" rank="18"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="MOST_RECENT_DATE" name="LAST_LIFECYCLE_CHANGE_DATE" type="ASSET">
+	  </attribute>
+	  <attribute algorithm="MOST_RECENT_DATE" name="AUDIT_DATE" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="AMEX_VOICE" rank="13"/>
+	      <source name="AD" rank="14"/>
+	      <source name="AXP_CLOUD" rank="15"/>
+	      <source name="HAOPS" rank="16"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="OLDEST_DATE" name="BILLABLE_START_DATE" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="AMEX_NETWORK" rank="7"/>
+	      <source name="AMEX_VOICE" rank="8"/>
+	      <source name="AD" rank="9"/>
+	      <source name="AXP_CLOUD" rank="10"/>
+	      <source name="HAOPS" rank="11"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="OLDEST_DATE" name="BILLABLE_END_DATE" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="AMEX_NETWORK" rank="7"/>
+	      <source name="AMEX_VOICE" rank="8"/>
+	      <source name="AD" rank="9"/>
+	      <source name="AXP_CLOUD" rank="10"/>
+	      <source name="HAOPS" rank="11"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="ASSET_DESCRIPTION" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="AMEX_VOICE" rank="15"/>
+	      <source name="AD" rank="16"/>
+	      <source name="AXP_CLOUD" rank="17"/>
+	      <source name="HAOPS" rank="18"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="COST_CENTER_CODE" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="AMEX_VOICE" rank="15"/>
+	      <source name="AD" rank="16"/>
+	      <source name="AXP_CLOUD" rank="17"/>
+	      <source name="HAOPS" rank="18"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="COST_CENTER" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="AMEX_VOICE" rank="15"/>
+	      <source name="AD" rank="16"/>
+	      <source name="AXP_CLOUD" rank="17"/>
+	      <source name="HAOPS" rank="18"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="SLA_CLASS" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="AMEX_VOICE" rank="15"/>
+	      <source name="AD" rank="16"/>
+	      <source name="AXP_CLOUD" rank="17"/>
+	      <source name="HAOPS" rank="18"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="ACQUIRED_METHOD" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="AMEX_VOICE" rank="15"/>
+	      <source name="AD" rank="16"/>
+	      <source name="AXP_CLOUD" rank="17"/>
+	      <source name="HAOPS" rank="18"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="UNIT_PRICE" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="AMEX_VOICE" rank="13"/>
+	      <source name="AD" rank="14"/>
+	      <source name="AXP_CLOUD" rank="15"/>
+	      <source name="HAOPS" rank="16"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="MONTHLY_MAINTENANCE_COST" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="AMEX_VOICE" rank="13"/>
+	      <source name="AD" rank="14"/>
+	      <source name="AXP_CLOUD" rank="15"/>
+	      <source name="HAOPS" rank="16"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="EQUIPMENT_AGE" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="AMEX_VOICE" rank="15"/>
+	      <source name="AD" rank="16"/>
+	      <source name="AXP_CLOUD" rank="17"/>
+	      <source name="HAOPS" rank="18"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="LEASED" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="AMEX_VOICE" rank="13"/>
+	      <source name="AD" rank="14"/>
+	      <source name="AXP_CLOUD" rank="15"/>
+	      <source name="HAOPS" rank="16"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="OLDEST_DATE" name="LEASE_START_DATE" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="AMEX_VOICE" rank="13"/>
+	      <source name="AD" rank="14"/>
+	      <source name="AXP_CLOUD" rank="15"/>
+	      <source name="HAOPS" rank="16"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="MOST_RECENT_DATE" name="LEASE_END_DATE" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="AMEX_VOICE" rank="13"/>
+	      <source name="AD" rank="14"/>
+	      <source name="AXP_CLOUD" rank="15"/>
+	      <source name="HAOPS" rank="16"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="IF_NOT_EXCLUDE" value="Billable" name="BILL_SCOPE_STATUS" type="ASSET">
+	    <sources>
+	      <source name="MCAFEE" rank="1"/>
+	      <source name="PGP" rank="2"/>
+	      <source name="EMC" rank="3"/>
+	      <source name="FOUNDSTONE" rank="4"/>
+	      <source name="HP_COMPUTER" rank="5"/>
+	      <source name="HP_NETWORK" rank="6"/>
+	      <source name="IBM" rank="7"/>
+	      <source name="IDN" rank="8"/>
+	      <source name="NCIRCLE" rank="9"/>
+	      <source name="POWERBROKER" rank="10"/>
+	      <source name="STRATUS" rank="11"/>
+	      <source name="DCI" rank="12"/>
+	      <source name="AZURE" rank="13"/>
+	      <source name="GSS" rank="14"/>
+	      <source name="AMEX_NETWORK" rank="15"/>
+	      <source name="MAC" rank="16"/>
+	      <source name="AMEX_VOICE" rank="17"/>
+	      <source name="AD" rank="18"/>
+	      <source name="AXP_CLOUD" rank="19"/>
+	      <source name="HAOPS" rank="20"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="ASSET_OWNER" type="ASSET">
+	    <sources>
+	      <source name="MCAFEE" rank="1"/>
+	      <source name="PGP" rank="2"/>
+	      <source name="FOUNDSTONE" rank="3"/>
+	      <source name="NCIRCLE" rank="4"/>
+	      <source name="POWERBROKER" rank="5"/>
+	      <source name="AZURE" rank="6"/>
+	      <source name="EMC" rank="7"/>
+	      <source name="HP_COMPUTER" rank="8"/>
+	      <source name="HP_NETWORK" rank="9"/>
+	      <source name="IBM" rank="10"/>
+	      <source name="IDN" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="MAC" rank="15"/>
+	      <source name="AMEX_VOICE" rank="16"/>
+	      <source name="AD" rank="17"/>
+	      <source name="AXP_CLOUD" rank="18"/>
+	      <source name="HAOPS" rank="19"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="ASSET_COMMENT" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="MAC" rank="15"/>
+	      <source name="AMEX_VOICE" rank="16"/>
+	      <source name="AD" rank="17"/>
+	      <source name="AXP_CLOUD" rank="18"/>
+	      <source name="HAOPS" rank="19"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="RANK_BY_VALUE" name="CLASSIFIED" type="ASSET">
+	    <rank_values>
+	        <rank_value value="Classified" rank="1"/>
+	        <rank_value value="Not Classified" rank="2"/>
+	    </rank_values>
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="MAC" rank="15"/>
+	      <source name="AMEX_VOICE" rank="16"/>
+	      <source name="AD" rank="17"/>
+	      <source name="AXP_CLOUD" rank="18"/>
+	      <source name="HAOPS" rank="19"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="IF_NOT_EXCLUDE" value="Supported" name="SUPPORT_SCOPE_STATUS" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="MAC" rank="15"/>
+	      <source name="AMEX_VOICE" rank="16"/>
+	      <source name="AD" rank="17"/>
+	      <source name="AXP_CLOUD" rank="18"/>
+	      <source name="HAOPS" rank="19"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="RANK_ASSET_ID" type="ASSET">
+	    <sources>
+	      <source name="SCCM" rank="1"/>
+	      <source name="MCAFEE" rank="2"/>
+	      <source name="PGP" rank="3"/>
+	      <source name="EMC" rank="4"/>
+	      <source name="FOUNDSTONE" rank="5"/>
+	      <source name="HP_COMPUTER" rank="6"/>
+	      <source name="HP_NETWORK" rank="7"/>
+	      <source name="IBM" rank="8"/>
+	      <source name="IDN" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="DCI" rank="13"/>
+	      <source name="AD" rank="14"/>
+	      <source name="AZURE" rank="15"/>
+	      <source name="PDI" rank="16"/>
+	      <source name="HP_DB" rank="17"/>
+	      <source name="GSS" rank="18"/>
+	      <source name="AMEX_NETWORK" rank="19"/>
+	      <source name="MAC" rank="20"/>
+	      <source name="AMEX_VOICE" rank="21"/>
+	      <source name="AXP_CLOUD" rank="22"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="ASSOCIATED_BY_NETWORK" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="MAC" rank="15"/>
+	      <source name="AMEX_VOICE" rank="16"/>
+	      <source name="AD" rank="17"/>
+	      <source name="AXP_CLOUD" rank="18"/>
+	      <source name="HAOPS" rank="19"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="MOST_FREQUENT_VALUE" name="VIRTUALIZATION_TYPE" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="AMEX_VOICE" rank="15"/>
+	      <source name="AD" rank="16"/>
+	      <source name="AXP_CLOUD" rank="17"/>
+	      <source name="HAOPS" rank="18"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="MINIMUM_VALUE" name="FREE_DISK" type="ASSET">
+	    <sources>
+	      <source name="FOUNDSTONE" rank="1"/>
+	      <source name="NCIRCLE" rank="2"/>
+	      <source name="POWERBROKER" rank="3"/>
+	      <source name="AZURE" rank="4"/>
+	      <source name="TIMS" rank="5"/>
+	      <source name="EMC" rank="6"/>
+	      <source name="HP_COMPUTER" rank="7"/>
+	      <source name="HP_NETWORK" rank="8"/>
+	      <source name="IBM" rank="9"/>
+	      <source name="IDN" rank="10"/>
+	      <source name="STRATUS" rank="11"/>
+	      <source name="AMEX_VOICE" rank="12"/>
+	      <source name="AD" rank="13"/>
+	      <source name="AXP_CLOUD" rank="14"/>
+	      <source name="HAOPS" rank="15"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="CI_NAME" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="AMEX_VOICE" rank="7"/>
+	      <source name="AD" rank="8"/>
+	      <source name="AXP_CLOUD" rank="9"/>
+	      <source name="HAOPS" rank="10"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="RACK_ID" type="ASSET">
+	    <sources>
+	      <source name="MCAFEE" rank="1"/>
+	      <source name="PGP" rank="2"/>
+	      <source name="EMC" rank="3"/>
+	      <source name="FOUNDSTONE" rank="4"/>
+	      <source name="HP_COMPUTER" rank="5"/>
+	      <source name="HP_NETWORK" rank="6"/>
+	      <source name="IBM" rank="7"/>
+	      <source name="IDN" rank="8"/>
+	      <source name="NCIRCLE" rank="9"/>
+	      <source name="POWERBROKER" rank="10"/>
+	      <source name="STRATUS" rank="11"/>
+	      <source name="DCI" rank="12"/>
+	      <source name="AZURE" rank="13"/>
+	      <source name="GSS" rank="14"/>
+	      <source name="AMEX_VOICE" rank="15"/>
+	      <source name="AD" rank="16"/>
+	      <source name="AXP_CLOUD" rank="17"/>
+	      <source name="HAOPS" rank="18"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="COST_CENTER_REFERENCE_GUID" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_VOICE" rank="14"/>
+	      <source name="AD" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="COST_CENTER_REFERENCE_LABEL" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_VOICE" rank="14"/>
+	      <source name="AD" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="LOCATION_REFERENCE_GUID" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_VOICE" rank="14"/>
+	      <source name="AD" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="MEMORY_MODEL_REFERENCE_GUID" type="ASSET">
+	    <sources>
+	      <source name="FOUNDSTONE" rank="1"/>
+	      <source name="NCIRCLE" rank="2"/>
+	      <source name="POWERBROKER" rank="3"/>
+	      <source name="AZURE" rank="4"/>
+	      <source name="TIMS" rank="5"/>
+	      <source name="EMC" rank="6"/>
+	      <source name="HP_COMPUTER" rank="7"/>
+	      <source name="HP_NETWORK" rank="8"/>
+	      <source name="IBM" rank="9"/>
+	      <source name="IDN" rank="10"/>
+	      <source name="STRATUS" rank="11"/>
+	      <source name="AMEX_VOICE" rank="12"/>
+	      <source name="AD" rank="13"/>
+	      <source name="AXP_CLOUD" rank="14"/>
+	      <source name="HAOPS" rank="15"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="MODEL_REFERENCE_GUID" type="ASSET">
+	    <sources>
+	      <source name="FOUNDSTONE" rank="1"/>
+	      <source name="NCIRCLE" rank="2"/>
+	      <source name="POWERBROKER" rank="3"/>
+	      <source name="AZURE" rank="4"/>
+	      <source name="TIMS" rank="5"/>
+	      <source name="EMC" rank="6"/>
+	      <source name="HP_COMPUTER" rank="7"/>
+	      <source name="HP_NETWORK" rank="8"/>
+	      <source name="IBM" rank="9"/>
+	      <source name="IDN" rank="10"/>
+	      <source name="STRATUS" rank="11"/>
+	      <source name="AMEX_NETWORK" rank="12"/>
+	      <source name="MAC" rank="13"/>
+	      <source name="AMEX_VOICE" rank="14"/>
+	      <source name="AD" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="MODEL_REFERENCE_LABEL" type="ASSET">
+	    <sources>
+	      <source name="FOUNDSTONE" rank="1"/>
+	      <source name="NCIRCLE" rank="2"/>
+	      <source name="POWERBROKER" rank="3"/>
+	      <source name="AZURE" rank="4"/>
+	      <source name="TIMS" rank="5"/>
+	      <source name="EMC" rank="6"/>
+	      <source name="HP_COMPUTER" rank="7"/>
+	      <source name="HP_NETWORK" rank="8"/>
+	      <source name="IBM" rank="9"/>
+	      <source name="IDN" rank="10"/>
+	      <source name="STRATUS" rank="11"/>
+	      <source name="AMEX_NETWORK" rank="12"/>
+	      <source name="MAC" rank="13"/>
+	      <source name="AMEX_VOICE" rank="14"/>
+	      <source name="AD" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="CPU_MODEL_REFERENCE_GUID" type="ASSET">
+	    <sources>
+	      <source name="FOUNDSTONE" rank="1"/>
+	      <source name="NCIRCLE" rank="2"/>
+	      <source name="POWERBROKER" rank="3"/>
+	      <source name="AZURE" rank="4"/>
+	      <source name="TIMS" rank="5"/>
+	      <source name="EMC" rank="6"/>
+	      <source name="HP_COMPUTER" rank="7"/>
+	      <source name="HP_NETWORK" rank="8"/>
+	      <source name="IBM" rank="9"/>
+	      <source name="IDN" rank="10"/>
+	      <source name="STRATUS" rank="11"/>
+	      <source name="AMEX_VOICE" rank="12"/>
+	      <source name="AD" rank="13"/>
+	      <source name="AXP_CLOUD" rank="14"/>
+	      <source name="HAOPS" rank="15"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="ASSET_OWNER_REFERENCE_GUID" type="ASSET">
+	    <sources>
+	      <source name="MCAFEE" rank="1"/>
+	      <source name="PGP" rank="2"/>
+	      <source name="FOUNDSTONE" rank="3"/>
+	      <source name="NCIRCLE" rank="4"/>
+	      <source name="POWERBROKER" rank="5"/>
+	      <source name="AZURE" rank="6"/>
+	      <source name="EMC" rank="7"/>
+	      <source name="HP_COMPUTER" rank="8"/>
+	      <source name="HP_NETWORK" rank="9"/>
+	      <source name="IBM" rank="10"/>
+	      <source name="IDN" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_VOICE" rank="14"/>
+	      <source name="AD" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="OS_REFERENCE_GUID" type="ASSET">
+	    <sources>
+	      <source name="FOUNDSTONE" rank="1"/>
+	      <source name="NCIRCLE" rank="2"/>
+	      <source name="POWERBROKER" rank="3"/>
+	      <source name="AZURE" rank="4"/>
+	      <source name="TIMS" rank="5"/>
+	      <source name="EMC" rank="6"/>
+	      <source name="HP_COMPUTER" rank="7"/>
+	      <source name="HP_NETWORK" rank="8"/>
+	      <source name="IBM" rank="9"/>
+	      <source name="IDN" rank="10"/>
+	      <source name="STRATUS" rank="11"/>
+	      <source name="AMEX_NETWORK" rank="12"/>
+	      <source name="MAC" rank="13"/>
+	      <source name="AMEX_VOICE" rank="14"/>
+	      <source name="AD" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="OS_REFERENCE_LABEL" type="ASSET">
+	    <sources>
+	      <source name="FOUNDSTONE" rank="1"/>
+	      <source name="NCIRCLE" rank="2"/>
+	      <source name="POWERBROKER" rank="3"/>
+	      <source name="AZURE" rank="4"/>
+	      <source name="TIMS" rank="5"/>
+	      <source name="EMC" rank="6"/>
+	      <source name="HP_COMPUTER" rank="7"/>
+	      <source name="HP_NETWORK" rank="8"/>
+	      <source name="IBM" rank="9"/>
+	      <source name="IDN" rank="10"/>
+	      <source name="STRATUS" rank="11"/>
+	      <source name="AMEX_NETWORK" rank="12"/>
+	      <source name="MAC" rank="13"/>
+	      <source name="AMEX_VOICE" rank="14"/>
+	      <source name="AD" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="MEMORY_MANUFACTURER" type="ASSET">
+	    <sources>
+	      <source name="FOUNDSTONE" rank="1"/>
+	      <source name="NCIRCLE" rank="2"/>
+	      <source name="POWERBROKER" rank="3"/>
+	      <source name="AZURE" rank="4"/>
+	      <source name="TIMS" rank="5"/>
+	      <source name="EMC" rank="6"/>
+	      <source name="HP_COMPUTER" rank="7"/>
+	      <source name="HP_NETWORK" rank="8"/>
+	      <source name="IBM" rank="9"/>
+	      <source name="IDN" rank="10"/>
+	      <source name="STRATUS" rank="11"/>
+	      <source name="AD" rank="12"/>
+	      <source name="AXP_CLOUD" rank="13"/>
+	      <source name="HAOPS" rank="14"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="MEMORY_MODEL" type="ASSET">
+	    <sources>
+	      <source name="FOUNDSTONE" rank="1"/>
+	      <source name="NCIRCLE" rank="2"/>
+	      <source name="POWERBROKER" rank="3"/>
+	      <source name="AZURE" rank="4"/>
+	      <source name="TIMS" rank="5"/>
+	      <source name="EMC" rank="6"/>
+	      <source name="HP_COMPUTER" rank="7"/>
+	      <source name="HP_NETWORK" rank="8"/>
+	      <source name="IBM" rank="9"/>
+	      <source name="IDN" rank="10"/>
+	      <source name="STRATUS" rank="11"/>
+	      <source name="AD" rank="12"/>
+	      <source name="AXP_CLOUD" rank="13"/>
+	      <source name="HAOPS" rank="14"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="WARRANTY_EXPIRATION_DATE" type="ASSET">
+	    <sources>
+	      <source name="MCAFEE" rank="1"/>
+	      <source name="PGP" rank="2"/>
+	      <source name="EMC" rank="3"/>
+	      <source name="FOUNDSTONE" rank="4"/>
+	      <source name="HP_COMPUTER" rank="5"/>
+	      <source name="HP_NETWORK" rank="6"/>
+	      <source name="IBM" rank="7"/>
+	      <source name="IDN" rank="8"/>
+	      <source name="NCIRCLE" rank="9"/>
+	      <source name="POWERBROKER" rank="10"/>
+	      <source name="STRATUS" rank="11"/>
+	      <source name="GSS" rank="12"/>
+	      <source name="AMEX_VOICE" rank="13"/>
+	      <source name="AD" rank="14"/>
+	      <source name="AXP_CLOUD" rank="15"/>
+	      <source name="HAOPS" rank="16"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="SERVICE_PROVIDER" type="ASSET">
+	    <sources>
+	      <source name="HP_COMPUTER" rank="1"/>
+	      <source name="HP_NETWORK" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="EMC" rank="4"/>
+	      <source name="SCCM" rank="5"/>
+	      <source name="MCAFEE" rank="6"/>
+	      <source name="PGP" rank="7"/>
+	      <source name="FOUNDSTONE" rank="8"/>
+	      <source name="NCIRCLE" rank="9"/>
+	      <source name="POWERBROKER" rank="10"/>
+	      <source name="DCI" rank="11"/>
+	      <source name="AD" rank="12"/>
+	      <source name="AZURE" rank="13"/>
+	      <source name="GSS" rank="14"/>
+	      <source name="AMEX_NETWORK" rank="15"/>
+	      <source name="MAC" rank="16"/>
+	      <source name="AMEX_VOICE" rank="17"/>
+	      <source name="AD" rank="18"/>
+	      <source name="AXP_CLOUD" rank="19"/>
+	      <source name="HAOPS" rank="20"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="PARENT_ASSET_NAME" type="ASSET">
+	    <sources>
+	      <source name="MCAFEE" rank="1"/>
+	      <source name="PGP" rank="2"/>
+	      <source name="EMC" rank="3"/>
+	      <source name="FOUNDSTONE" rank="4"/>
+	      <source name="HP_COMPUTER" rank="5"/>
+	      <source name="HP_NETWORK" rank="6"/>
+	      <source name="IBM" rank="7"/>
+	      <source name="IDN" rank="8"/>
+	      <source name="NCIRCLE" rank="9"/>
+	      <source name="POWERBROKER" rank="10"/>
+	      <source name="STRATUS" rank="11"/>
+	      <source name="GSS" rank="12"/>
+	      <source name="AMEX_VOICE" rank="13"/>
+	      <source name="AD" rank="14"/>
+	      <source name="AXP_CLOUD" rank="15"/>
+	      <source name="HAOPS" rank="16"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="PARENT_ASSET_TAG" type="ASSET">
+	    <sources>
+	      <source name="MCAFEE" rank="1"/>
+	      <source name="PGP" rank="2"/>
+	      <source name="EMC" rank="3"/>
+	      <source name="FOUNDSTONE" rank="4"/>
+	      <source name="HP_COMPUTER" rank="5"/>
+	      <source name="HP_NETWORK" rank="6"/>
+	      <source name="IBM" rank="7"/>
+	      <source name="IDN" rank="8"/>
+	      <source name="NCIRCLE" rank="9"/>
+	      <source name="POWERBROKER" rank="10"/>
+	      <source name="STRATUS" rank="11"/>
+	      <source name="GSS" rank="12"/>
+	      <source name="AMEX_VOICE" rank="13"/>
+	      <source name="AD" rank="14"/>
+	      <source name="AXP_CLOUD" rank="15"/>
+	      <source name="HAOPS" rank="16"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="CLUSTER_NAME" type="ASSET">
+	    <sources>
+	      <source name="MCAFEE" rank="1"/>
+	      <source name="PGP" rank="2"/>
+	      <source name="EMC" rank="3"/>
+	      <source name="FOUNDSTONE" rank="4"/>
+	      <source name="HP_COMPUTER" rank="5"/>
+	      <source name="HP_NETWORK" rank="6"/>
+	      <source name="IBM" rank="7"/>
+	      <source name="IDN" rank="8"/>
+	      <source name="NCIRCLE" rank="9"/>
+	      <source name="POWERBROKER" rank="10"/>
+	      <source name="STRATUS" rank="11"/>
+	      <source name="GSS" rank="12"/>
+	      <source name="AMEX_VOICE" rank="13"/>
+	      <source name="AD" rank="14"/>
+	      <source name="AXP_CLOUD" rank="15"/>
+	      <source name="HAOPS" rank="16"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="SHORT_DESCRIPTION" type="ASSET">
+	    <sources>
+	      <source name="MCAFEE" rank="1"/>
+	      <source name="PGP" rank="2"/>
+	      <source name="EMC" rank="3"/>
+	      <source name="FOUNDSTONE" rank="4"/>
+	      <source name="HP_COMPUTER" rank="5"/>
+	      <source name="HP_NETWORK" rank="6"/>
+	      <source name="IBM" rank="7"/>
+	      <source name="IDN" rank="8"/>
+	      <source name="NCIRCLE" rank="9"/>
+	      <source name="POWERBROKER" rank="10"/>
+	      <source name="STRATUS" rank="11"/>
+	      <source name="GSS" rank="12"/>
+	      <source name="AMEX_VOICE" rank="13"/>
+	      <source name="AD" rank="14"/>
+	      <source name="AXP_CLOUD" rank="15"/>
+	      <source name="HAOPS" rank="16"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="OS_REFERENCE_VERSION" type="ASSET">
+	    <sources>
+	      <source name="MCAFEE" rank="1"/>
+	      <source name="PGP" rank="2"/>
+	      <source name="EMC" rank="3"/>
+	      <source name="FOUNDSTONE" rank="4"/>
+	      <source name="HP_COMPUTER" rank="5"/>
+	      <source name="HP_NETWORK" rank="6"/>
+	      <source name="IBM" rank="7"/>
+	      <source name="IDN" rank="8"/>
+	      <source name="NCIRCLE" rank="9"/>
+	      <source name="POWERBROKER" rank="10"/>
+	      <source name="STRATUS" rank="11"/>
+	      <source name="DCI" rank="12"/>
+	      <source name="AD" rank="13"/>
+	      <source name="GSS" rank="14"/>
+	      <source name="AMEX_VOICE" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="CI_OPERATIONAL_STATUS" type="ASSET">
+	    <sources>
+	      <source name="PGP" rank="1"/>
+	      <source name="EMC" rank="2"/>
+	      <source name="FOUNDSTONE" rank="3"/>
+	      <source name="HP_COMPUTER" rank="4"/>
+	      <source name="HP_NETWORK" rank="5"/>
+	      <source name="IBM" rank="6"/>
+	      <source name="IDN" rank="7"/>
+	      <source name="NCIRCLE" rank="8"/>
+	      <source name="POWERBROKER" rank="9"/>
+	      <source name="STRATUS" rank="10"/>
+	      <source name="DCI" rank="11"/>
+	      <source name="AD" rank="12"/>
+	      <source name="AMEX_VOICE" rank="13"/>
+	      <source name="AXP_CLOUD" rank="14"/>
+	      <source name="HAOPS" rank="15"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="SNOW_OPERATIONAL_STATUS" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="AMEX_VOICE" rank="15"/>
+	      <source name="AD" rank="16"/>
+	      <source name="AXP_CLOUD" rank="17"/>
+	      <source name="HAOPS" rank="18"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="SNOW_INSTALL_STATUS" type="ASSET">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="AMEX_VOICE" rank="15"/>
+	      <source name="AD" rank="16"/>
+	      <source name="AXP_CLOUD" rank="17"/>
+	      <source name="HAOPS" rank="18"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="MOST_RECENT_DATE" name="ASSIGNED_DATE" type="ASSET">
+	    <sources>
+	      <source name="HP_COMPUTER" rank="1"/>
+	      <source name="HP_NETWORK" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="STRATUS" rank="5"/>
+	      <source name="SCCM" rank="6"/>
+	      <source name="MCAFEE" rank="7"/>
+	      <source name="FOUNDSTONE" rank="8"/>
+	      <source name="NCIRCLE" rank="9"/>
+	      <source name="POWERBROKER" rank="10"/>
+	      <source name="AZURE" rank="11"/>
+	      <source name="GSS" rank="12"/>
+	      <source name="AMEX_NETWORK" rank="13"/>
+	      <source name="AMEX_VOICE" rank="14"/>
+	      <source name="AD" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="ORGANIZATION_REFERENCE_GUID" type="ASSET">
+	    <sources>
+	      <source name="HP_COMPUTER" rank="1"/>
+	      <source name="HP_NETWORK" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="STRATUS" rank="5"/>
+	      <source name="SCCM" rank="6"/>
+	      <source name="MCAFEE" rank="7"/>
+	      <source name="FOUNDSTONE" rank="8"/>
+	      <source name="NCIRCLE" rank="9"/>
+	      <source name="POWERBROKER" rank="10"/>
+	      <source name="AZURE" rank="11"/>
+	      <source name="GSS" rank="12"/>
+	      <source name="AMEX_NETWORK" rank="13"/>
+	      <source name="AMEX_VOICE" rank="14"/>
+	      <source name="AD" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="GL_ACCOUNT" type="ASSET">
+	    <sources>
+	      <source name="HP_COMPUTER" rank="1"/>
+	      <source name="HP_NETWORK" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="STRATUS" rank="5"/>
+	      <source name="SCCM" rank="6"/>
+	      <source name="MCAFEE" rank="7"/>
+	      <source name="FOUNDSTONE" rank="8"/>
+	      <source name="NCIRCLE" rank="9"/>
+	      <source name="POWERBROKER" rank="10"/>
+	      <source name="AZURE" rank="11"/>
+	      <source name="GSS" rank="12"/>
+	      <source name="AMEX_NETWORK" rank="13"/>
+	      <source name="AMEX_VOICE" rank="14"/>
+	      <source name="AD" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="LEASE_CONTRACT" type="ASSET">
+	    <sources>
+	      <source name="HP_COMPUTER" rank="1"/>
+	      <source name="HP_NETWORK" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="STRATUS" rank="5"/>
+	      <source name="SCCM" rank="6"/>
+	      <source name="MCAFEE" rank="7"/>
+	      <source name="FOUNDSTONE" rank="8"/>
+	      <source name="NCIRCLE" rank="9"/>
+	      <source name="POWERBROKER" rank="10"/>
+	      <source name="AZURE" rank="11"/>
+	      <source name="GSS" rank="12"/>
+	      <source name="AMEX_NETWORK" rank="13"/>
+	      <source name="AMEX_VOICE" rank="14"/>
+	      <source name="AD" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="PO_NUMBER" type="ASSET">
+	    <sources>
+	      <source name="HP_COMPUTER" rank="1"/>
+	      <source name="HP_NETWORK" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="STRATUS" rank="5"/>
+	      <source name="SCCM" rank="6"/>
+	      <source name="MCAFEE" rank="7"/>
+	      <source name="FOUNDSTONE" rank="8"/>
+	      <source name="NCIRCLE" rank="9"/>
+	      <source name="POWERBROKER" rank="10"/>
+	      <source name="AZURE" rank="11"/>
+	      <source name="GSS" rank="12"/>
+	      <source name="AMEX_NETWORK" rank="13"/>
+	      <source name="AMEX_VOICE" rank="14"/>
+	      <source name="AD" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="PURCHASE_COST" type="ASSET">
+	    <sources>
+	      <source name="HP_COMPUTER" rank="1"/>
+	      <source name="HP_NETWORK" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="STRATUS" rank="5"/>
+	      <source name="SCCM" rank="6"/>
+	      <source name="MCAFEE" rank="7"/>
+	      <source name="FOUNDSTONE" rank="8"/>
+	      <source name="NCIRCLE" rank="9"/>
+	      <source name="POWERBROKER" rank="10"/>
+	      <source name="AZURE" rank="11"/>
+	      <source name="GSS" rank="12"/>
+	      <source name="AMEX_NETWORK" rank="13"/>
+	      <source name="AMEX_VOICE" rank="14"/>
+	      <source name="AD" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="VENDOR" type="ASSET">
+	    <sources>
+	      <source name="HP_COMPUTER" rank="1"/>
+	      <source name="HP_NETWORK" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="STRATUS" rank="5"/>
+	      <source name="SCCM" rank="6"/>
+	      <source name="MCAFEE" rank="7"/>
+	      <source name="FOUNDSTONE" rank="8"/>
+	      <source name="NCIRCLE" rank="9"/>
+	      <source name="POWERBROKER" rank="10"/>
+	      <source name="AZURE" rank="11"/>
+	      <source name="GSS" rank="12"/>
+	      <source name="AMEX_NETWORK" rank="13"/>
+	      <source name="AMEX_VOICE" rank="14"/>
+	      <source name="AD" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="VENDOR_REFERENCE_GUID" type="ASSET">
+	    <sources>
+	      <source name="HP_COMPUTER" rank="1"/>
+	      <source name="HP_NETWORK" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="STRATUS" rank="5"/>
+	      <source name="SCCM" rank="6"/>
+	      <source name="MCAFEE" rank="7"/>
+	      <source name="FOUNDSTONE" rank="8"/>
+	      <source name="NCIRCLE" rank="9"/>
+	      <source name="POWERBROKER" rank="10"/>
+	      <source name="AZURE" rank="11"/>
+	      <source name="GSS" rank="12"/>
+	      <source name="AMEX_NETWORK" rank="13"/>
+	      <source name="AMEX_VOICE" rank="14"/>
+	      <source name="AD" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="NATIVE_NATURAL_KEY" type="ASSET">
+	    <sources>
+	      <source name="HP_COMPUTER" rank="1"/>
+	      <source name="HP_NETWORK" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="STRATUS" rank="5"/>
+	      <source name="SCCM" rank="6"/>
+	      <source name="MCAFEE" rank="7"/>
+	      <source name="FOUNDSTONE" rank="8"/>
+	      <source name="NCIRCLE" rank="9"/>
+	      <source name="POWERBROKER" rank="10"/>
+	      <source name="AZURE" rank="11"/>
+	      <source name="GSS" rank="12"/>
+	      <source name="AMEX_NETWORK" rank="13"/>
+	      <source name="AMEX_VOICE" rank="14"/>
+	      <source name="AD" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="REL_TYPE_LABEL" type="ASSET">
+	    <sources>
+	      <source name="HP_COMPUTER" rank="1"/>
+	      <source name="HP_NETWORK" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="STRATUS" rank="5"/>
+	      <source name="SCCM" rank="6"/>
+	      <source name="MCAFEE" rank="7"/>
+	      <source name="FOUNDSTONE" rank="8"/>
+	      <source name="NCIRCLE" rank="9"/>
+	      <source name="POWERBROKER" rank="10"/>
+	      <source name="AZURE" rank="11"/>
+	      <source name="GSS" rank="12"/>
+	      <source name="AMEX_NETWORK" rank="13"/>
+	      <source name="AMEX_VOICE" rank="14"/>
+	      <source name="AD" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="VIEW_GROUP" type="NETWORK_INTERFACE">
+	    <sources>
+	      <source name="MCAFEE" rank="1"/>
+	      <source name="PGP" rank="2"/>
+	      <source name="EMC" rank="3"/>
+	      <source name="FOUNDSTONE" rank="4"/>
+	      <source name="HP_COMPUTER" rank="5"/>
+	      <source name="HP_NETWORK" rank="6"/>
+	      <source name="IBM" rank="7"/>
+	      <source name="IDN" rank="8"/>
+	      <source name="NCIRCLE" rank="9"/>
+	      <source name="POWERBROKER" rank="10"/>
+	      <source name="STRATUS" rank="11"/>
+	      <source name="DCI" rank="12"/>
+	      <source name="AZURE" rank="13"/>
+	      <source name="GSS" rank="14"/>
+	      <source name="SNOW" rank="15"/>
+	      <source name="AD" rank="16"/>
+	      <source name="AMEX_NETWORK" rank="17"/>
+	      <source name="MAC" rank="18"/>
+	      <source name="AMEX_VOICE" rank="19"/>
+	      <source name="AXP_CLOUD" rank="20"/>
+	      <source name="HAOPS" rank="21"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="ASSET_NAME" type="NETWORK_INTERFACE">
+	    <sources>
+	      <source name="MCAFEE" rank="1"/>
+	      <source name="PGP" rank="2"/>
+	      <source name="FOUNDSTONE" rank="3"/>
+	      <source name="NCIRCLE" rank="4"/>
+	      <source name="POWERBROKER" rank="5"/>
+	      <source name="AZURE" rank="6"/>
+	      <source name="EMC" rank="7"/>
+	      <source name="HP_COMPUTER" rank="8"/>
+	      <source name="HP_NETWORK" rank="9"/>
+	      <source name="IBM" rank="10"/>
+	      <source name="IDN" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="MAC" rank="15"/>
+	      <source name="AMEX_VOICE" rank="16"/>
+	      <source name="AD" rank="17"/>
+	      <source name="AXP_CLOUD" rank="18"/>
+	      <source name="HAOPS" rank="19"/>
+	      <source name="DCI" rank="20"/>
+	      <source name="PDI" rank="21"/>
+	      <source name="HP_DB" rank="22"/>
+	      <source name="SNOW" rank="23"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="ASSET_TAG" type="NETWORK_INTERFACE">
+	    <sources>
+	      <source name="MCAFEE" rank="1"/>
+	      <source name="PGP" rank="2"/>
+	      <source name="FOUNDSTONE" rank="3"/>
+	      <source name="NCIRCLE" rank="4"/>
+	      <source name="POWERBROKER" rank="5"/>
+	      <source name="AZURE" rank="6"/>
+	      <source name="EMC" rank="7"/>
+	      <source name="HP_COMPUTER" rank="8"/>
+	      <source name="HP_NETWORK" rank="9"/>
+	      <source name="IBM" rank="10"/>
+	      <source name="IDN" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="MAC" rank="15"/>
+	      <source name="AMEX_VOICE" rank="16"/>
+	      <source name="AD" rank="17"/>
+	      <source name="AXP_CLOUD" rank="18"/>
+	      <source name="HAOPS" rank="19"/>
+	      <source name="DCI" rank="20"/>
+	      <source name="PDI" rank="21"/>
+	      <source name="HP_DB" rank="22"/>
+	      <source name="SNOW" rank="23"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="SERIAL_NUMBER" type="NETWORK_INTERFACE">
+	    <sources>
+	      <source name="MCAFEE" rank="1"/>
+	      <source name="PGP" rank="2"/>
+	      <source name="FOUNDSTONE" rank="3"/>
+	      <source name="NCIRCLE" rank="4"/>
+	      <source name="POWERBROKER" rank="5"/>
+	      <source name="AZURE" rank="6"/>
+	      <source name="EMC" rank="7"/>
+	      <source name="HP_COMPUTER" rank="8"/>
+	      <source name="HP_NETWORK" rank="9"/>
+	      <source name="IBM" rank="10"/>
+	      <source name="IDN" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="MAC" rank="15"/>
+	      <source name="AMEX_VOICE" rank="16"/>
+	      <source name="AD" rank="17"/>
+	      <source name="AXP_CLOUD" rank="18"/>
+	      <source name="HAOPS" rank="19"/>
+	      <source name="DCI" rank="20"/>
+	      <source name="PDI" rank="21"/>
+	      <source name="HP_DB" rank="22"/>
+	      <source name="SNOW" rank="23"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="MAC_ADDRESS" type="NETWORK_INTERFACE">
+	    <sources>
+	      <source name="PGP" rank="1"/>
+	      <source name="FOUNDSTONE" rank="2"/>
+	      <source name="NCIRCLE" rank="3"/>
+	      <source name="POWERBROKER" rank="4"/>
+	      <source name="AZURE" rank="5"/>
+	      <source name="TIMS" rank="6"/>
+	      <source name="EMC" rank="7"/>
+	      <source name="HP_COMPUTER" rank="8"/>
+	      <source name="HP_NETWORK" rank="9"/>
+	      <source name="IBM" rank="10"/>
+	      <source name="IDN" rank="11"/>
+	      <source name="STRATUS" rank="12"/>
+	      <source name="AMEX_VOICE" rank="13"/>
+	      <source name="AD" rank="14"/>
+	      <source name="AXP_CLOUD" rank="15"/>
+	      <source name="HAOPS" rank="16"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="ORGANIZATION" type="NETWORK_INTERFACE">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="AMEX_VOICE" rank="15"/>
+	      <source name="AD" rank="16"/>
+	      <source name="AXP_CLOUD" rank="17"/>
+	      <source name="HAOPS" rank="18"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="MOST_RECENT_DATE" name="SCAN_DATE" type="NETWORK_INTERFACE">
+	    <sources>
+	      <source name="PGP" rank="1"/>
+	      <source name="FOUNDSTONE" rank="2"/>
+	      <source name="NCIRCLE" rank="3"/>
+	      <source name="POWERBROKER" rank="4"/>
+	      <source name="AZURE" rank="5"/>
+	      <source name="MAC" rank="6"/>
+	      <source name="AMEX_VOICE" rank="7"/>
+	      <source name="AD" rank="8"/>
+	      <source name="AXP_CLOUD" rank="9"/>
+	      <source name="HAOPS" rank="10"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="CI_NAME" type="NETWORK_INTERFACE">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="AMEX_VOICE" rank="7"/>
+	      <source name="AD" rank="8"/>
+	      <source name="AXP_CLOUD" rank="9"/>
+	      <source name="HAOPS" rank="10"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="SNOW_OPERATIONAL_STATUS" type="NETWORK_INTERFACE">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="AMEX_VOICE" rank="15"/>
+	      <source name="AD" rank="16"/>
+	      <source name="AXP_CLOUD" rank="17"/>
+	      <source name="HAOPS" rank="18"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="SNOW_INSTALL_STATUS" type="NETWORK_INTERFACE">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="HP_COMPUTER" rank="2"/>
+	      <source name="HP_NETWORK" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="SCCM" rank="7"/>
+	      <source name="MCAFEE" rank="8"/>
+	      <source name="FOUNDSTONE" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="POWERBROKER" rank="11"/>
+	      <source name="AZURE" rank="12"/>
+	      <source name="GSS" rank="13"/>
+	      <source name="AMEX_NETWORK" rank="14"/>
+	      <source name="AMEX_VOICE" rank="15"/>
+	      <source name="AD" rank="16"/>
+	      <source name="AXP_CLOUD" rank="17"/>
+	      <source name="HAOPS" rank="18"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="MOST_RECENT_DATE" name="ASSIGNED_DATE" type="NETWORK_INTERFACE">
+	    <sources>
+	      <source name="HP_COMPUTER" rank="1"/>
+	      <source name="HP_NETWORK" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="STRATUS" rank="5"/>
+	      <source name="SCCM" rank="6"/>
+	      <source name="MCAFEE" rank="7"/>
+	      <source name="FOUNDSTONE" rank="8"/>
+	      <source name="NCIRCLE" rank="9"/>
+	      <source name="POWERBROKER" rank="10"/>
+	      <source name="AZURE" rank="11"/>
+	      <source name="GSS" rank="12"/>
+	      <source name="AMEX_NETWORK" rank="13"/>
+	      <source name="AMEX_VOICE" rank="14"/>
+	      <source name="AD" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="ORGANIZATION_REFERENCE_GUID" type="NETWORK_INTERFACE">
+	    <sources>
+	      <source name="HP_COMPUTER" rank="1"/>
+	      <source name="HP_NETWORK" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="STRATUS" rank="5"/>
+	      <source name="SCCM" rank="6"/>
+	      <source name="MCAFEE" rank="7"/>
+	      <source name="FOUNDSTONE" rank="8"/>
+	      <source name="NCIRCLE" rank="9"/>
+	      <source name="POWERBROKER" rank="10"/>
+	      <source name="AZURE" rank="11"/>
+	      <source name="GSS" rank="12"/>
+	      <source name="AMEX_NETWORK" rank="13"/>
+	      <source name="AMEX_VOICE" rank="14"/>
+	      <source name="AD" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="GL_ACCOUNT" type="NETWORK_INTERFACE">
+	    <sources>
+	      <source name="HP_COMPUTER" rank="1"/>
+	      <source name="HP_NETWORK" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="STRATUS" rank="5"/>
+	      <source name="SCCM" rank="6"/>
+	      <source name="MCAFEE" rank="7"/>
+	      <source name="FOUNDSTONE" rank="8"/>
+	      <source name="NCIRCLE" rank="9"/>
+	      <source name="POWERBROKER" rank="10"/>
+	      <source name="AZURE" rank="11"/>
+	      <source name="GSS" rank="12"/>
+	      <source name="AMEX_NETWORK" rank="13"/>
+	      <source name="AMEX_VOICE" rank="14"/>
+	      <source name="AD" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="LEASE_CONTRACT" type="NETWORK_INTERFACE">
+	    <sources>
+	      <source name="HP_COMPUTER" rank="1"/>
+	      <source name="HP_NETWORK" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="STRATUS" rank="5"/>
+	      <source name="SCCM" rank="6"/>
+	      <source name="MCAFEE" rank="7"/>
+	      <source name="FOUNDSTONE" rank="8"/>
+	      <source name="NCIRCLE" rank="9"/>
+	      <source name="POWERBROKER" rank="10"/>
+	      <source name="AZURE" rank="11"/>
+	      <source name="GSS" rank="12"/>
+	      <source name="AMEX_NETWORK" rank="13"/>
+	      <source name="AMEX_VOICE" rank="14"/>
+	      <source name="AD" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="PO_NUMBER" type="NETWORK_INTERFACE">
+	    <sources>
+	      <source name="HP_COMPUTER" rank="1"/>
+	      <source name="HP_NETWORK" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="STRATUS" rank="5"/>
+	      <source name="SCCM" rank="6"/>
+	      <source name="MCAFEE" rank="7"/>
+	      <source name="FOUNDSTONE" rank="8"/>
+	      <source name="NCIRCLE" rank="9"/>
+	      <source name="POWERBROKER" rank="10"/>
+	      <source name="AZURE" rank="11"/>
+	      <source name="GSS" rank="12"/>
+	      <source name="AMEX_NETWORK" rank="13"/>
+	      <source name="AMEX_VOICE" rank="14"/>
+	      <source name="AD" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="PURCHASE_COST" type="NETWORK_INTERFACE">
+	    <sources>
+	      <source name="HP_COMPUTER" rank="1"/>
+	      <source name="HP_NETWORK" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="STRATUS" rank="5"/>
+	      <source name="SCCM" rank="6"/>
+	      <source name="MCAFEE" rank="7"/>
+	      <source name="FOUNDSTONE" rank="8"/>
+	      <source name="NCIRCLE" rank="9"/>
+	      <source name="POWERBROKER" rank="10"/>
+	      <source name="AZURE" rank="11"/>
+	      <source name="GSS" rank="12"/>
+	      <source name="AMEX_NETWORK" rank="13"/>
+	      <source name="AMEX_VOICE" rank="14"/>
+	      <source name="AD" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="VENDOR" type="NETWORK_INTERFACE">
+	    <sources>
+	      <source name="HP_COMPUTER" rank="1"/>
+	      <source name="HP_NETWORK" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="STRATUS" rank="5"/>
+	      <source name="SCCM" rank="6"/>
+	      <source name="MCAFEE" rank="7"/>
+	      <source name="FOUNDSTONE" rank="8"/>
+	      <source name="NCIRCLE" rank="9"/>
+	      <source name="POWERBROKER" rank="10"/>
+	      <source name="AZURE" rank="11"/>
+	      <source name="GSS" rank="12"/>
+	      <source name="AMEX_NETWORK" rank="13"/>
+	      <source name="AMEX_VOICE" rank="14"/>
+	      <source name="AD" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="VENDOR_REFERENCE_GUID" type="NETWORK_INTERFACE">
+	    <sources>
+	      <source name="HP_COMPUTER" rank="1"/>
+	      <source name="HP_NETWORK" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="STRATUS" rank="5"/>
+	      <source name="SCCM" rank="6"/>
+	      <source name="MCAFEE" rank="7"/>
+	      <source name="FOUNDSTONE" rank="8"/>
+	      <source name="NCIRCLE" rank="9"/>
+	      <source name="POWERBROKER" rank="10"/>
+	      <source name="AZURE" rank="11"/>
+	      <source name="GSS" rank="12"/>
+	      <source name="AMEX_NETWORK" rank="13"/>
+	      <source name="AMEX_VOICE" rank="14"/>
+	      <source name="AD" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="NATIVE_NATURAL_KEY" type="NETWORK_INTERFACE">
+	    <sources>
+	      <source name="HP_COMPUTER" rank="1"/>
+	      <source name="HP_NETWORK" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="STRATUS" rank="5"/>
+	      <source name="SCCM" rank="6"/>
+	      <source name="MCAFEE" rank="7"/>
+	      <source name="FOUNDSTONE" rank="8"/>
+	      <source name="NCIRCLE" rank="9"/>
+	      <source name="POWERBROKER" rank="10"/>
+	      <source name="AZURE" rank="11"/>
+	      <source name="GSS" rank="12"/>
+	      <source name="AMEX_NETWORK" rank="13"/>
+	      <source name="AMEX_VOICE" rank="14"/>
+	      <source name="AD" rank="15"/>
+	      <source name="AXP_CLOUD" rank="16"/>
+	      <source name="HAOPS" rank="17"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="VIEW_GROUP" type="DATABASE">
+	    <sources>
+	      <source name="PDI" rank="1"/>
+	      <source name="HP_DB" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="AD" rank="5"/>
+	      <source name="AXP_CLOUD" rank="6"/>
+	      <source name="HAOPS" rank="7"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="DATABASE_NAME" type="DATABASE">
+	    <sources>
+	      <source name="PDI" rank="1"/>
+	      <source name="HP_DB" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="AD" rank="5"/>
+	      <source name="AXP_CLOUD" rank="6"/>
+	      <source name="HAOPS" rank="7"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="CI_NAME" type="DATABASE">
+	    <sources>
+	      <source name="PDI" rank="1"/>
+	      <source name="HP_DB" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="AD" rank="5"/>
+	      <source name="AXP_CLOUD" rank="6"/>
+	      <source name="HAOPS" rank="7"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="DATABASE_TYPE" type="DATABASE">
+	    <sources>
+	      <source name="PDI" rank="1"/>
+	      <source name="HP_DB" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="AD" rank="5"/>
+	      <source name="AXP_CLOUD" rank="6"/>
+	      <source name="HAOPS" rank="7"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="DATABASE_VERSION" type="DATABASE">
+	    <sources>
+	      <source name="PDI" rank="1"/>
+	      <source name="HP_DB" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="AD" rank="5"/>
+	      <source name="AXP_CLOUD" rank="6"/>
+	      <source name="HAOPS" rank="7"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="DATABASE_DESCRIPTION" type="DATABASE">
+	    <sources>
+	      <source name="PDI" rank="1"/>
+	      <source name="HP_DB" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="AD" rank="5"/>
+	      <source name="AXP_CLOUD" rank="6"/>
+	      <source name="HAOPS" rank="7"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="DATABASE_MODEL_REFERENCE_LABEL" type="DATABASE">
+	    <sources>
+	      <source name="PDI" rank="1"/>
+	      <source name="HP_DB" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="AD" rank="5"/>
+	      <source name="AXP_CLOUD" rank="6"/>
+	      <source name="HAOPS" rank="7"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="DATABASE_MODEL_REFERENCE_GUID" type="DATABASE">
+	    <sources>
+	      <source name="PDI" rank="1"/>
+	      <source name="HP_DB" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="AD" rank="5"/>
+	      <source name="AXP_CLOUD" rank="6"/>
+	      <source name="HAOPS" rank="7"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="OPERATIONAL_STATUS" type="DATABASE">
+	    <sources>
+	      <source name="PDI" rank="1"/>
+	      <source name="HP_DB" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="AD" rank="5"/>
+	      <source name="AXP_CLOUD" rank="6"/>
+	      <source name="HAOPS" rank="7"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="ASSET_ID" type="DATABASE">
+	    <sources>
+	      <source name="PDI" rank="1"/>
+	      <source name="HP_DB" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="AD" rank="5"/>
+	      <source name="AXP_CLOUD" rank="6"/>
+	      <source name="HAOPS" rank="7"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="ASSET_NAME" type="DATABASE">
+	    <sources>
+	      <source name="HP_DB" rank="1"/>
+	      <source name="IBM" rank="2"/>
+	      <source name="IDN" rank="3"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="NATIVE_NATURAL_KEY" type="DATABASE">
+	    <sources>
+	      <source name="HP_DB" rank="1"/>
+	      <source name="IBM" rank="2"/>
+	      <source name="IDN" rank="3"/>
+	      <source name="SNOW" rank="4"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="PARENT_ASSET_NAME" type="DATABASE">
+	    <sources>
+	      <source name="HP_DB" rank="1"/>
+	      <source name="IBM" rank="2"/>
+	      <source name="IDN" rank="3"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="SNOW_INSTALL_STATUS" type="DATABASE">
+	    <sources>
+	      <source name="PDI" rank="1"/>
+	      <source name="HP_DB" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="ORGANIZATION" type="DATABASE">
+	    <sources>
+	      <source name="HP_DB" rank="1"/>
+	      <source name="IBM" rank="2"/>
+	      <source name="IDN" rank="3"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="DATABASE_MODEL" type="DATABASE">
+	    <sources>
+	      <source name="PDI" rank="1"/>
+	      <source name="HP_DB" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="MOST_RECENT_DATE" name="ASSIGNED_DATE" type="DATABASE">
+	    <sources>
+	      <source name="HP_DB" rank="1"/>
+	      <source name="IBM" rank="2"/>
+	      <source name="IDN" rank="3"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="GL_ACCOUNT" type="DATABASE">
+	    <sources>
+	      <source name="HP_DB" rank="1"/>
+	      <source name="IBM" rank="2"/>
+	      <source name="IDN" rank="3"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="LEASE_CONTRACT" type="DATABASE">
+	    <sources>
+	      <source name="HP_DB" rank="1"/>
+	      <source name="IBM" rank="2"/>
+	      <source name="IDN" rank="3"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="ORGANIZATION_REFERENCE_GUID" type="DATABASE">
+	    <sources>
+	      <source name="HP_DB" rank="1"/>
+	      <source name="IBM" rank="2"/>
+	      <source name="IDN" rank="3"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="PO_NUMBER" type="DATABASE">
+	    <sources>
+	      <source name="HP_DB" rank="1"/>
+	      <source name="IBM" rank="2"/>
+	      <source name="IDN" rank="3"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="PURCHASE_COST" type="DATABASE">
+	    <sources>
+	      <source name="HP_DB" rank="1"/>
+	      <source name="IBM" rank="2"/>
+	      <source name="IDN" rank="3"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="VENDOR" type="DATABASE">
+	    <sources>
+	      <source name="HP_DB" rank="1"/>
+	      <source name="IBM" rank="2"/>
+	      <source name="IDN" rank="3"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="VENDOR_REFERENCE_GUID" type="DATABASE">
+	    <sources>
+	      <source name="HP_DB" rank="1"/>
+	      <source name="IBM" rank="2"/>
+	      <source name="IDN" rank="3"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="VIEW_GROUP" type="DB_INSTANCE">
+	    <sources>
+	      <source name="PDI" rank="1"/>
+	      <source name="HP_DB" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="AD" rank="5"/>
+	      <source name="AXP_CLOUD" rank="6"/>
+	      <source name="HAOPS" rank="7"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="DB_INSTANCE_NAME" type="DB_INSTANCE">
+	    <sources>
+	      <source name="PDI" rank="1"/>
+	      <source name="HP_DB" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="AD" rank="5"/>
+	      <source name="AXP_CLOUD" rank="6"/>
+	      <source name="HAOPS" rank="7"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="CI_NAME" type="DB_INSTANCE">
+	    <sources>
+	      <source name="PDI" rank="1"/>
+	      <source name="HP_DB" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="AD" rank="5"/>
+	      <source name="AXP_CLOUD" rank="6"/>
+	      <source name="HAOPS" rank="7"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="DB_INSTANCE_TYPE" type="DB_INSTANCE">
+	    <sources>
+	      <source name="PDI" rank="1"/>
+	      <source name="HP_DB" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="AD" rank="5"/>
+	      <source name="AXP_CLOUD" rank="6"/>
+	      <source name="HAOPS" rank="7"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="DB_INSTANCE_VERSION" type="DB_INSTANCE">
+	    <sources>
+	      <source name="PDI" rank="1"/>
+	      <source name="HP_DB" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="AD" rank="5"/>
+	      <source name="AXP_CLOUD" rank="6"/>
+	      <source name="HAOPS" rank="7"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="DB_INSTANCE_DESCRIPTION" type="DB_INSTANCE">
+	    <sources>
+	      <source name="PDI" rank="1"/>
+	      <source name="HP_DB" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="AD" rank="5"/>
+	      <source name="AXP_CLOUD" rank="6"/>
+	      <source name="HAOPS" rank="7"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="DB_INSTANCE_MODEL_REF_LABEL" type="DB_INSTANCE">
+	    <sources>
+	      <source name="PDI" rank="1"/>
+	      <source name="HP_DB" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="AD" rank="5"/>
+	      <source name="AXP_CLOUD" rank="6"/>
+	      <source name="HAOPS" rank="7"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="DB_INSTANCE_MODEL_REF_GUID" type="DB_INSTANCE">
+	    <sources>
+	      <source name="PDI" rank="1"/>
+	      <source name="HP_DB" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="AD" rank="5"/>
+	      <source name="AXP_CLOUD" rank="6"/>
+	      <source name="HAOPS" rank="7"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="OPERATIONAL_STATUS" type="DB_INSTANCE">
+	    <sources>
+	      <source name="PDI" rank="1"/>
+	      <source name="HP_DB" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="AD" rank="5"/>
+	      <source name="AXP_CLOUD" rank="6"/>
+	      <source name="HAOPS" rank="7"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="MOST_RECENT_DATE" name="LAST_SOFTWARE_SCAN_DATE" type="DB_INSTANCE">
+	    <sources>
+	      <source name="PDI" rank="1"/>
+	      <source name="HP_DB" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="AD" rank="5"/>
+	      <source name="AXP_CLOUD" rank="6"/>
+	      <source name="HAOPS" rank="7"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="MOST_RECENT_DATE" name="LAST_ACTIVITY_DATE" type="DB_INSTANCE">
+	    <sources>
+	      <source name="PDI" rank="1"/>
+	      <source name="HP_DB" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="AD" rank="5"/>
+	      <source name="AXP_CLOUD" rank="6"/>
+	      <source name="HAOPS" rank="7"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="DATABASE_ID" type="DB_INSTANCE">
+	    <sources>
+	      <source name="PDI" rank="1"/>
+	      <source name="HP_DB" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	      <source name="AD" rank="5"/>
+	      <source name="AXP_CLOUD" rank="6"/>
+	      <source name="HAOPS" rank="7"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="DATABASE_NAME" type="DB_INSTANCE">
+	    <sources>
+	      <source name="HP_DB" rank="1"/>
+	      <source name="IBM" rank="2"/>
+	      <source name="IDN" rank="3"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="NATIVE_NATURAL_KEY" type="DB_INSTANCE">
+	    <sources>
+	      <source name="HP_DB" rank="1"/>
+	      <source name="IBM" rank="2"/>
+	      <source name="IDN" rank="3"/>
+	      <source name="SNOW" rank="4"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="PARENT_ASSET_NAME" type="DB_INSTANCE">
+	    <sources>
+	      <source name="HP_DB" rank="1"/>
+	      <source name="IBM" rank="2"/>
+	      <source name="IDN" rank="3"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="SNOW_INSTALL_STATUS" type="DB_INSTANCE">
+	    <sources>
+	      <source name="PDI" rank="1"/>
+	      <source name="HP_DB" rank="2"/>
+	      <source name="IBM" rank="3"/>
+	      <source name="IDN" rank="4"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="ORGANIZATION" type="DB_INSTANCE">
+	    <sources>
+	      <source name="HP_DB" rank="1"/>
+	      <source name="IBM" rank="2"/>
+	      <source name="IDN" rank="3"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="MOST_RECENT_DATE" name="ASSIGNED_DATE" type="DB_INSTANCE">
+	    <sources>
+	      <source name="HP_DB" rank="1"/>
+	      <source name="IBM" rank="2"/>
+	      <source name="IDN" rank="3"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="ORGANIZATION_REFERENCE_GUID" type="DB_INSTANCE">
+	    <sources>
+	      <source name="HP_DB" rank="1"/>
+	      <source name="IBM" rank="2"/>
+	      <source name="IDN" rank="3"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="GL_ACCOUNT" type="DB_INSTANCE">
+	    <sources>
+	      <source name="HP_DB" rank="1"/>
+	      <source name="IBM" rank="2"/>
+	      <source name="IDN" rank="3"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="LEASE_CONTRACT" type="DB_INSTANCE">
+	    <sources>
+	      <source name="HP_DB" rank="1"/>
+	      <source name="IBM" rank="2"/>
+	      <source name="IDN" rank="3"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="PO_NUMBER" type="DB_INSTANCE">
+	    <sources>
+	      <source name="HP_DB" rank="1"/>
+	      <source name="IBM" rank="2"/>
+	      <source name="IDN" rank="3"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="PURCHASE_COST" type="DB_INSTANCE">
+	    <sources>
+	      <source name="HP_DB" rank="1"/>
+	      <source name="IBM" rank="2"/>
+	      <source name="IDN" rank="3"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="VENDOR" type="DB_INSTANCE">
+	    <sources>
+	      <source name="HP_DB" rank="1"/>
+	      <source name="IBM" rank="2"/>
+	      <source name="IDN" rank="3"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="VENDOR_REFERENCE_GUID" type="DB_INSTANCE">
+	    <sources>
+	      <source name="HP_DB" rank="1"/>
+	      <source name="IBM" rank="2"/>
+	      <source name="IDN" rank="3"/>
+	    </sources>
+	  </attribute> 
+	  <attribute algorithm="SOURCE_PRIORITY" name="BUID" type="RACK">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="GSS" rank="2"/>
+	      <source name="HAOPS" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="TIMS" rank="7"/>
+	      <source name="NCIRCLE" rank="8"/>
+	      <source name="SNOW" rank="9"/>
+	      <source name="" rank="10"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="BUID" type="GROUP">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="GSS" rank="2"/>
+	      <source name="HAOPS" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="TIMS" rank="7"/>
+	      <source name="NCIRCLE" rank="8"/>
+	      <source name="SNOW" rank="9"/>
+	      <source name="" rank="10"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="CMDB_CLASS" type="GROUP">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="GSS" rank="2"/>
+	      <source name="HAOPS" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="TIMS" rank="7"/>
+	      <source name="NCIRCLE" rank="8"/>
+	      <source name="SNOW" rank="9"/>
+	      <source name="" rank="10"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="VIEW_GROUP" type="GROUP">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="GSS" rank="2"/>
+	      <source name="HAOPS" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="TIMS" rank="7"/>
+	      <source name="NCIRCLE" rank="8"/>
+	      <source name="SNOW" rank="9"/>
+	      <source name="" rank="10"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="GROUP_NAME" type="GROUP">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="GSS" rank="2"/>
+	      <source name="HAOPS" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="TIMS" rank="7"/>
+	      <source name="NCIRCLE" rank="8"/>
+	      <source name="SNOW" rank="9"/>
+	      <source name="" rank="10"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="GROUP_DESCRIPTION" type="GROUP">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="GSS" rank="2"/>
+	      <source name="HAOPS" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="TIMS" rank="7"/>
+	      <source name="NCIRCLE" rank="8"/>
+	      <source name="SNOW" rank="9"/>
+	      <source name="" rank="10"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="GROUP_EMAIL" type="GROUP">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="GSS" rank="2"/>
+	      <source name="HAOPS" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="TIMS" rank="7"/>
+	      <source name="NCIRCLE" rank="8"/>
+	      <source name="SNOW" rank="9"/>
+	      <source name="" rank="10"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="IS_ACTIVE" type="GROUP">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="GSS" rank="2"/>
+	      <source name="HAOPS" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="TIMS" rank="7"/>
+	      <source name="NCIRCLE" rank="8"/>
+	      <source name="SNOW" rank="9"/>
+	      <source name="" rank="10"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="VENDOR" type="GROUP">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="GSS" rank="2"/>
+	      <source name="HAOPS" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="TIMS" rank="7"/>
+	      <source name="NCIRCLE" rank="8"/>
+	      <source name="SNOW" rank="9"/>
+	      <source name="" rank="10"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="VENDOR_REFERENCE_GUID" type="GROUP">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="GSS" rank="2"/>
+	      <source name="HAOPS" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="TIMS" rank="7"/>
+	      <source name="NCIRCLE" rank="8"/>
+	      <source name="SNOW" rank="9"/>
+	      <source name="" rank="10"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="MOST_RECENT_DATE" name="RECORD_CREATED_DATE" type="GROUP">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="GSS" rank="2"/>
+	      <source name="HAOPS" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="TIMS" rank="7"/>
+	      <source name="NCIRCLE" rank="8"/>
+	      <source name="SNOW" rank="9"/>
+	      <source name="" rank="10"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="MOST_RECENT_DATE" name="RECORD_UPDATED_DATE" type="GROUP">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="GSS" rank="2"/>
+	      <source name="HAOPS" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="TIMS" rank="7"/>
+	      <source name="NCIRCLE" rank="8"/>
+	      <source name="SNOW" rank="9"/>
+	      <source name="" rank="10"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="MOST_RECENT_DATE" name="LAST_ACTIVITY_DATE" type="GROUP">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="GSS" rank="2"/>
+	      <source name="HAOPS" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="TIMS" rank="7"/>
+	      <source name="NCIRCLE" rank="8"/>
+	      <source name="SNOW" rank="9"/>
+	      <source name="" rank="10"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="COST_CENTER" type="GROUP">
+	    <sources>
+	      <source name="AZURE" rank="1"/>
+	      <source name="EMC" rank="2"/>
+	      <source name="GSS" rank="3"/>
+	      <source name="HAOPS" rank="4"/>
+	      <source name="IBM" rank="5"/>
+	      <source name="IDN" rank="6"/>
+	      <source name="STRATUS" rank="7"/>
+	      <source name="TIMS" rank="8"/>
+	      <source name="NCIRCLE" rank="9"/>
+	      <source name="SNOW" rank="10"/>
+	      <source name="" rank="11"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="COST_CENTER_REFERENCE_GUID" type="GROUP">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="GSS" rank="2"/>
+	      <source name="HAOPS" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="TIMS" rank="7"/>
+	      <source name="NCIRCLE" rank="8"/>
+	      <source name="SNOW" rank="9"/>
+	      <source name="" rank="10"/>
+	    </sources>
+	  </attribute>
+	  <attribute algorithm="SOURCE_PRIORITY" name="COST_CENTER_CODE" type="GROUP">
+	    <sources>
+	      <source name="EMC" rank="1"/>
+	      <source name="GSS" rank="2"/>
+	      <source name="HAOPS" rank="3"/>
+	      <source name="IBM" rank="4"/>
+	      <source name="IDN" rank="5"/>
+	      <source name="STRATUS" rank="6"/>
+	      <source name="TIMS" rank="7"/>
+	      <source name="NCIRCLE" rank="8"/>
+	      <source name="SNOW" rank="9"/>
+	      <source name="" rank="10"/>
+	    </sources>
+	  </attribute>
+	  <!-- Relationship Attributes -->
+	  <attribute algorithm="SOURCE_PRIORITY" name="BUID" type="ASSET_SUPPORTED_BY_GROUP">
+	    <sources>
+	      <source name="AMEX_VOICE" rank="1"/>
+	      <source name="AZURE" rank="2"/>
+	      <source name="EMC" rank="3"/>
+	      <source name="GSS" rank="4"/>
+	      <source name="HAOPS" rank="5"/>
+	      <source name="IBM" rank="6"/>
+	      <source name="IDN" rank="7"/>
+	      <source name="STRATUS" rank="8"/>
+	      <source name="TIMS" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="SNOW" rank="11"/>
+	    </sources>
+	  </attribute>
+	
+	  <attribute algorithm="SOURCE_PRIORITY" name="CMDB_GUID" type="ASSET_SUPPORTED_BY_GROUP">
+	    <sources>
+	      <source name="AMEX_VOICE" rank="1"/>
+	      <source name="AZURE" rank="2"/>
+	      <source name="EMC" rank="3"/>
+	      <source name="GSS" rank="4"/>
+	      <source name="HAOPS" rank="5"/>
+	      <source name="IBM" rank="6"/>
+	      <source name="IDN" rank="7"/>
+	      <source name="STRATUS" rank="8"/>
+	      <source name="TIMS" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="SNOW" rank="11"/>
+	    </sources>
+	  </attribute>
+	
+	  <attribute algorithm="SOURCE_PRIORITY" name="CMDB_CLASS" type="ASSET_SUPPORTED_BY_GROUP">
+	    <sources>
+	      <source name="AMEX_VOICE" rank="1"/>
+	      <source name="AZURE" rank="2"/>
+	      <source name="EMC" rank="3"/>
+	      <source name="GSS" rank="4"/>
+	      <source name="HAOPS" rank="5"/>
+	      <source name="IBM" rank="6"/>
+	      <source name="IDN" rank="7"/>
+	      <source name="STRATUS" rank="8"/>
+	      <source name="TIMS" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="SNOW" rank="11"/>
+	    </sources>
+	  </attribute>
+	
+	  <attribute algorithm="SOURCE_PRIORITY" name="VIEW_GROUP" type="ASSET_SUPPORTED_BY_GROUP">
+	    <sources>
+	      <source name="AMEX_VOICE" rank="1"/>
+	      <source name="AZURE" rank="2"/>
+	      <source name="EMC" rank="3"/>
+	      <source name="GSS" rank="4"/>
+	      <source name="HAOPS" rank="5"/>
+	      <source name="IBM" rank="6"/>
+	      <source name="IDN" rank="7"/>
+	      <source name="STRATUS" rank="8"/>
+	      <source name="TIMS" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="SNOW" rank="11"/>
+	    </sources>
+	  </attribute>
+	
+	  <attribute algorithm="SOURCE_PRIORITY" name="GROUP_ID" type="ASSET_SUPPORTED_BY_GROUP">
+	    <sources>
+	      <source name="AMEX_VOICE" rank="1"/>
+	      <source name="AZURE" rank="2"/>
+	      <source name="EMC" rank="3"/>
+	      <source name="GSS" rank="4"/>
+	      <source name="HAOPS" rank="5"/>
+	      <source name="IBM" rank="6"/>
+	      <source name="IDN" rank="7"/>
+	      <source name="STRATUS" rank="8"/>
+	      <source name="TIMS" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="SNOW" rank="11"/>
+	    </sources>
+	  </attribute>
+	
+	  <attribute algorithm="SOURCE_PRIORITY" name="ASSET_ID" type="ASSET_SUPPORTED_BY_GROUP">
+	    <sources>
+	      <source name="AMEX_VOICE" rank="1"/>
+	      <source name="AZURE" rank="2"/>
+	      <source name="EMC" rank="3"/>
+	      <source name="GSS" rank="4"/>
+	      <source name="HAOPS" rank="5"/>
+	      <source name="IBM" rank="6"/>
+	      <source name="IDN" rank="7"/>
+	      <source name="STRATUS" rank="8"/>
+	      <source name="TIMS" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="SNOW" rank="11"/>
+	    </sources>
+	  </attribute>
+	
+	  <attribute algorithm="MOST_RECENT_DATE" name="RECORD_CREATED_DATE" type="ASSET_SUPPORTED_BY_GROUP">
+	    <sources>
+	      <source name="AMEX_VOICE" rank="1"/>
+	      <source name="AZURE" rank="2"/>
+	      <source name="EMC" rank="3"/>
+	      <source name="GSS" rank="4"/>
+	      <source name="HAOPS" rank="5"/>
+	      <source name="IBM" rank="6"/>
+	      <source name="IDN" rank="7"/>
+	      <source name="STRATUS" rank="8"/>
+	      <source name="TIMS" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="SNOW" rank="11"/>
+	    </sources>
+	  </attribute>
+	
+	    <attribute algorithm="MOST_RECENT_DATE" name="RECORD_UPDATED_DATE" type="ASSET_SUPPORTED_BY_GROUP">
+	    <sources>
+	      <source name="AMEX_VOICE" rank="1"/>
+	      <source name="AZURE" rank="2"/>
+	      <source name="EMC" rank="3"/>
+	      <source name="GSS" rank="4"/>
+	      <source name="HAOPS" rank="5"/>
+	      <source name="IBM" rank="6"/>
+	      <source name="IDN" rank="7"/>
+	      <source name="STRATUS" rank="8"/>
+	      <source name="TIMS" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="SNOW" rank="11"/>
+	    </sources>
+	  </attribute>
+	
+	  <attribute algorithm="MOST_RECENT_DATE" name="LAST_ACTIVITY_DATE" type="ASSET_SUPPORTED_BY_GROUP">
+	    <sources>
+	      <source name="AMEX_VOICE" rank="1"/>
+	      <source name="AZURE" rank="2"/>
+	      <source name="EMC" rank="3"/>
+	      <source name="GSS" rank="4"/>
+	      <source name="HAOPS" rank="5"/>
+	      <source name="IBM" rank="6"/>
+	      <source name="IDN" rank="7"/>
+	      <source name="STRATUS" rank="8"/>
+	      <source name="TIMS" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="SNOW" rank="11"/>
+	    </sources>
+	  </attribute>
+	
+	  <attribute algorithm="SOURCE_PRIORITY" name="IF_EA_REL_TYPE_ID" type="ASSET_SUPPORTED_BY_GROUP">
+	    <sources>
+	      <source name="AMEX_VOICE" rank="1"/>
+	      <source name="AZURE" rank="2"/>
+	      <source name="EMC" rank="3"/>
+	      <source name="GSS" rank="4"/>
+	      <source name="HAOPS" rank="5"/>
+	      <source name="IBM" rank="6"/>
+	      <source name="IDN" rank="7"/>
+	      <source name="STRATUS" rank="8"/>
+	      <source name="TIMS" rank="9"/>
+	      <source name="NCIRCLE" rank="10"/>
+	      <source name="SNOW" rank="11"/>
+	    </sources>
+	  </attribute>
+	
+	 <attribute algorithm="SOURCE_PRIORITY" name="USER_ID" type="ASSET_ASSIGNED_TO_USER">
+	    <sources>
+	      <source name="HP_COMPUTER" rank="1"/>
+	    </sources>
+	  </attribute>
+	
+	  <attribute algorithm="SOURCE_PRIORITY" name="ASSET_ID" type="ASSET_ASSIGNED_TO_USER">
+	    <sources>
+	      <source name="HP_COMPUTER" rank="1"/>
+	    </sources>
+	  </attribute>
+	
+	  <attribute algorithm="SOURCE_PRIORITY" name="IS_PRIMARY" type="ASSET_ASSIGNED_TO_USER">
+	    <sources>
+	      <source name="HP_COMPUTER" rank="1"/>
+	    </sources>
+	  </attribute>
+	</attributes>
+</purification>

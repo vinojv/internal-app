@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:SOURCE NAME="ONX" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig"  xmlns:xi="http://www.w3.org/2001/XInclude">
+	<FEEDS>
+		<xi:include href="ONX/FEED_PO_LINE_ITEM_ONX.xml"/>
+	</FEEDS>
+	<ENTITIES>
+		<xi:include href="ONX/ENTITY_PO_LINE_ITEM_ONX.xml"/>
+		<xi:include href="ONX/ENTITY_PURCHASE_ORDER_ONX.xml"/>
+	</ENTITIES>
+	<RELATIONS>
+		<xi:include href="ONX/RELATION_PO_POLI.xml"/>
+	</RELATIONS>
+</blz:SOURCE>
+

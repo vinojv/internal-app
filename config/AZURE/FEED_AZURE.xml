@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:FEED NAME="AZURE" TYPE="[ASSET, GROUP, GROUP_ASSET]" ISPRIMARY="TRUE" PROPAGATE="FALSE" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig" >
+	<fileparameters>
+		<parameter name="headerRowCount"  value="1" />
+		<parameter name="dateFormatMask"  value="MM/DD/YYYY" />
+		<parameter name="fieldDelimiter" type="ascii" value="124" />
+		<parameter name="recordDelimiter" type="namedDelimiter" value="NEWLINE" />
+	</fileparameters>
+	<COLUMN NAME="TENANT_DATA_PARTITION_ID" TYPE="virtual" VALUE="1" />
+	<COLUMN NAME="IF_SOURCE_ID" TYPE="virtual" VALUE="18" />
+	<COLUMN NAME="TENANT_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATA_PARTITION_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="SOURCE_CODE" TYPE="virtual" VALUE="AZURE" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATE_FORMAT_MASK" TYPE="virtual" VALUE="MM-dd-yyyy HH:mm:ss" PROCESS="TRIM"  />
+	<COLUMN NAME="ASSET_CLASS" TYPE="virtual" VALUE="SERVER" PROCESS="TRIM"  />
+	<COLUMN NAME="ASSET_NAME" EXTERNALNAME="u_name" TYPE="identifier"   />
+	<COLUMN NAME="ROLE" EXTERNALNAME="u_release_environment_name" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="NATIVE_PHYSICAL_STATUS" EXTERNALNAME="u_asset_state_name" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="U_ASSET_STATE" EXTERNALNAME="u_asset_status" TYPE="ignore"  />
+	<COLUMN NAME="ASSET_INSTALL_DATE" EXTERNALNAME="sys_created_on" TYPE="attribute" PROCESS="CONVERT_STRING_TO_DATE(DATE_FORMAT_MASK,TIME_ZONE)"  />
+	<COLUMN NAME="ASSET_INSTALL_DATE_O" EXTERNALNAME="sys_created_on" TYPE="attribute" />
+	<COLUMN NAME="AGENT_UPDATED_DATE" EXTERNALNAME="sys_updated_on" TYPE="attribute" PROCESS="CONVERT_STRING_TO_DATE(DATE_FORMAT_MASK,TIME_ZONE)" RECENCY_INDICATOR="LATEST"  />
+	<COLUMN NAME="AGENT_UPDATED_DATE_O" EXTERNALNAME="sys_updated_on" TYPE="attribute" />
+	<COLUMN NAME="IP_ADDRESS" EXTERNALNAME="u_ip_address" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="IS_VIRTUAL" EXTERNALNAME="u_is_virtual" TYPE="attribute" PROCESS="TRIM_DROP_HIGH_LOW_ASCII"  />
+	<COLUMN NAME="CPU_COUNT" EXTERNALNAME="u_physical_cpu_count" TYPE="attribute" PROCESS="EXTRACT_FIRST_NUMERIC"  />
+	<COLUMN NAME="U_OPERATING_SYSTEM_NAME" EXTERNALNAME="u_operating_system_name" TYPE="ignore"  />
+	<COLUMN NAME="U_OPERATING_SYSTEM_VERSION" EXTERNALNAME="u_operating_system_version" TYPE="ignore"  />
+	<COLUMN NAME="U_PROCESSER_MODEL" EXTERNALNAME="u_processer_model" TYPE="ignore"  />
+	<COLUMN NAME="U_COMPUTER_MODEL" EXTERNALNAME="u_computer_model" TYPE="ignore"  />
+	<COLUMN NAME="U_MEMORY_COUNT" EXTERNALNAME="u_memory_count" TYPE="ignore"  />
+	<COLUMN NAME="TOTAL_MEMORY" EXTERNALNAME="u_total_memory" TYPE="attribute" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="COST_CENTER" EXTERNALNAME="u_cost_center" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="SERIAL_NUMBER" EXTERNALNAME="u_serial_number" TYPE="attribute" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="ASSET_DESCRIPTION" EXTERNALNAME="u_description" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="GROUP_NAME" TYPE="virtual" VALUE="AZURE_AXP_GL" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="REL_TYPE_NAME" TYPE="virtual" VALUE="ASSET_SUPPORTED_BY_GROUP" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="TIME_ZONE" TYPE="virtual" VALUE="US/Michigan"  />
+</blz:FEED>
+

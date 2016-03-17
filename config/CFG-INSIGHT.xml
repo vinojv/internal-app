@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:SOURCE NAME="INSIGHT" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig"  xmlns:xi="http://www.w3.org/2001/XInclude">
+	<FEEDS>
+		<xi:include href="INSIGHT/FEED_PO_LINE_ITEM_INSIGHT.xml"/>
+	</FEEDS>
+	<ENTITIES>
+		<xi:include href="INSIGHT/ENTITY_PO_LINE_ITEM_INSIGHT.xml"/>
+		<xi:include href="INSIGHT/ENTITY_PURCHASE_ORDER_INSIGHT.xml"/>
+	</ENTITIES>
+	<RELATIONS>
+		<xi:include href="INSIGHT/RELATION_PO_POLI.xml"/>
+	</RELATIONS>
+</blz:SOURCE>
+

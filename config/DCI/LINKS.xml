@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:LINKS xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig">
+	<LINK NAME="DEVICE_RACK" FROMFEED="ITSM_DCI_DEVICES" FROMCOLUMN="RACK_NAME" TOFEED="ITSM_DCI_RACKS" TOCOLUMN="RACK_NAME"  />
+</blz:LINKS>
+

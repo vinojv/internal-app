@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:SOURCE NAME="IQUATE" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig"  xmlns:xi="http://www.w3.org/2001/XInclude">
+	<FEEDS>
+		<xi:include href="IQUATE/FEED_IQUATE_SOFTWARE.xml"/>
+		<xi:include href="IQUATE/FEED_IQUATE_COMPUTER.xml"/>
+	</FEEDS>
+	<xi:include href="IQUATE/LINKS.xml"/>
+	<ENTITIES>
+		<xi:include href="IQUATE/ENTITY_IQUATE_SOFTWARE.xml"/>
+		<xi:include href="IQUATE/ENTITY_IQUATE_COMPUTER.xml"/>
+	</ENTITIES>
+	<RELATIONS>
+		<xi:include href="IQUATE/RELATION_SW_COMPUTER.xml"/>
+	</RELATIONS>
+</blz:SOURCE>
+

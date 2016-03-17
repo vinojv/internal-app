@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:FEED NAME="SNOW_DB_INSTANCE" TYPE="[DB_INSTANCE]" ISPRIMARY="TRUE" PROPAGATE="FALSE" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig" >
+	<fileparameters>
+		<parameter name="headerRowCount"  value="1" />
+		<parameter name="dateFormatMask"  value="MM/DD/YYYY" />
+		<parameter name="fieldDelimiter" type="ascii" value="44" />
+		<parameter name="recordDelimiter" type="namedDelimiter" value="NEWLINE" />
+	</fileparameters>
+	<COLUMN NAME="TENANT_DATA_PARTITION_ID" TYPE="virtual" VALUE="1" />
+	<COLUMN NAME="IF_SOURCE_ID" TYPE="virtual" VALUE="1" />
+	<COLUMN NAME="TENANT_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATA_PARTITION_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="SOURCE_CODE" TYPE="virtual" VALUE="SNOW" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATE_FORMAT_MASK" TYPE="virtual" VALUE="MM/dd/yyyy" PROCESS="TRIM"  />
+	<COLUMN NAME="NATIVE_DB_INSTANCE_ID" EXTERNALNAME="u_guid" TYPE="attribute" PROCESS="TRIM_DROP_HIGH_LOW_ASCII"  />
+	<COLUMN NAME="NATIVE_NATURAL_KEY" EXTERNALNAME="name" TYPE="identifier" PROCESS="TRIM"  />
+	<COLUMN NAME="VERSION" EXTERNALNAME="version" TYPE="ignore"  />
+	<COLUMN NAME="CATEGORY" EXTERNALNAME="category" TYPE="ignore"  />
+	<COLUMN NAME="ci_short_description" EXTERNALNAME="short_description" TYPE="ignore"  />
+	<COLUMN NAME="DB_INSTANCE_MODEL_REF_GUID" EXTERNALNAME="model_id.u_guid" TYPE="attribute" PROCESS="TRIM_DROP_HIGH_LOW_ASCII"  />
+	<COLUMN NAME="DB_INSTANCE_MODEL_REF_LABEL" EXTERNALNAME="model_id.display_name" TYPE="attribute" PROCESS="TRIM_DROP_HIGH_LOW_ASCII"  />
+	<COLUMN NAME="MODEL_ID_NAME" EXTERNALNAME="model_id.name" TYPE="ignore"  />
+	<COLUMN NAME="MODEL_ID_MANUFACTURER_NAME" EXTERNALNAME="model_id.manufacturer" TYPE="ignore"  />
+	<COLUMN NAME="MODEL_ID_MODEL_NUMBER" EXTERNALNAME="model_id.model_number" TYPE="ignore"  />
+	<COLUMN NAME="MODEL_ID_SHORT_DESCRIPTION" EXTERNALNAME="model_id.short_description" TYPE="ignore"  />
+	<COLUMN NAME="MODEL_ID_CMDB_MODEL_CATEGORY" EXTERNALNAME="model_id.cmdb_model_category" TYPE="ignore"  />
+	<COLUMN NAME="ci_sys_class_name" EXTERNALNAME="sys_class_name" TYPE="ignore"  />
+	<COLUMN NAME="CI_SYS_MOD_COUNT" EXTERNALNAME="sys_mod_count" TYPE="ignore"  />
+	<COLUMN NAME="SYS_CREATED_ON" EXTERNALNAME="sys_created_on" TYPE="ignore"  />
+	<COLUMN NAME="SYS_CREATED_BY" EXTERNALNAME="sys_created_by" TYPE="ignore"  />
+	<COLUMN NAME="SYS_UPDATED_ON" EXTERNALNAME="sys_updated_on" TYPE="ignore"  />
+	<COLUMN NAME="SYS_UPDATED_BY" EXTERNALNAME="sys_updated_by" TYPE="ignore"  />
+	<COLUMN NAME="NATIVE_ALM_SYS_ID" EXTERNALNAME="asset.u_guid" TYPE="ignore"  />
+	<COLUMN NAME="CI_ASSIGNED" EXTERNALNAME="assigned" TYPE="ignore"  />
+	<COLUMN NAME="CI_COMPANY_NAME" EXTERNALNAME="company.name" TYPE="ignore"  />
+	<COLUMN NAME="CI_COMPANY_U_GUID" EXTERNALNAME="company.u_guid" TYPE="ignore"  />
+	<COLUMN NAME="CI_GL_ACCOUNT" EXTERNALNAME="gl_account" TYPE="ignore"  />
+	<COLUMN NAME="CI_LEASE_ID" EXTERNALNAME="lease_id" TYPE="ignore"  />
+	<COLUMN NAME="CI_PO_NUMBER" EXTERNALNAME="po_number" TYPE="ignore"  />
+	<COLUMN NAME="CI_MANAGED_BY_NAME" EXTERNALNAME="managed_by.name" TYPE="ignore"  />
+	<COLUMN NAME="CI_MANAGED_BY_U_GUID" EXTERNALNAME="managed_by.u_guid" TYPE="ignore"  />
+	<COLUMN NAME="CI_SUPPORTED_BY_NAME" EXTERNALNAME="supported_by.name" TYPE="ignore"  />
+	<COLUMN NAME="CI_SUPPORTED_BY_U_GUID" EXTERNALNAME="supported_by.u_guid" TYPE="ignore"  />
+	<COLUMN NAME="CI_SUPPORT_GROUP_NAME" EXTERNALNAME="support_group.name" TYPE="ignore"  />
+	<COLUMN NAME="CI_SUPPORT_GROUP_U_GUID" EXTERNALNAME="support_group.u_guid" TYPE="ignore"  />
+	<COLUMN NAME="CI_VENDOR_NAME" EXTERNALNAME="vendor.name" TYPE="ignore"  />
+	<COLUMN NAME="CI_VENDOR_U_GUID" EXTERNALNAME="vendor.u_guid" TYPE="ignore"  />
+	<COLUMN NAME="OPERATIONAL_STATUS" EXTERNALNAME="operational_status" TYPE="attribute"  />
+	<COLUMN NAME="install_status" EXTERNALNAME="install_status" TYPE="ignore"  />
+	<COLUMN NAME="ci_discovery_source" EXTERNALNAME="discovery_source" TYPE="ignore"  />
+	<COLUMN NAME="CI_U_BLAZENT_KEY" EXTERNALNAME="u_blazent_key" TYPE="ignore"  />
+	<COLUMN NAME="DB_INSTANCE_NAME" EXTERNALNAME="u_axp_dbinstance_name" TYPE="attribute" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATABASE_NAME" EXTERNALNAME="u_axp_database" TYPE="attribute" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="u_axp_database_name" EXTERNALNAME="u_axp_database.name" TYPE="ignore"  />
+	<COLUMN NAME="HAS_CMDB_RECORD" TYPE="virtual" VALUE="Y"  />
+	<COLUMN NAME="TIME_ZONE" TYPE="virtual" VALUE="US/Michigan"  />
+</blz:FEED>
+

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:SOURCE NAME="AMEX_NETWORK" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig"  xmlns:xi="http://www.w3.org/2001/XInclude">
+	<FEEDS>
+		<xi:include href="AMEX_NETWORK/FEED_AMEX_NETWORK.xml"/>
+	</FEEDS>
+	<ENTITIES>
+		<xi:include href="AMEX_NETWORK/ENTITY_NETWORK.xml"/>
+	</ENTITIES>
+</blz:SOURCE>
+

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:FEED NAME="PDI" TYPE="[DB_INSTANCE]" ISPRIMARY="TRUE" PROPAGATE="FALSE" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig" >
+	<fileparameters>
+		<parameter name="headerRowCount"  value="1" />
+		<parameter name="dateFormatMask"  value="MM/DD/YYYY" />
+		<parameter name="fieldDelimiter" type="ascii" value="124" />
+		<parameter name="recordDelimiter" type="namedDelimiter" value="NEWLINE" />
+	</fileparameters>
+	<COLUMN NAME="TENANT_DATA_PARTITION_ID" TYPE="virtual" VALUE="1" />
+	<COLUMN NAME="IF_SOURCE_ID" TYPE="virtual" VALUE="19" />
+	<COLUMN NAME="TENANT_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATA_PARTITION_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="SOURCE_CODE" TYPE="virtual" VALUE="PDI" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATE_FORMAT_MASK" TYPE="virtual" VALUE="yyyy-MM-dd HH:mm:ss" PROCESS="TRIM"  />
+	<COLUMN NAME="DB_INSTANCE_DESCRIPTION" EXTERNALNAME="Description" TYPE="attribute" PROCESS="TRIM_DROP_HIGH_LOW_ASCII"  />
+	<COLUMN NAME="LAST_SOFTWARE_SCAN_DATE" EXTERNALNAME="Last Software Scan Time" TYPE="attribute" PROCESS="CONVERT_STRING_TO_DATE(DATE_FORMAT_MASK,TIME_ZONE)"  />
+	<COLUMN NAME="LAST_SOFTWARE_SCAN_DATE_O" EXTERNALNAME="Last Software Scan Time" TYPE="attribute" />
+	<COLUMN NAME="DB_INSTANCE_TYPE" EXTERNALNAME="Model ID" TYPE="attribute" PROCESS="TRIM_DROP_HIGH_LOW_ASCII"  />
+	<COLUMN NAME="NATIVE_NATURAL_KEY" EXTERNALNAME="Name" TYPE="identifier" PROCESS="TRIM"  />
+	<COLUMN NAME="NATIVE_OPERATIONAL_STATUS" EXTERNALNAME="Operational Status" TYPE="attribute" PROCESS="TRIM_DROP_HIGH_LOW_ASCII"  />
+	<COLUMN NAME="ACTIVE" EXTERNALNAME="Active" TYPE="ignore"  />
+	<COLUMN NAME="APPROVAL_GROUP" EXTERNALNAME="Approval group" TYPE="ignore"  />
+	<COLUMN NAME="ASSET" EXTERNALNAME="Asset" TYPE="ignore"  />
+	<COLUMN NAME="ASSET_TAG_NUMBER" EXTERNALNAME="Asset Tag Number" TYPE="ignore"  />
+	<COLUMN NAME="ASSIGNED" EXTERNALNAME="Assigned" TYPE="ignore"  />
+	<COLUMN NAME="ASSIGNED_TO" EXTERNALNAME="Assigned to" TYPE="ignore"  />
+	<COLUMN NAME="ATTRIBUTES" EXTERNALNAME="Attributes" TYPE="ignore"  />
+	<COLUMN NAME="BLAZENT_KEY" EXTERNALNAME="Blazent Key" TYPE="ignore"  />
+	<COLUMN NAME="CAN_PRINT" EXTERNALNAME="Can Print" TYPE="ignore"  />
+	<COLUMN NAME="CAPABILITY_TYPE" EXTERNALNAME="Capability Type" TYPE="ignore"  />
+	<COLUMN NAME="CATEGORY" EXTERNALNAME="Category" TYPE="ignore"  />
+	<COLUMN NAME="CHECKED_IN" EXTERNALNAME="Checked in" TYPE="ignore"  />
+	<COLUMN NAME="CHECKED_OUT" EXTERNALNAME="Checked out" TYPE="ignore"  />
+	<COLUMN NAME="CLASS" EXTERNALNAME="Class" TYPE="ignore"  />
+	<COLUMN NAME="COMMENTS" EXTERNALNAME="Comments" TYPE="ignore"  />
+	<COLUMN NAME="COMPANY" EXTERNALNAME="Company" TYPE="ignore"  />
+	<COLUMN NAME="COST_R" EXTERNALNAME="Cost" TYPE="ignore"  />
+	<COLUMN NAME="COST_CURRENCY" EXTERNALNAME="Cost currency" TYPE="ignore"  />
+	<COLUMN NAME="COST_CENTER_R" EXTERNALNAME="COST_CENTER" TYPE="ignore"  />
+	<COLUMN NAME="CREATED" EXTERNALNAME="Created" TYPE="ignore"  />
+	<COLUMN NAME="CREATED_BY" EXTERNALNAME="Created by" TYPE="ignore"  />
+	<COLUMN NAME="DATA_SOURCE" EXTERNALNAME="Data Source" TYPE="ignore"  />
+	<COLUMN NAME="DATABASE_PORT" EXTERNALNAME="DATABASE_PORT" TYPE="ignore"  />
+	<COLUMN NAME="DATABASE_VERSION" EXTERNALNAME="DATABASE_VERSION" TYPE="ignore" PROCESS="TRIM_DROP_HIGH_LOW_ASCII"  />
+	<COLUMN NAME="DATASET_NAME" EXTERNALNAME="Dataset Name" TYPE="ignore"  />
+	<COLUMN NAME="DEPARTMENT_R" EXTERNALNAME="Department" TYPE="ignore"  />
+	<COLUMN NAME="DNS_DOMAIN" EXTERNALNAME="DNS Domain" TYPE="ignore"  />
+	<COLUMN NAME="DOMAIN" EXTERNALNAME="Domain" TYPE="ignore"  />
+	<COLUMN NAME="DUE" EXTERNALNAME="Due" TYPE="ignore"  />
+	<COLUMN NAME="DUE_IN" EXTERNALNAME="Due in" TYPE="ignore"  />
+	<COLUMN NAME="EXTERNAL_REFERENCE_ID" EXTERNALNAME="External Reference ID" TYPE="ignore"  />
+	<COLUMN NAME="EXTERNAL_REFERENCE_SOURCE" EXTERNALNAME="External Reference Source" TYPE="ignore"  />
+	<COLUMN NAME="FAULT_COUNT" EXTERNALNAME="Fault count" TYPE="ignore"  />
+	<COLUMN NAME="FIRST_DISCOVERED" EXTERNALNAME="First Discovered" TYPE="ignore"  />
+	<COLUMN NAME="FL_UPDATE_ID" EXTERNALNAME="FL Update ID" TYPE="ignore"  />
+	<COLUMN NAME="GATEWAY" EXTERNALNAME="Gateway" TYPE="ignore"  />
+	<COLUMN NAME="GL_ACCOUNT" EXTERNALNAME="GL account" TYPE="ignore" PROCESS="TRIM_DROP_HIGH_LOW_ASCII"  />
+	<COLUMN NAME="GUID" EXTERNALNAME="GUID" TYPE="ignore"  />
+	<COLUMN NAME="INSTALLED" EXTERNALNAME="Installed" TYPE="ignore"  />
+	<COLUMN NAME="INVOICE_NUMBER" EXTERNALNAME="Invoice number" TYPE="ignore"  />
+	<COLUMN NAME="IP_ADDRESS_R" EXTERNALNAME="IP Address" TYPE="ignore"  />
+	<COLUMN NAME="JUSTIFICATION" EXTERNALNAME="Justification" TYPE="ignore"  />
+	<COLUMN NAME="LAST_BOOT_TIME" EXTERNALNAME="Last Boot Time" TYPE="ignore"  />
+	<COLUMN NAME="LAST_DOMAIN_AUTHENTICATION" EXTERNALNAME="Last Domain Authentication" TYPE="ignore"  />
+	<COLUMN NAME="LAST_HARDWARE_SCAN_TIME" EXTERNALNAME="Last Hardware Scan Time" TYPE="ignore"  />
+	<COLUMN NAME="LAST_SECURITY_SCAN" EXTERNALNAME="Last Security Scan" TYPE="ignore"  />
+	<COLUMN NAME="LEASE_CONTRACT" EXTERNALNAME="Lease contract" TYPE="ignore" PROCESS="TRIM_DROP_HIGH_LOW_ASCII"  />
+	<COLUMN NAME="LOCATION_R" EXTERNALNAME="Location" TYPE="ignore"  />
+	<COLUMN NAME="MAC_ADDRESS_R" EXTERNALNAME="MAC Address" TYPE="ignore"  />
+	<COLUMN NAME="MAINTENANCE_SCHEDULE" EXTERNALNAME="Maintenance schedule" TYPE="ignore"  />
+	<COLUMN NAME="MANAGED_BY" EXTERNALNAME="Managed By" TYPE="ignore" PROCESS="TRIM"  />
+	<COLUMN NAME="MANUFACTURER_NAME" EXTERNALNAME="Manufacturer Name" TYPE="ignore"  />
+	<COLUMN NAME="MODEL_NUMBER" EXTERNALNAME="Model Number" TYPE="ignore"  />
+	<COLUMN NAME="MONITOR" EXTERNALNAME="Monitor" TYPE="ignore"  />
+	<COLUMN NAME="MOST_RECENT_DISCOVERY" EXTERNALNAME="Most Recent Discovery" TYPE="ignore"  />
+	<COLUMN NAME="NATIVE_ASSET_ID_R" EXTERNALNAME="Native Asset ID" TYPE="ignore"  />
+	<COLUMN NAME="NORMALIZATION_FALIURE" EXTERNALNAME="Normalization Faliure" TYPE="ignore"  />
+	<COLUMN NAME="ORDER_RECEIVED" EXTERNALNAME="Order received" TYPE="ignore"  />
+	<COLUMN NAME="ORDERED" EXTERNALNAME="Ordered" TYPE="ignore"  />
+	<COLUMN NAME="OWNED_BY" EXTERNALNAME="Owned by" TYPE="ignore"  />
+	<COLUMN NAME="PARENT" EXTERNALNAME="Parent" TYPE="ignore"  />
+	<COLUMN NAME="PID" EXTERNALNAME="PID" TYPE="ignore"  />
+	<COLUMN NAME="PRIMARY_DNS" EXTERNALNAME="Primary DNS" TYPE="ignore" PROCESS="TRIM"  />
+	<COLUMN NAME="PROPOSED_DATE" EXTERNALNAME="Proposed Date" TYPE="ignore"  />
+	<COLUMN NAME="PROPOSED_STATE" EXTERNALNAME="Proposed state" TYPE="ignore"  />
+	<COLUMN NAME="PROPOSED_TYPE" EXTERNALNAME="Proposed type" TYPE="ignore"  />
+	<COLUMN NAME="PURCHASE_DATE" EXTERNALNAME="Purchase Date" TYPE="ignore"  />
+	<COLUMN NAME="PURCHASE_ORDER_NUMBER" EXTERNALNAME="Purchase Order Number" TYPE="ignore"  />
+	<COLUMN NAME="RECON_CHARACTERISTICS" EXTERNALNAME="Recon characteristics" TYPE="ignore"  />
+	<COLUMN NAME="RECONCILIATION_STATUS" EXTERNALNAME="Reconciliation Status" TYPE="ignore"  />
+	<COLUMN NAME="RELEASE_ENVIRONMENT" EXTERNALNAME="Release Environment" TYPE="ignore"  />
+	<COLUMN NAME="SCHEDULE" EXTERNALNAME="Schedule" TYPE="ignore"  />
+	<COLUMN NAME="SECONDARY_DNS" EXTERNALNAME="Secondary DNS" TYPE="ignore" PROCESS="TRIM"  />
+	<COLUMN NAME="SERIAL_NUMBER_R" EXTERNALNAME="Serial Number" TYPE="ignore"  />
+	<COLUMN NAME="SHORT_DESCRIPTION" EXTERNALNAME="Short Description" TYPE="ignore" PROCESS="TRIM"  />
+	<COLUMN NAME="SKIP_SYNC" EXTERNALNAME="Skip sync" TYPE="ignore"  />
+	<COLUMN NAME="SPECIAL_INSTRUCTIONS" EXTERNALNAME="Special Instructions" TYPE="ignore"  />
+	<COLUMN NAME="START_DATE" EXTERNALNAME="Start date" TYPE="ignore"  />
+	<COLUMN NAME="STATUS" EXTERNALNAME="Status" TYPE="ignore"  />
+	<COLUMN NAME="SUBCATEGORY" EXTERNALNAME="Subcategory" TYPE="ignore"  />
+	<COLUMN NAME="SUPPORT_GROUP" EXTERNALNAME="Support Group" TYPE="ignore"  />
+	<COLUMN NAME="SUPPORTED_BY" EXTERNALNAME="Supported By" TYPE="ignore"  />
+	<COLUMN NAME="SYS_ID" EXTERNALNAME="Sys ID" TYPE="ignore"  />
+	<COLUMN NAME="TASK" EXTERNALNAME="Task" TYPE="ignore"  />
+	<COLUMN NAME="U_NAME_CLASS" EXTERNALNAME="U name class" TYPE="ignore"  />
+	<COLUMN NAME="UPDATED" EXTERNALNAME="Updated" TYPE="ignore"  />
+	<COLUMN NAME="UPDATED_BY" EXTERNALNAME="Updated by" TYPE="ignore"  />
+	<COLUMN NAME="UPDATES" EXTERNALNAME="Updates" TYPE="ignore"  />
+	<COLUMN NAME="USED_FOR" EXTERNALNAME="Used for" TYPE="ignore"  />
+	<COLUMN NAME="VALIDATION_FALIURE" EXTERNALNAME="Validation faliure" TYPE="ignore"  />
+	<COLUMN NAME="VENDOR" EXTERNALNAME="Vendor" TYPE="ignore" PROCESS="TRIM_DROP_HIGH_LOW_ASCII"  />
+	<COLUMN NAME="WARRANTY_END_DATE" EXTERNALNAME="Warranty End Date" TYPE="ignore"  />
+	<COLUMN NAME="DB_INSTANCE_NAME" TYPE="virtual" VALUE="=if(rec.get('NATIVE_NATURAL_KEY') != null) if(rec.get('NATIVE_NATURAL_KEY').split('\\|',-1)[0] != undefined) return rec.get('NATIVE_NATURAL_KEY').split('\\|',-1)[0]; return null;" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATABASE_NAME" TYPE="virtual" VALUE="=if(rec.get('NATIVE_NATURAL_KEY') != null) if(rec.get('NATIVE_NATURAL_KEY').split('\\|',-1)[1] != undefined) return rec.get('NATIVE_NATURAL_KEY').split('\\|',-1)[1]; return null;" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="PARENT_ASSET_NAME" TYPE="virtual" VALUE="=if(rec.get('NATIVE_NATURAL_KEY') != null) if(rec.get('NATIVE_NATURAL_KEY').split('\\|',-1)[2] != undefined) return rec.get('NATIVE_NATURAL_KEY').split('\\|',-1)[2]; return null;" PROCESS="TRIM"  />
+	<COLUMN NAME="ASSET_NAME" TYPE="virtual" VALUE="=if(rec.get('NATIVE_NATURAL_KEY') != null) if(rec.get('NATIVE_NATURAL_KEY').split('\\|',-1)[2] != undefined) return rec.get('NATIVE_NATURAL_KEY').split('\\|',-1)[2]; return null;" PROCESS="TRIM"  />
+	<COLUMN NAME="TIME_ZONE" TYPE="virtual" VALUE="US/Michigan"  />
+</blz:FEED>
+

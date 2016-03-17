@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:FEED NAME="SNOWGROUP_ASSET" TYPE="[ASSET]" ISPRIMARY="FALSE" PROPAGATE="TRUE" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig" >
+	<fileparameters>
+		<parameter name="headerRowCount"  value="1" />
+		<parameter name="fieldDelimiter" type="ascii" value="124" />
+		<parameter name="recordDelimiter" type="namedDelimiter" value="NEWLINE" />
+	</fileparameters>
+	<COLUMN NAME="TENANT_DATA_PARTITION_ID" TYPE="virtual" VALUE="1" />
+	<COLUMN NAME="IF_SOURCE_ID" TYPE="virtual" VALUE="27" />
+	<COLUMN NAME="TENANT_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATA_PARTITION_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="SOURCE_CODE" TYPE="virtual" VALUE="SNOW_REL_FOR_BE" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATE_FORMAT_MASK" TYPE="virtual" VALUE="MM-dd-yyyy" PROCESS="TRIM"  />
+	<COLUMN NAME="NATIVE_GROUP_ASSET_ID" EXTERNALNAME="u_guid" TYPE="identifier" PROCESS="TRIM_DROP_HIGH_LOW_ASCII"  />
+	<COLUMN NAME="ASSET_NAME" EXTERNALNAME="ci" TYPE="attribute"   />
+	<COLUMN NAME="NATIVE_ASSET_ID" EXTERNALNAME="ci.u_guid" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="CMDB_CLASS" EXTERNALNAME="ci.sys_class_name" TYPE="attribute" PROCESS="TRIM_DROP_HIGH_LOW_ASCII"  />
+	<COLUMN NAME="GROUP_NAME" EXTERNALNAME="group" TYPE="attribute" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="NATIVE_GROUP_ID" EXTERNALNAME="group.u_guid" TYPE="attribute" PROCESS="TRIM_DROP_HIGH_LOW_ASCII"  />
+	<COLUMN NAME="rel_type_name_ex" EXTERNALNAME="type.name" TYPE="ignore"  />
+	<COLUMN NAME="REL_TYPE_NAME" TYPE="virtual" VALUE="=if(trim(rec.get('rel_type_name_ex')) == 'Supports::Supported By') return 'ASSET_SUPPORTED_BY_GROUP'; else return trim(rec.get('rel_type_name_ex'));" DATATYPE="noquote" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="type_u_guid" EXTERNALNAME="type.u_guid" TYPE="ignore"  />
+	<COLUMN NAME="TIME_ZONE" TYPE="virtual" VALUE="US/Michigan"  />
+</blz:FEED>
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:SOURCE NAME="ORACLE" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig"  xmlns:xi="http://www.w3.org/2001/XInclude">
+	<FEEDS>
+		<xi:include href="ORACLE/FEED_PO_LINE_ITEM_ORACLE.xml"/>
+	</FEEDS>
+	<ENTITIES>
+		<xi:include href="ORACLE/ENTITY_PO_LINE_ITEM_ORACLE.xml"/>
+		<xi:include href="ORACLE/ENTITY_PURCHASE_ORDER_ORACLE.xml"/>
+	</ENTITIES>
+	<RELATIONS>
+		<xi:include href="ORACLE/RELATION_PO_POLI.xml"/>
+	</RELATIONS>
+</blz:SOURCE>
+

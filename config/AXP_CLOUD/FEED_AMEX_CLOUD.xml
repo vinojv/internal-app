@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:FEED NAME="AMEX_CLOUD" TYPE="[ASSET, GROUP, GROUP_ASSET]" ISPRIMARY="TRUE" PROPAGATE="FALSE" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig" >
+	<fileparameters>
+		<parameter name="headerRowCount"  value="1" />
+		<parameter name="fieldDelimiter" type="ascii" value="124" />
+		<parameter name="recordDelimiter" type="namedDelimiter" value="NEWLINE" />
+	</fileparameters>
+	<COLUMN NAME="TENANT_DATA_PARTITION_ID" TYPE="virtual" VALUE="1" />
+	<COLUMN NAME="IF_SOURCE_ID" TYPE="virtual" VALUE="25" />
+	<COLUMN NAME="TENANT_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="DATA_PARTITION_CODE" TYPE="virtual" VALUE="AMEX" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="SOURCE_CODE" TYPE="virtual" VALUE="AXP_CLOUD" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="ASSET_CLASS" TYPE="virtual" VALUE="SERVER" PROCESS="TRIM"  />
+	<COLUMN NAME="DATE_FORMAT_MASK" TYPE="virtual" VALUE="MM/dd/yyyy" PROCESS="TRIM"  />
+	<COLUMN NAME="u_serv_img_id" EXTERNALNAME="u_serv_img_id" TYPE="ignore"  />
+	<COLUMN NAME="ASSET_NAME" EXTERNALNAME="host_name" TYPE="identifier"   />
+	<COLUMN NAME="ASSET_TAG" EXTERNALNAME="asset_tag" TYPE="attribute" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="u_alt_asset_tag" EXTERNALNAME="u_alt_asset_tag" TYPE="ignore"  />
+	<COLUMN NAME="SERIAL_NUMBER" EXTERNALNAME="serial_number" TYPE="attribute" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="u_server_managed_by" EXTERNALNAME="u_server_managed_by" TYPE="ignore"  />
+	<COLUMN NAME="u_asset_state_name" EXTERNALNAME="u_asset_state_name" TYPE="ignore"  />
+	<COLUMN NAME="NATIVE_PHYSICAL_STATUS" EXTERNALNAME="u_asset_status" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="IS_VIRTUAL" EXTERNALNAME="u_server_type" TYPE="attribute" PROCESS="TRIM_DROP_HIGH_LOW_ASCII"  />
+	<COLUMN NAME="ROLE" EXTERNALNAME="u_release_environment" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="u_ntwk_envir_nm" EXTERNALNAME="u_ntwk_envir_nm" TYPE="ignore"  />
+	<COLUMN NAME="u_serv_prps_nm" EXTERNALNAME="u_serv_prps_nm" TYPE="ignore"  />
+	<COLUMN NAME="MODEL" EXTERNALNAME="u_model" TYPE="attribute"   />
+	<COLUMN NAME="u_vss_provisioned" EXTERNALNAME="u_vss_provisioned" TYPE="ignore"  />
+	<COLUMN NAME="MODEL_MANUFACTURER" EXTERNALNAME="manufacturer" TYPE="attribute" PROCESS="TRIM" />
+	<COLUMN NAME="u_vendor_provided_identifier" EXTERNALNAME="u_vendor_provided_identifier" TYPE="ignore"  />
+	<COLUMN NAME="u_vend_prvd_serv_prps_nm" EXTERNALNAME="u_vend_prvd_serv_prps_nm" TYPE="ignore"  />
+	<COLUMN NAME="u_prvd_ntwk_intfc_card_ct" EXTERNALNAME="u_prvd_ntwk_intfc_card_ct" TYPE="ignore"  />
+	<COLUMN NAME="u_vend_prvd_serv_type_ds" EXTERNALNAME="u_vend_prvd_serv_type_ds" TYPE="ignore"  />
+	<COLUMN NAME="u_vend_prvd_ctry_ds" EXTERNALNAME="u_vend_prvd_ctry_ds" TYPE="ignore"  />
+	<COLUMN NAME="u_vend_prvd_rgn_nm" EXTERNALNAME="u_vend_prvd_rgn_nm" TYPE="ignore"  />
+	<COLUMN NAME="u_vend_prvd_rgn_area_ds" EXTERNALNAME="u_vend_prvd_rgn_area_ds" TYPE="ignore"  />
+	<COLUMN NAME="COST_CENTER_CODE" EXTERNALNAME="u_vend_prvd_cost_ctr_no" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="u_vndr_sys_fun_ds" EXTERNALNAME="u_vndr_sys_fun_ds" TYPE="ignore"  />
+	<COLUMN NAME="u_vend_lst_etl_updt_ts" EXTERNALNAME="u_vend_lst_etl_updt_ts" TYPE="ignore"  />
+	<COLUMN NAME="u_vend_prvd_rls_envir_nm" EXTERNALNAME="u_vend_prvd_rls_envir_nm" TYPE="ignore"  />
+	<COLUMN NAME="OS_NAME" EXTERNALNAME="u_vndr_os_name" TYPE="attribute"   />
+	<COLUMN NAME="OS_VERSION" EXTERNALNAME="u_vndr_os_vrsn_num" TYPE="attribute"    />
+	<COLUMN NAME="OS_SERVICE_PACK" EXTERNALNAME="u_vndr_os_sp_desc" TYPE="attribute"    />
+	<COLUMN NAME="u_vendor_provided_asset_state" EXTERNALNAME="u_vendor_provided_asset_state" TYPE="ignore"  />
+	<COLUMN NAME="sys_updated_on" EXTERNALNAME="sys_updated_on" TYPE="ignore"  />
+	<COLUMN NAME="name" EXTERNALNAME="name" TYPE="ignore"  />
+	<COLUMN NAME="location_igore" EXTERNALNAME="location" TYPE="ignore"  />
+	<COLUMN NAME="vendor" EXTERNALNAME="vendor" TYPE="ignore"  />
+	<COLUMN NAME="u_vlan_name" EXTERNALNAME="u_vlan_name" TYPE="ignore"  />
+	<COLUMN NAME="firewall_status" EXTERNALNAME="firewall_status" TYPE="ignore"  />
+	<COLUMN NAME="u_control_m_installed" EXTERNALNAME="u_control_m_installed" TYPE="ignore"  />
+	<COLUMN NAME="u_virus_def_current" EXTERNALNAME="u_virus_def_current" TYPE="ignore"  />
+	<COLUMN NAME="u_hosting_provider" EXTERNALNAME="u_hosting_provider" TYPE="ignore"  />
+	<COLUMN NAME="ASSET_INSTALL_DATE" EXTERNALNAME="u_installed_date" TYPE="attribute" PROCESS="CONVERT_STRING_TO_DATE(DATE_FORMAT_MASK,TIME_ZONE)"  />
+	<COLUMN NAME="ASSET_INSTALL_DATE_O" EXTERNALNAME="u_installed_date" TYPE="attribute"  />
+	<COLUMN NAME="disk_space" EXTERNALNAME="disk_space" TYPE="ignore"  />
+	<COLUMN NAME="u_dotnet_compliant" EXTERNALNAME="u_dotnet_compliant" TYPE="ignore"  />
+	<COLUMN NAME="u_java_compliant" EXTERNALNAME="u_java_compliant" TYPE="ignore"  />
+	<COLUMN NAME="u_citrix" EXTERNALNAME="u_citrix" TYPE="ignore"  />
+	<COLUMN NAME="u_citrix_version" EXTERNALNAME="u_citrix_version" TYPE="ignore"  />
+	<COLUMN NAME="u_compliance_issue" EXTERNALNAME="u_compliance_issue" TYPE="ignore"  />
+	<COLUMN NAME="cpu_speed" EXTERNALNAME="cpu_speed" TYPE="ignore"  />
+	<COLUMN NAME="u_esx_server" EXTERNALNAME="u_esx_server" TYPE="ignore"  />
+	<COLUMN NAME="u_power_state" EXTERNALNAME="u_power_state" TYPE="ignore"  />
+	<COLUMN NAME="u_ra_complaince" EXTERNALNAME="u_ra_complaince" TYPE="ignore"  />
+	<COLUMN NAME="u_ra_product_name" EXTERNALNAME="u_ra_product_name" TYPE="ignore"  />
+	<COLUMN NAME="u_ra_product_version" EXTERNALNAME="u_ra_product_version" TYPE="ignore"  />
+	<COLUMN NAME="u_server_tier" EXTERNALNAME="u_server_tier" TYPE="ignore"  />
+	<COLUMN NAME="u_disposed_date" EXTERNALNAME="u_disposed_date" TYPE="ignore"  />
+	<COLUMN NAME="u_logical_processor_count" EXTERNALNAME="u_logical_processor_count" TYPE="ignore"  />
+	<COLUMN NAME="u_prcs_ds" EXTERNALNAME="u_prcs_ds" TYPE="ignore"  />
+	<COLUMN NAME="dr_backup" EXTERNALNAME="dr_backup" TYPE="ignore"  />
+	<COLUMN NAME="dns_domain" EXTERNALNAME="dns_domain" TYPE="ignore"  />
+	<COLUMN NAME="u_windows_update" EXTERNALNAME="u_windows_update" TYPE="ignore"  />
+	<COLUMN NAME="u_non_ra_software_installed" EXTERNALNAME="u_non_ra_software_installed" TYPE="ignore"  />
+	<COLUMN NAME="last_discovered" EXTERNALNAME="last_discovered" TYPE="ignore"  />
+	<COLUMN NAME="ASSET_COMMENT" EXTERNALNAME="short_description" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="cpu_core_count" EXTERNALNAME="cpu_core_count" TYPE="ignore"  />
+	<COLUMN NAME="CPU_COUNT" EXTERNALNAME="cpu_count" TYPE="attribute" PROCESS="EXTRACT_FIRST_NUMERIC"  />
+	<COLUMN NAME="TOTAL_MEMORY_UNITS" EXTERNALNAME="u_ram_ds" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="TOTAL_MEMORY" EXTERNALNAME="ram" TYPE="attribute" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="u_hard_disk_capacity" EXTERNALNAME="u_hard_disk_capacity" TYPE="ignore"  />
+	<COLUMN NAME="u_intr_dasd_capc_ct" EXTERNALNAME="u_intr_dasd_capc_ct" TYPE="ignore"  />
+	<COLUMN NAME="u_tot_dasd_capc_ct" EXTERNALNAME="u_tot_dasd_capc_ct" TYPE="ignore"  />
+	<COLUMN NAME="u_server_width" EXTERNALNAME="u_server_width" TYPE="ignore"  />
+	<COLUMN NAME="u_server_depth" EXTERNALNAME="u_server_depth" TYPE="ignore"  />
+	<COLUMN NAME="u_server_height" EXTERNALNAME="u_server_height" TYPE="ignore"  />
+	<COLUMN NAME="u_server_weight" EXTERNALNAME="u_server_weight" TYPE="ignore"  />
+	<COLUMN NAME="u_server_unit_size" EXTERNALNAME="u_server_unit_size" TYPE="ignore"  />
+	<COLUMN NAME="u_max_btu" EXTERNALNAME="u_max_btu" TYPE="ignore"  />
+	<COLUMN NAME="u_max_kva" EXTERNALNAME="u_max_kva" TYPE="ignore"  />
+	<COLUMN NAME="purchase_date" EXTERNALNAME="purchase_date" TYPE="ignore"  />
+	<COLUMN NAME="u_receipt_date" EXTERNALNAME="u_receipt_date" TYPE="ignore"  />
+	<COLUMN NAME="u_server_active_date" EXTERNALNAME="u_server_active_date" TYPE="ignore"  />
+	<COLUMN NAME="WARRANTY_EXPIRATION_DATE" EXTERNALNAME="warranty_expiration" TYPE="attribute" PROCESS="CONVERT_STRING_TO_DATE(DATE_FORMAT_MASK,TIME_ZONE)"  />
+	<COLUMN NAME="WARRANTY_EXPIRATION_DATE_O" EXTERNALNAME="warranty_expiration" TYPE="attribute"  />
+	<COLUMN NAME="u_server_uninstalled_date" EXTERNALNAME="u_server_uninstalled_date" TYPE="ignore"  />
+	<COLUMN NAME="u_server_powerof_date" EXTERNALNAME="u_server_powerof_date" TYPE="ignore"  />
+	<COLUMN NAME="u_rgn_nm" EXTERNALNAME="u_rgn_nm" TYPE="ignore"  />
+	<COLUMN NAME="u_ctry_cd" EXTERNALNAME="u_ctry_cd" TYPE="ignore"  />
+	<COLUMN NAME="LOCATION_COUNTRY" EXTERNALNAME="u_country" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="u_rgn_area_cd" EXTERNALNAME="u_rgn_area_cd" TYPE="ignore"  />
+	<COLUMN NAME="LOCATION_STATE" EXTERNALNAME="u_state" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="LOCATION_STREET_ADDRESS_1" EXTERNALNAME="u_address" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="LOCATION_CITY" EXTERNALNAME="u_city" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="LOCATION_BUILDING" EXTERNALNAME="u_building" TYPE="attribute" PROCESS="TRIM"  />
+	<COLUMN NAME="u_sub_premise_ds" EXTERNALNAME="u_sub_premise_ds" TYPE="ignore"  />
+	<COLUMN NAME="u_rm_tx" EXTERNALNAME="u_rm_tx" TYPE="ignore"  />
+	<COLUMN NAME="u_grid_tx" EXTERNALNAME="u_grid_tx" TYPE="ignore"  />
+	<COLUMN NAME="u_pstl_cd_tx" EXTERNALNAME="u_pstl_cd_tx" TYPE="ignore"  />
+	<COLUMN NAME="u_ad_line_1_txt" EXTERNALNAME="u_ad_line_1_txt" TYPE="ignore"  />
+	<COLUMN NAME="u_ad_line_2_txt" EXTERNALNAME="u_ad_line_2_txt" TYPE="ignore"  />
+	<COLUMN NAME="u_hdwr_raid_lvl_ds" EXTERNALNAME="u_hdwr_raid_lvl_ds" TYPE="ignore"  />
+	<COLUMN NAME="u_prev_serv_im_nm" EXTERNALNAME="u_prev_serv_im_nm" TYPE="ignore"  />
+	<COLUMN NAME="u_secr_std_ds" EXTERNALNAME="u_secr_std_ds" TYPE="ignore"  />
+	<COLUMN NAME="u_serv_patchable_in" EXTERNALNAME="u_serv_patchable_in" TYPE="ignore"  />
+	<COLUMN NAME="u_patch_excpt_ds" EXTERNALNAME="u_patch_excpt_ds" TYPE="ignore"  />
+	<COLUMN NAME="support_group" EXTERNALNAME="support_group" TYPE="ignore"  />
+	<COLUMN NAME="supported_by" EXTERNALNAME="supported_by" TYPE="ignore"  />
+	<COLUMN NAME="u_vss_provisioned_in" EXTERNALNAME="u_vss_provisioned_in" TYPE="ignore"  />
+	<COLUMN NAME="u_cluster_name" EXTERNALNAME="u_cluster_name" TYPE="ignore"  />
+	<COLUMN NAME="u_ntwk_alias_nm" EXTERNALNAME="u_ntwk_alias_nm" TYPE="ignore"  />
+	<COLUMN NAME="u_websphere_appl_serv_hub_nm" EXTERNALNAME="u_websphere_appl_serv_hub_nm" TYPE="ignore"  />
+	<COLUMN NAME="po_number" EXTERNALNAME="po_number" TYPE="ignore"  />
+	<COLUMN NAME="u_hardware_identifier" EXTERNALNAME="u_hardware_identifier" TYPE="ignore"  />
+	<COLUMN NAME="u_dqi_error" EXTERNALNAME="u_dqi_error" TYPE="ignore"  />
+	<COLUMN NAME="u_dqi_reject" EXTERNALNAME="u_dqi_reject" TYPE="ignore"  />
+	<COLUMN NAME="u_lease_expiry_dt" EXTERNALNAME="u_lease_expiry_dt" TYPE="ignore"  />
+	<COLUMN NAME="u_tenant_type" EXTERNALNAME="u_tenant_type" TYPE="ignore"  />
+	<COLUMN NAME="ip_address" EXTERNALNAME="ip_address" TYPE="ignore"  />
+	<COLUMN NAME="GROUP_NAME" TYPE="virtual" VALUE="CISS_AXP_AM" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="REL_TYPE_NAME" TYPE="virtual" VALUE="ASSET_SUPPORTED_BY_GROUP" PROCESS="UPPER_TRIM"  />
+	<COLUMN NAME="TIME_ZONE" TYPE="virtual" VALUE="US/Michigan"  />
+</blz:FEED>
+

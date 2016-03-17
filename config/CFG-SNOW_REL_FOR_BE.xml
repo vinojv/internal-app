@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:SOURCE NAME="SNOW_REL_FOR_BE" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig"  xmlns:xi="http://www.w3.org/2001/XInclude">
+	<FEEDS>
+		<xi:include href="SNOW_REL_FOR_BE/FEED_SNOWGROUP_ASSET.xml"/>
+		<xi:include href="SNOW_REL_FOR_BE/FEED_SNOW_CMDB_CI_COMPUTER.xml"/>
+		<xi:include href="SNOW_REL_FOR_BE/FEED_SNOWGROUP_GROUP.xml"/>
+	</FEEDS>
+	<xi:include href="SNOW_REL_FOR_BE/LINKS.xml"/>
+	<ENTITIES>
+		<xi:include href="SNOW_REL_FOR_BE/ENTITY_COMPUTER.xml"/>
+		<xi:include href="SNOW_REL_FOR_BE/ENTITY_GROUP.xml"/>
+	</ENTITIES>
+	<RELATIONS>
+		<xi:include href="SNOW_REL_FOR_BE/RELATION_COMPUTER_GROUP.xml"/>
+	</RELATIONS>
+</blz:SOURCE>
+

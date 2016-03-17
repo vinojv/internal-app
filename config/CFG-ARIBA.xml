@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<blz:SOURCE NAME="ARIBA" xmlns:blz="http://www.blazent.com/xmlbeans/connectorconfig"  xmlns:xi="http://www.w3.org/2001/XInclude">
+	<FEEDS>
+		<xi:include href="ARIBA/FEED_PURCHASE_ORDER_ARIBA.xml"/>
+		<xi:include href="ARIBA/FEED_PO_LINE_ITEM_ARIBA.xml"/>
+	</FEEDS>
+	<xi:include href="ARIBA/LINKS.xml"/>
+	<ENTITIES>
+		<xi:include href="ARIBA/ENTITY_PURCHASE_ORDER_ARIBA.xml"/>
+		<xi:include href="ARIBA/ENTITY_PO_LINE_ITEM_ARIBA.xml"/>
+	</ENTITIES>
+	<RELATIONS>
+		<xi:include href="ARIBA/RELATION_PO_POLI.xml"/>
+	</RELATIONS>
+</blz:SOURCE>
+
